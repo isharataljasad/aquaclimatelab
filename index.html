@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>AquaClimate Lab — Water × Weather × Chemistry × Data for Arid Regions</title>
+  <meta name="description" content="AquaClimate Lab is an educational knowledge prototype connecting water, weather, climate, chemistry, data science, and precision fertigation for arid regions — from Arizona to Saudi Arabia." />
+  <meta name="keywords" content="hydrology, atmospheric science, climate, drought, groundwater, water quality, chemistry, pH, TDS, salinity, data science, AI, GIS, precision fertigation, smart fertilizer, arid regions, Arizona, Saudi Arabia" />
+  <meta name="author" content="AquaClimate Lab" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aquaclimatelab.com/" />
+  <meta name="theme-color" content="#060d16" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AquaClimate Lab" />
+  <meta property="og:title" content="AquaClimate Lab — Water × Weather × Chemistry × Data" />
+  <meta property="og:description" content="A knowledge prototype for understanding water, climate, chemistry, data, and precision fertigation in arid regions — from Arizona to Saudi Arabia." />
+  <meta property="og:url" content="https://aquaclimatelab.com/" />
+  <meta property="og:locale" content="ar_SA" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://aquaclimatelab.com/assets/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AquaClimate Lab — Water, Weather, Chemistry, and Data for arid regions" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AquaClimate Lab — Water × Weather × Chemistry × Data" />
+  <meta name="twitter:description" content="A knowledge prototype for understanding water, climate, chemistry, data, and precision fertigation in arid regions." />
+  <meta name="twitter:image" content="https://aquaclimatelab.com/assets/img/og-image.png" />
+  <meta name="twitter:image:alt" content="AquaClimate Lab cover" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AquaClimate Lab",
+    "url": "https://aquaclimatelab.com/",
+    "description": "An educational knowledge prototype connecting water, weather, climate, chemistry, data science, and precision fertigation for arid regions.",
+    "inLanguage": ["ar", "en"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">تجاوز إلى المحتوى الرئيسي</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav wrap" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#top" aria-label="AquaClimate Lab — الصفحة الرئيسية">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#04141d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.5c3.8 4.4 6 7.4 6 10.5a6 6 0 1 1-12 0c0-3.1 2.2-6.1 6-10.5Z" fill="rgba(255,255,255,.3)"/>
+            <path d="M9 13a3 3 0 0 0 3 3"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>AquaClimate Lab</strong>
+          <small>Water × Weather × Chemistry × Data</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bars" aria-hidden="true"></span><span>القائمة</span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#tracks">المسارات</a></li>
+        <li><a href="#fertigation">Smart Fertigation</a></li>
+        <li><a href="#arizona">لماذا أريزونا؟</a></li>
+        <li><a href="#saudi">السياق السعودي</a></li>
+        <li><a href="#projects">المشاريع</a></li>
+        <li><a href="#demo">العرض التفاعلي</a></li>
+        <li><a href="#team">الفريق</a></li>
+        <li><a href="#contact">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="section hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Arid-Region Science · Knowledge Prototype</p>
+          <h1>AquaClimate&nbsp;Lab</h1>
+          <p class="hero-sub">Water × Weather × Chemistry × Data</p>
+          <p class="lead">من أريزونا إلى السعودية — نموذج معرفي يشرح كيف يلتقي الماء والمناخ والكيمياء وعلوم البيانات في البيئات الجافة.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">استعرض المشاريع</a>
+            <a class="button ghost" href="#tracks">المسارات الثلاثة</a>
+          </div>
+          <div class="trust-strip" aria-label="المحاور الأساسية">
+            <span class="chip">Hydrology</span>
+            <span class="chip">Weather &amp; Climate</span>
+            <span class="chip">Water Chemistry</span>
+            <span class="chip">Data Science</span>
+            <span class="chip">AI</span>
+          </div>
+        </div>
+
+        <!-- Signature element: research console readout -->
+        <div class="console" role="img" aria-label="لوحة قراءات توضيحية تجمع محاور الماء والمناخ والكيمياء والبيانات">
+          <div class="console-top">
+            <span class="label">Convergence Readout</span>
+            <span class="console-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="channels">
+            <div class="channel" data-c="water">
+              <span class="name">WATER</span>
+              <span class="track"><span class="fill pulse"></span></span>
+              <span class="val">78%</span>
+            </div>
+            <div class="channel" data-c="climate">
+              <span class="name">CLIMATE</span>
+              <span class="track"><span class="fill pulse"></span></span>
+              <span class="val">64%</span>
+            </div>
+            <div class="channel" data-c="chem">
+              <span class="name">CHEMISTRY</span>
+              <span class="track"><span class="fill pulse"></span></span>
+              <span class="val">71%</span>
+            </div>
+            <div class="channel" data-c="data">
+              <span class="name">DATA · AI</span>
+              <span class="track"><span class="fill pulse"></span></span>
+              <span class="val">88%</span>
+            </div>
+          </div>
+          <div class="console-foot">
+            <span>signal · educational model</span>
+            <svg class="sparkline" viewBox="0 0 120 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 24 L18 18 L32 22 L48 10 L64 16 L80 6 L96 14 L118 8" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MISSION ===================== -->
+    <section class="section" id="mission">
+      <div class="wrap split">
+        <div class="panel feature">
+          <p class="eyebrow">Mission</p>
+          <h2>مختبر معرفة صغير، لا صفحة تعريف عادية.</h2>
+          <p class="lead">AquaClimate Lab مساحة تعليمية مستقلة تشرح كيف تتقاطع علوم الماء والمناخ والكيمياء والبيانات في مشكلات حقيقية بالبيئات الجافة.</p>
+        </div>
+        <div class="panel">
+          <p>الهدف بسيط وواضح: تقديم محتوى علمي مبسّط، ومشاريع تطبيقية عامة، وأدوات تفاعلية تعليمية — بصيغة احترافية قابلة للنشر والتطوير لاحقًا إلى مقالات ولوحات بيانات وأعمال محفظة.</p>
+          <p class="en muted">A clean, deployment-ready prototype that can grow into articles, dashboards, public datasets, and professional portfolios — without representing any employer, university, or government entity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRACKS ===================== -->
+    <section class="section" id="tracks">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Three Tracks</p>
+          <h2>ثلاثة مسارات، سؤال واحد.</h2>
+          <p>كل مسار مستقل بذاته، لكنه يخدم سؤالًا أكبر: كيف نقرأ البيئات الجافة بالعلم والقياس والبيانات؟</p>
+        </div>
+        <div class="tracks-grid">
+
+          <article class="card track-card" data-c="water">
+            <span class="code">TRACK / WATER · CLIMATE</span>
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3c3.6 4.2 5.6 7 5.6 9.8A5.6 5.6 0 1 1 6.4 12.8C6.4 10 8.4 7.2 12 3Z"/>
+                <path d="M9.5 13a2.6 2.6 0 0 0 2.5 2.5"/>
+              </svg>
+            </span>
+            <h3>Water &amp; Climate</h3>
+            <p>الهيدرولوجيا والطقس والمناخ، والجفاف والمياه الجوفية، وأنظمة المياه في المناطق الجافة.</p>
+            <ul>
+              <li>Hydrology &amp; groundwater recharge</li>
+              <li>Drought &amp; weather signals</li>
+              <li>Arid-region water systems</li>
+            </ul>
+          </article>
+
+          <article class="card track-card" data-c="chem">
+            <span class="code">TRACK / CHEMISTRY</span>
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3v6.5L4.5 17a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L15 9.5V3"/>
+                <path d="M8 3h8M7.5 14h9"/>
+              </svg>
+            </span>
+            <h3>Chemistry &amp; Industry</h3>
+            <p>جودة المياه، الـ pH، الأملاح الذائبة TDS، الملوحة، العسر، المعالجة، والمواد في السياق الصناعي.</p>
+            <ul>
+              <li>Water quality &amp; treatment</li>
+              <li>pH, TDS, salinity, hardness</li>
+              <li>Materials &amp; corrosion basics</li>
+            </ul>
+          </article>
+
+          <article class="card track-card" data-c="data">
+            <span class="code">TRACK / DATA · AI</span>
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19V5M4 19h16"/>
+                <path d="M7 16l3-4 3 2 4-6"/>
+              </svg>
+            </span>
+            <h3>Data Science &amp; AI</h3>
+            <p>Python و SQL و GIS، ولوحات البيانات، والبيانات البيئية، وتعلّم الآلة، والتحليل المدعوم بالذكاء الاصطناعي.</p>
+            <ul>
+              <li>Python, SQL &amp; GIS</li>
+              <li>Dashboards &amp; visualization</li>
+              <li>Machine learning &amp; responsible AI</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SMART FERTIGATION ===================== -->
+    <section class="section" id="fertigation">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Smart Fertigation · Root-Zone Layer</p>
+          <h2>Smart Fertilizer &amp; Precision Fertigation</h2>
+          <p class="lead">حيث يلتقي الماء والكيمياء والبيانات عند منطقة الجذور — الطبقة التي تُكمل مثلث AquaClimate Lab.</p>
+        </div>
+
+        <div class="fertigation-feature">
+          <figure class="fertigation-media">
+            <img src="assets/smart-fertigation.png" width="1400" height="788" loading="lazy"
+                 alt="AI-powered precision fertigation with soil sensors, plant roots, drip irrigation, and smart fertilizer technology." />
+          </figure>
+          <div class="fertigation-intro">
+            <p>مستقبل التسميد ليس "سمادًا أكثر"، بل توصيلًا أذكى للعناصر الغذائية. في المناطق الجافة، السؤال ليس فقط أي عنصر يُضاف، بل <strong>متى وأين وكيف</strong> يصل إلى منطقة الجذور.</p>
+            <p class="en muted">Modern fertilizer technology is moving from bulk application toward intelligent nutrient delivery. The key question in arid regions is not only what nutrient is added, but when, where, and how it reaches the root zone. Precision fertigation connects irrigation, chemistry, sensors, and data science to reduce waste and improve nutrient-use thinking.</p>
+            <div class="skills">
+              <span class="chip">Controlled-release</span>
+              <span class="chip">Precision fertigation</span>
+              <span class="chip">Drip irrigation</span>
+              <span class="chip">Soil moisture</span>
+              <span class="chip">EC &amp; pH sensors</span>
+              <span class="chip">Nutrient timing</span>
+              <span class="chip">Root-zone delivery</span>
+              <span class="chip">Data dashboards</span>
+              <span class="chip">AI decision support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fertigation-cards">
+          <article class="card fert-card" data-c="chem">
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="8" width="18" height="8" rx="4"/>
+                <path d="M12 8v8"/>
+              </svg>
+            </span>
+            <h3>Controlled-Release Nutrients</h3>
+            <p>إطلاق بطيء أو متدرّج للعناصر الغذائية مصمّم ليطابق احتياج النبات ويقلّل الفاقد غير الضروري.</p>
+          </article>
+
+          <article class="card fert-card" data-c="water">
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3c3.4 4 5.2 6.6 5.2 9.2A5.2 5.2 0 1 1 6.8 12.2C6.8 9.6 8.6 7 12 3Z"/>
+                <path d="M12 21v-2M8.5 20l-.6-1.7M15.5 20l.6-1.7"/>
+              </svg>
+            </span>
+            <h3>Precision Fertigation</h3>
+            <p>توصيل الماء والمغذيات معًا عبر أنظمة الري، موجَّهًا بقراءات الـ EC والـ pH والرطوبة والتوقيت.</p>
+          </article>
+
+          <article class="card fert-card" data-c="data">
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3.5" y="4" width="17" height="13" rx="2"/>
+                <path d="M7 13l2.5-3 2 1.5L15 8M9 21h6"/>
+              </svg>
+            </span>
+            <h3>AI &amp; Sensor Feedback</h3>
+            <p>تحويل بيانات التربة والماء إلى لوحات تدعم قرارات أفضل حول الري وتوصيل المغذيات.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY ARIZONA ===================== -->
+    <section class="section" id="arizona">
+      <div class="wrap split">
+        <div class="panel">
+          <p class="eyebrow">Why Arizona?</p>
+          <h2>أريزونا نموذج تعليمي للتفكير في البيئات الجافة.</h2>
+          <p>أريزونا منطقة جافة حقيقية تجمع تحديات الماء والطقس والمناخ في مكان واحد: شُح الأمطار، الاعتماد على المياه الجوفية، موجات الحرارة، والجفاف الممتد.</p>
+          <p>نستخدمها كنموذج تعليمي لفهم كيف تُقاس هذه الظواهر وتُفسَّر — دون أي ادعاء بحثي أو تمثيل لأي جهة أكاديمية.</p>
+        </div>
+        <div class="panel">
+          <h3>ماذا نتعلّم منها؟</h3>
+          <ul class="factlist">
+            <li>كيف يتحوّل المطر النادر إلى تغذية للمياه الجوفية.</li>
+            <li>كيف تُقرأ مؤشرات الجفاف والطقس عبر الزمن.</li>
+            <li>كيف ترتبط جودة المياه بالمصدر والمناخ المحلي.</li>
+            <li>كيف تساعد البيانات على رؤية ما لا يظهر في قراءة واحدة.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SAUDI RELEVANCE ===================== -->
+    <section class="section" id="saudi">
+      <div class="wrap split">
+        <div class="panel amber">
+          <p class="eyebrow">Saudi Relevance</p>
+          <h2>السياق السعودي: بيئة جافة تحتاج تفكيرًا متعدد التخصصات.</h2>
+          <p>السعودية من أكثر البيئات جفافًا في العالم، وتعتمد بشكل كبير على إدارة الماء، والتحلية، وجودة المياه، والبيانات المناخية في التخطيط طويل المدى.</p>
+          <p>هنا يلتقي العلم بالتطبيق: قياس الماء، فهم كيميائه، قراءة المناخ، وتحويل كل ذلك إلى بيانات قابلة للتحليل والقرار.</p>
+        </div>
+        <div class="panel">
+          <h3>لماذا يهم الربط بين المسارات؟</h3>
+          <ul class="factlist">
+            <li>الماء لا يُفهم بمعزل عن كيميائه ومناخه.</li>
+            <li>قرارات البيئة الجافة تحتاج قياسًا، لا حدسًا.</li>
+            <li>البيانات تربط الملاحظة الميدانية بالنمذجة.</li>
+            <li>المهارات المتعددة تبني فهمًا أكثر اكتمالًا.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROCESS MODEL ===================== -->
+    <section class="section" id="model">
+      <div class="wrap split">
+        <div class="panel feature">
+          <p class="eyebrow">How We Work</p>
+          <h2>من القياس إلى المعنى.</h2>
+          <p class="lead">نموذج عمل بسيط يربط المسارات الثلاثة في سلسلة واحدة واضحة.</p>
+          <p class="muted">كل خطوة تبني على ما قبلها: نلاحظ، نفسّر، ننمذج، ثم نوصّل النتيجة بلغة مفهومة للطلاب والمهنيين.</p>
+        </div>
+        <ol class="steps" aria-label="مراحل العمل">
+          <li><div><strong>Observe — نلاحظ</strong><span>قياس المطر والحرارة والملوحة والمؤشرات.</span></div></li>
+          <li><div><strong>Explain — نفسّر</strong><span>شرح ما تعنيه القراءات كيميائيًا ومناخيًا.</span></div></li>
+          <li><div><strong>Model — ننمذج</strong><span>تحويل القراءات إلى خرائط ولوحات بيانات.</span></div></li>
+          <li><div><strong>Communicate — نوصّل</strong><span>كتابة النتائج بلغة واضحة وقابلة للمشاركة.</span></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Mini Projects</p>
+          <h2>مشاريع صغيرة تجعل المختبر أقوى من صفحة تعريف.</h2>
+          <p>مشاريع تعليمية عامة بالكامل — لا تعتمد على أي بيانات داخلية أو مشاريع عمل غير منشورة.</p>
+        </div>
+        <div class="projects-grid">
+
+          <article class="card project-card">
+            <span class="tag">01 · CHEMISTRY</span>
+            <h3>Water Quality Dashboard</h3>
+            <p>لوحة بصرية تشرح كيف تُقرأ مؤشرات جودة المياه: pH، TDS، العسر، والملوحة.</p>
+            <span class="status">Concept</span>
+          </article>
+
+          <article class="card project-card">
+            <span class="tag">02 · HYDROLOGY</span>
+            <h3>Rain to Groundwater Map</h3>
+            <p>خريطة تعليمية تتبع كيف يتحوّل المطر إلى تغذية للمياه الجوفية في البيئات الجافة.</p>
+            <span class="status">Concept</span>
+          </article>
+
+          <article class="card project-card">
+            <span class="tag">03 · CLIMATE</span>
+            <h3>Desert Climate Notes</h3>
+            <p>ملاحظات تعليمية حول الحرارة والجفاف وأنماط المناخ في المناطق الجافة.</p>
+            <span class="status">Concept</span>
+          </article>
+
+          <article class="card project-card">
+            <span class="tag">04 · CHEMISTRY</span>
+            <h3>Chemistry of Water Treatment</h3>
+            <p>من الماء الخام إلى المعالجة: ترسيب، ترشيح، ضبط أملاح وحموضة، وتعقيم.</p>
+            <span class="status">Concept</span>
+          </article>
+
+          <article class="card project-card">
+            <span class="tag">05 · DATA · AI</span>
+            <h3>Arid Region Data Explorer</h3>
+            <p>أداة استكشاف للبيانات البيئية العامة: تنظيف، تصوّر، وربط المؤشرات ببعضها.</p>
+            <span class="status">Concept</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INTERACTIVE DEMO ===================== -->
+    <section class="section" id="demo">
+      <div class="wrap demo-grid">
+        <div>
+          <p class="eyebrow">Interactive Demo</p>
+          <h2>إشارة جودة المياه — للتعليم فقط.</h2>
+          <p class="muted">حرّك المؤشرات لترى كيف تتغيّر "الإشارة" التفسيرية. هذه أداة توضيحية لشرح المفاهيم، وليست أداة مختبرية أو تشخيصًا لصلاحية مياه حقيقية.</p>
+          <div class="skills">
+            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Statistics</span>
+            <span class="chip">GIS</span><span class="chip">Dashboards</span><span class="chip">Machine Learning</span>
+            <span class="chip">Responsible AI</span>
+          </div>
+        </div>
+
+        <div class="card demo-card">
+          <h3>Water Quality Signal</h3>
+          <p class="demo-note">educational model · not a lab or health test</p>
+
+          <div class="field">
+            <div class="field-top">
+              <label for="ph">الحموضة — pH</label>
+              <span class="read"><span id="phOut">7.4</span></span>
+            </div>
+            <input id="ph" type="range" min="4" max="10" step="0.1" value="7.4"
+                   aria-describedby="signalBox" />
+          </div>
+
+          <div class="field">
+            <div class="field-top">
+              <label for="tds">الأملاح الذائبة — TDS</label>
+              <span class="read"><span id="tdsOut">620</span><small>ppm</small></span>
+            </div>
+            <input id="tds" type="range" min="50" max="2500" step="10" value="620"
+                   aria-describedby="signalBox" />
+          </div>
+
+          <div class="field">
+            <div class="field-top">
+              <label for="hard">العسر — Hardness</label>
+              <span class="read"><span id="hardOut">180</span><small>mg/L</small></span>
+            </div>
+            <input id="hard" type="range" min="20" max="500" step="5" value="180"
+                   aria-describedby="signalBox" />
+          </div>
+
+          <div class="field">
+            <div class="field-top">
+              <label for="sal">الملوحة — Salinity</label>
+              <span class="read"><span id="salOut">1.2</span><small>ppt</small></span>
+            </div>
+            <input id="sal" type="range" min="0" max="40" step="0.1" value="1.2"
+                   aria-describedby="signalBox" />
+          </div>
+
+          <div class="signal" id="signalBox" data-state="ok" role="status" aria-live="polite">
+            <div class="signal-head">
+              <span class="signal-dot" aria-hidden="true"></span>
+              <strong id="signalTitle">عيّنة تعليمية متوازنة</strong>
+            </div>
+            <p id="signalBody">القيم الحالية ضمن نطاق تعليمي متوازن. غيّر المؤشرات لرؤية كيف تتبدّل القراءة.</p>
+            <p class="disclaimer-inline">للتعليم فقط — ليست حكمًا على صلاحية مياه حقيقية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TEAM / PROFILES ===================== -->
+    <section class="section" id="team">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The Team</p>
+          <h2>ثلاثة أدوار تبني المختبر.</h2>
+          <p>أدوار عامة آمنة — تُحدَّث بالأسماء والروابط الرسمية لاحقًا عند الرغبة.</p>
+        </div>
+        <div class="profiles-grid">
+
+          <article class="card profile-card" data-c="water">
+            <span class="profile-avatar" aria-hidden="true">WC</span>
+            <h3>Water &amp; Climate Track Lead</h3>
+            <p class="role">HYDROLOGY · ATMOSPHERIC SCIENCE</p>
+            <p>خلفية في علوم الماء والغلاف الجوي، مع تركيز على المياه الجوفية والجفاف والمناخ في المناطق الجافة.</p>
+            <span class="profile-link">LinkedIn <span class="soon">Coming soon</span></span>
+          </article>
+
+          <article class="card profile-card" data-c="chem">
+            <span class="profile-avatar" aria-hidden="true">CI</span>
+            <h3>Chemistry &amp; Industry Track Lead</h3>
+            <p class="role">WATER CHEMISTRY · MATERIALS</p>
+            <p>خلفية في الكيمياء وجودة المياه والمعالجة والمواد، بلغة عامة آمنة دون تمثيل أي جهة عمل.</p>
+            <span class="profile-link">LinkedIn <span class="soon">Coming soon</span></span>
+          </article>
+
+          <article class="card profile-card" data-c="data">
+            <span class="profile-avatar" aria-hidden="true">DA</span>
+            <h3>Data Science &amp; AI Track Builder</h3>
+            <p class="role">PYTHON · SQL · GIS · ML</p>
+            <p>مسار ناشئ يبني مهارة حقيقية في البيانات والبرمجة والتحليل، مع توظيف الذكاء الاصطناعي كأداة مساعدة.</p>
+            <span class="profile-link">LinkedIn <span class="soon">Coming soon</span></span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DISCLAIMER ===================== -->
+    <section class="section" id="disclaimer">
+      <div class="wrap">
+        <div class="disclaimer">
+          <p class="eyebrow">Disclaimer</p>
+          <h2>حدود واضحة.</h2>
+          <p>هذا الموقع نموذج تعليمي ومحفظة أعمال (portfolio prototype). لا يقدّم استشارات زراعية أو بيئية أو مختبرية أو هندسية أو تنظيمية أو تجارية. لا يمثّل أي جهة عمل أو جامعة أو جهة حكومية، ولا يستخدم شعاراتها، ولا ينشر بيانات داخلية أو مشاريع غير عامة.</p>
+          <p class="en muted">This website is an educational and portfolio prototype. It does not provide agricultural, environmental, laboratory, engineering, regulatory, or commercial advice. It does not represent any employer, university, or government entity. Any real-world decision requires qualified review and official data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact-card">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>جاهز للتحويل إلى موقع منشور.</h2>
+            <p>استبدل البريد والروابط ببيانات الفريق، ثم انشره على Vercel كموقع ثابت خلال دقائق.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:hello@aquaclimatelab.com">hello@aquaclimatelab.com</a>
+            <a class="button ghost" href="#top">العودة للأعلى</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="brand-text">
+        <strong>AquaClimate Lab</strong>
+        <small>Water × Weather × Chemistry × Data</small>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> AquaClimate Lab — independent educational prototype.</p>
+        <p>Built as a fast, static, deployment-ready site · <a href="#disclaimer">Disclaimer</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
