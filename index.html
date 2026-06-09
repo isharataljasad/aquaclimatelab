@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- Fixed build: critical CSS and JS are embedded to prevent unstyled deployment on Vercel. -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>AquaClimate Lab — Water × Weather × Chemistry × Data for Arid Regions</title>
+  <meta name="description" content="AquaClimate Lab is an educational knowledge prototype connecting water, weather, climate, chemistry, data science, and precision fertigation for arid regions — from Arizona to Saudi Arabia." />
+  <meta name="keywords" content="hydrology, atmospheric science, climate, drought, groundwater, water quality, chemistry, pH, TDS, salinity, data science, AI, GIS, precision fertigation, smart fertilizer, arid regions, Arizona, Saudi Arabia" />
+  <meta name="author" content="AquaClimate Lab" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aquaclimatelab.com/" />
+  <meta name="theme-color" content="#060d16" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AquaClimate Lab" />
+  <meta property="og:title" content="AquaClimate Lab — Water × Weather × Chemistry × Data" />
+  <meta property="og:description" content="A knowledge prototype for understanding water, climate, chemistry, data, and precision fertigation in arid regions — from Arizona to Saudi Arabia." />
+  <meta property="og:url" content="https://aquaclimatelab.com/" />
+  <meta property="og:locale" content="ar_SA" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="https://aquaclimatelab.com/assets/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AquaClimate Lab — Water, Weather, Chemistry, and Data for arid regions" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AquaClimate Lab — Water × Weather × Chemistry × Data" />
+  <meta name="twitter:description" content="A knowledge prototype for understanding water, climate, chemistry, data, and precision fertigation in arid regions." />
+  <meta name="twitter:image" content="https://aquaclimatelab.com/assets/img/og-image.png" />
+  <meta name="twitter:image:alt" content="AquaClimate Lab cover" />
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <style>
+/* ============================================================
+   AquaClimate Lab — Water × Weather × Chemistry × Data
+   Dark "research console" theme. Static, dependency-free.
+   ============================================================ */
+
+:root{
+  /* Base — deep navy / near black */
+  --bg:#060d16;
+  --bg-2:#091525;
+  --elev:#0d1c2e;
+  --elev-2:#112440;
+  --glass:rgba(18,38,62,.55);
+
+  /* Accents */
+  --water:#39c0e0;     /* water blue */
+  --cyan:#7fe6f2;      /* soft cyan */
+  --amber:#f4b14d;     /* climate amber */
+  --amber-soft:#ffd591;
+
+  /* Text */
+  --ink:#eef5fb;       /* clean white text */
+  --muted:#92a6bd;     /* muted gray secondary */
+  --faint:#637c97;     /* faint tertiary */
+
+  /* Lines / structure */
+  --line:rgba(143,176,209,.16);
+  --line-strong:rgba(143,176,209,.28);
+
+  --radius:18px;
+  --radius-lg:26px;
+  --wrap:1180px;
+  --shadow:0 30px 80px rgba(0,0,0,.45);
+  --shadow-soft:0 14px 40px rgba(0,0,0,.3);
+
+  --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,"Noto Sans Arabic","Segoe UI Arabic",Tahoma,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  line-height:1.8;
+  background-color:var(--bg);
+  /* subtle data-grid + ambient light */
+  background-image:
+    radial-gradient(circle at 15% -5%,rgba(57,192,224,.16),transparent 38%),
+    radial-gradient(circle at 92% 4%,rgba(244,177,77,.10),transparent 34%),
+    linear-gradient(rgba(143,176,209,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(143,176,209,.045) 1px,transparent 1px),
+    linear-gradient(180deg,var(--bg),var(--bg-2));
+  background-size:auto,auto,42px 42px,42px 42px,auto;
+  background-attachment:fixed,fixed,fixed,fixed,fixed;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+ul{margin:0}
+
+/* ---------- Shared utilities ---------- */
+.wrap{width:min(var(--wrap),calc(100% - 40px));margin-inline:auto}
+.section{padding:96px 0;position:relative}
+.eyebrow{
+  margin:0 0 1rem;font-family:var(--mono);font-size:.74rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--water);
+  display:inline-flex;align-items:center;gap:.6rem;direction:ltr;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--water);opacity:.7;display:inline-block}
+h1,h2,h3{margin:0;letter-spacing:-.02em;font-weight:800;color:var(--ink)}
+h1{font-size:clamp(2.3rem,5.4vw,4.4rem);line-height:1.06;letter-spacing:-.035em}
+h2{font-size:clamp(1.7rem,3.3vw,2.9rem);line-height:1.16}
+h3{font-size:1.22rem;line-height:1.3;font-weight:700}
+p{margin:0}
+.lead{font-size:clamp(1.05rem,1.6vw,1.28rem);color:#cfe0ee;line-height:1.7}
+.muted{color:var(--muted)}
+.en{direction:ltr;unicode-bidi:isolate}
+.section-head{max-width:760px;margin-bottom:48px}
+.section-head p{color:var(--muted);font-size:1.06rem;margin-top:.9rem}
+
+.skip-link{
+  position:absolute;inset-inline-start:1rem;top:-5rem;z-index:50;
+  background:var(--water);color:#04121c;padding:.65rem 1.1rem;border-radius:12px;font-weight:700;
+  transition:top .2s ease;
+}
+.skip-link:focus{top:1rem}
+
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+
+/* ---------- Header / Nav ---------- */
+.site-header{
+  position:sticky;top:0;z-index:40;
+  background:rgba(6,13,22,.72);backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid var(--line);
+}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem;min-width:max-content}
+.brand-mark{
+  width:42px;height:42px;border-radius:13px;display:grid;place-items:center;flex-shrink:0;
+  background:linear-gradient(140deg,var(--water),#1c7fa6);
+  box-shadow:0 10px 26px rgba(57,192,224,.3),inset 0 1px 0 rgba(255,255,255,.35);
+  position:relative;overflow:hidden;
+}
+.brand-mark svg{width:24px;height:24px}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-text strong{font-size:1.02rem;letter-spacing:-.01em}
+.brand-text small{font-family:var(--mono);color:var(--cyan);font-size:.66rem;letter-spacing:.12em;direction:ltr}
+.nav-menu{display:flex;align-items:center;gap:.2rem;list-style:none;padding:0;margin:0}
+.nav-menu a{display:block;padding:.55rem .8rem;border-radius:999px;color:#cfe0ee;font-size:.92rem;transition:background .18s,color .18s}
+.nav-menu a:hover,.nav-menu a:focus-visible{background:rgba(143,176,209,.12);color:#fff}
+.nav-toggle{
+  display:none;background:var(--elev-2);color:var(--ink);border:1px solid var(--line-strong);
+  border-radius:12px;padding:.55rem .7rem;font-family:var(--mono);font-size:.8rem;cursor:pointer;align-items:center;gap:.5rem;
+}
+.nav-toggle .bars{display:inline-block;width:18px;height:2px;background:currentColor;position:relative}
+.nav-toggle .bars::before,.nav-toggle .bars::after{content:"";position:absolute;left:0;width:18px;height:2px;background:currentColor}
+.nav-toggle .bars::before{top:-6px}.nav-toggle .bars::after{top:6px}
+
+/* ---------- Buttons ---------- */
+.button{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:50px;
+  padding:.8rem 1.4rem;border-radius:999px;font-weight:700;font-size:.98rem;
+  border:1px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.button.primary{background:linear-gradient(135deg,var(--water),#1f93ba);color:#04141d;box-shadow:0 16px 34px rgba(57,192,224,.28)}
+.button.primary:hover{transform:translateY(-2px);box-shadow:0 20px 44px rgba(57,192,224,.38)}
+.button.ghost{border-color:var(--line-strong);color:var(--ink);background:rgba(143,176,209,.06)}
+.button.ghost:hover{transform:translateY(-2px);background:rgba(143,176,209,.12)}
+
+/* ---------- Hero ---------- */
+.hero{padding:84px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+.hero h1{margin-bottom:.6rem}
+.hero h1 .accent{color:var(--cyan)}
+.hero-sub{
+  font-family:var(--mono);direction:ltr;text-align:start;
+  font-size:clamp(1.05rem,2vw,1.55rem);font-weight:600;letter-spacing:.02em;
+  color:var(--cyan);margin-bottom:1.4rem;
+}
+.hero .lead{max-width:560px}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin:2.1rem 0 1.8rem}
+.trust-strip{display:flex;gap:.45rem;flex-wrap:wrap}
+.chip{
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.04em;direction:ltr;
+  border:1px solid var(--line);background:rgba(143,176,209,.06);
+  padding:.34rem .7rem;border-radius:999px;color:#bcd2e4;
+}
+
+/* Hero instrument console (signature element) */
+.console{
+  position:relative;border:1px solid var(--line-strong);border-radius:var(--radius-lg);
+  background:linear-gradient(160deg,rgba(20,42,68,.7),rgba(9,21,37,.78));
+  box-shadow:var(--shadow);padding:26px;overflow:hidden;
+}
+.console::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 80% -10%,rgba(57,192,224,.22),transparent 45%);
+}
+.console-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative}
+.console-top .label{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;direction:ltr}
+.console-dots{display:flex;gap:.4rem}
+.console-dots i{width:9px;height:9px;border-radius:50%;display:block;opacity:.85}
+.console-dots i:nth-child(1){background:var(--water)}
+.console-dots i:nth-child(2){background:var(--cyan)}
+.console-dots i:nth-child(3){background:var(--amber)}
+.channels{display:grid;gap:14px;position:relative}
+.channel{
+  display:grid;grid-template-columns:84px 1fr auto;align-items:center;gap:14px;
+  padding:14px 16px;border-radius:14px;background:rgba(143,176,209,.05);border:1px solid var(--line);
+}
+.channel .name{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:#cfe0ee;direction:ltr}
+.channel .track{height:6px;border-radius:999px;background:rgba(143,176,209,.16);overflow:hidden;position:relative}
+.channel .fill{position:absolute;inset-block:0;inset-inline-start:0;border-radius:999px}
+.channel .val{font-family:var(--mono);font-size:.82rem;color:var(--ink);min-width:48px;text-align:end;direction:ltr}
+.channel[data-c="water"] .fill{background:linear-gradient(90deg,var(--water),var(--cyan));width:78%}
+.channel[data-c="climate"] .fill{background:linear-gradient(90deg,var(--cyan),#bff3fb);width:64%}
+.channel[data-c="chem"] .fill{background:linear-gradient(90deg,var(--amber),var(--amber-soft));width:71%}
+.channel[data-c="data"] .fill{background:linear-gradient(90deg,#9fb6ff,var(--cyan));width:88%}
+.channel .pulse{animation:flow 3.4s ease-in-out infinite alternate}
+@keyframes flow{from{opacity:.78;transform:scaleX(.94);transform-origin:inset-inline-start}to{opacity:1;transform:scaleX(1)}}
+.console-foot{
+  margin-top:20px;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.console-foot span{font-family:var(--mono);font-size:.72rem;color:var(--muted);direction:ltr;letter-spacing:.05em}
+.sparkline{width:120px;height:32px;color:var(--cyan)}
+
+/* ---------- Cards (shared) ---------- */
+.card{
+  border:1px solid var(--line);border-radius:var(--radius-lg);
+  background:linear-gradient(165deg,rgba(20,42,68,.45),rgba(9,21,37,.55));
+  box-shadow:var(--shadow-soft);transition:transform .2s ease,border-color .2s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+
+/* ---------- Tracks ---------- */
+.tracks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.track-card{padding:30px;position:relative;overflow:hidden}
+.track-card .code{font-family:var(--mono);font-size:.74rem;color:var(--muted);letter-spacing:.14em;direction:ltr}
+.track-card .glyph,.fert-card .glyph{
+  width:52px;height:52px;border-radius:15px;margin:16px 0 20px;display:grid;place-items:center;
+  border:1px solid var(--line-strong);
+}
+.track-card .glyph svg,.fert-card .glyph svg{width:26px;height:26px}
+.track-card h3{margin-bottom:.7rem}
+.track-card p{color:var(--muted);margin-bottom:1.1rem}
+.track-card ul{list-style:none;padding:0;display:grid;gap:.5rem}
+.track-card li{display:flex;align-items:center;gap:.6rem;color:#c3d4e4;font-size:.94rem}
+.track-card li::before{content:"";width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.track-card[data-c="water"] .glyph,.fert-card[data-c="water"] .glyph{background:rgba(57,192,224,.12);color:var(--water)}
+.track-card[data-c="water"] li::before{background:var(--water)}
+.track-card[data-c="water"]{box-shadow:var(--shadow-soft),inset 0 1px 0 rgba(57,192,224,.12)}
+.track-card[data-c="chem"] .glyph,.fert-card[data-c="chem"] .glyph{background:rgba(244,177,77,.12);color:var(--amber)}
+.track-card[data-c="chem"] li::before{background:var(--amber)}
+.track-card[data-c="data"] .glyph,.fert-card[data-c="data"] .glyph{background:rgba(127,230,242,.12);color:var(--cyan)}
+.track-card[data-c="data"] li::before{background:var(--cyan)}
+
+/* ---------- Smart Fertigation ---------- */
+.fertigation-feature{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;margin-bottom:24px}
+.fertigation-media{margin:0;position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 1px rgba(57,192,224,.08)}
+.fertigation-media::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:var(--radius-lg);box-shadow:inset 0 0 60px rgba(57,192,224,.18),inset 0 0 0 1px rgba(127,230,242,.12)}
+.fertigation-media img{display:block;width:100%;height:auto;border-radius:var(--radius-lg)}
+.fertigation-intro p{color:var(--muted)}
+.fertigation-intro p strong{color:var(--ink)}
+.fertigation-intro p + p{margin-top:1rem}
+.fertigation-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fert-card{padding:28px}
+.fert-card .glyph{margin-top:0}
+.fert-card h3{margin-bottom:.6rem;font-size:1.12rem}
+.fert-card p{color:var(--muted);font-size:.95rem}
+
+/* ---------- Split / context sections ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.panel{padding:34px;border:1px solid var(--line);border-radius:var(--radius-lg);background:linear-gradient(165deg,rgba(20,42,68,.42),rgba(9,21,37,.5))}
+.panel.feature{
+  background:linear-gradient(150deg,rgba(57,192,224,.14),rgba(9,21,37,.6));
+  border-color:rgba(57,192,224,.3);
+}
+.panel.amber{background:linear-gradient(150deg,rgba(244,177,77,.12),rgba(9,21,37,.6));border-color:rgba(244,177,77,.28)}
+.panel h2,.panel h3{margin-bottom:1rem}
+.panel p{color:var(--muted)}
+.panel p + p{margin-top:1rem}
+.panel .lead{color:#d7e6f1}
+.factlist{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.8rem}
+.factlist li{display:flex;gap:.7rem;color:#c3d4e4;font-size:.96rem}
+.factlist li::before{content:"→";color:var(--cyan);font-family:var(--mono);flex-shrink:0}
+
+/* Process steps (a real sequence → numbered) */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:step}
+.steps li{
+  display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+  padding:18px;border-radius:16px;background:rgba(143,176,209,.05);border:1px solid var(--line);counter-increment:step;
+}
+.steps li::before{
+  content:counter(step,decimal-leading-zero);font-family:var(--mono);font-size:.86rem;font-weight:700;
+  color:var(--water);width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:rgba(57,192,224,.12);border:1px solid rgba(57,192,224,.25);
+}
+.steps strong{display:block;color:var(--ink)}
+.steps span{display:block;color:var(--muted);font-size:.92rem;margin-top:.2rem}
+
+/* ---------- Projects ---------- */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.project-card{padding:26px;display:flex;flex-direction:column;min-height:210px}
+.project-card .tag{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--cyan);direction:ltr;
+  border:1px solid var(--line);border-radius:999px;padding:.26rem .6rem;align-self:flex-start;margin-bottom:1rem;
+}
+.project-card h3{margin-bottom:.6rem;font-size:1.12rem}
+.project-card p{color:var(--muted);font-size:.95rem}
+.project-card .status{
+  margin-top:auto;padding-top:1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;
+  color:var(--faint);direction:ltr;display:flex;align-items:center;gap:.5rem;
+}
+.project-card .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(244,177,77,.18)}
+
+/* ---------- Demo ---------- */
+.demo-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:32px;align-items:start}
+.skills{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem}
+.demo-card{padding:30px}
+.demo-card h3{margin-bottom:.3rem}
+.demo-note{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:var(--muted);direction:ltr;margin-bottom:1.4rem}
+.field{margin:18px 0}
+.field-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.5rem}
+.field-top label{font-weight:600;color:var(--ink);font-size:.98rem}
+.field-top .read{font-family:var(--mono);font-weight:700;color:var(--cyan);direction:ltr;font-size:.95rem}
+.field-top .read small{color:var(--muted);font-weight:400;margin-inline-start:.2rem}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;
+  background:rgba(143,176,209,.2);outline-offset:5px;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;
+  background:var(--water);border:3px solid #04141d;box-shadow:0 2px 10px rgba(57,192,224,.5);cursor:pointer;
+}
+input[type=range]::-moz-range-thumb{
+  width:20px;height:20px;border-radius:50%;background:var(--water);border:3px solid #04141d;
+  box-shadow:0 2px 10px rgba(57,192,224,.5);cursor:pointer;
+}
+.signal{
+  margin-top:24px;padding:20px;border-radius:16px;border:1px solid var(--line-strong);
+  background:rgba(143,176,209,.05);transition:border-color .2s ease,background .2s ease;
+}
+.signal[data-state="watch"]{border-color:rgba(244,177,77,.45);background:rgba(244,177,77,.08)}
+.signal-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.signal-dot{width:10px;height:10px;border-radius:50%;background:var(--water);flex-shrink:0}
+.signal[data-state="watch"] .signal-dot{background:var(--amber)}
+.signal strong{font-size:1.02rem}
+.signal p{color:var(--muted);font-size:.95rem}
+.disclaimer-inline{margin-top:1rem;font-size:.84rem;color:var(--faint);display:flex;gap:.5rem}
+.disclaimer-inline::before{content:"⚠";color:var(--amber);flex-shrink:0}
+
+/* ---------- Profiles ---------- */
+.profiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.profile-card{padding:28px;text-align:start}
+.profile-avatar{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:18px;
+  font-family:var(--mono);font-weight:700;font-size:1.1rem;color:#04141d;direction:ltr;
+}
+.profile-card[data-c="water"] .profile-avatar{background:linear-gradient(135deg,var(--water),var(--cyan))}
+.profile-card[data-c="chem"] .profile-avatar{background:linear-gradient(135deg,var(--amber),var(--amber-soft))}
+.profile-card[data-c="data"] .profile-avatar{background:linear-gradient(135deg,var(--cyan),#9fb6ff)}
+.profile-card h3{font-size:1.1rem;margin-bottom:.3rem}
+.profile-card .role{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--cyan);direction:ltr;margin-bottom:1rem}
+.profile-card p{color:var(--muted);font-size:.94rem;margin-bottom:1.2rem}
+.profile-link{
+  display:inline-flex;align-items:center;gap:.5rem;font-size:.86rem;color:var(--muted);
+  font-family:var(--mono);letter-spacing:.05em;direction:ltr;
+}
+.profile-link .soon{border:1px dashed var(--line-strong);border-radius:999px;padding:.2rem .6rem;font-size:.72rem}
+
+/* ---------- Disclaimer ---------- */
+.disclaimer{padding:34px;border:1px solid var(--line-strong);border-radius:var(--radius-lg);background:rgba(9,21,37,.6)}
+.disclaimer .eyebrow{color:var(--amber)}
+.disclaimer .eyebrow::before{background:var(--amber)}
+.disclaimer p{color:var(--muted)}
+.disclaimer p + p{margin-top:1rem}
+
+/* ---------- Contact ---------- */
+.contact-card{
+  padding:42px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+  border:1px solid rgba(57,192,224,.28);border-radius:var(--radius-lg);
+  background:linear-gradient(150deg,rgba(57,192,224,.12),rgba(9,21,37,.55));
+}
+.contact-card h2{margin-bottom:.7rem}
+.contact-card p{color:var(--muted);max-width:46ch}
+.contact-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+
+/* ---------- Footer ---------- */
+.site-footer{border-top:1px solid var(--line);padding:40px 0;background:rgba(4,10,17,.6)}
+.footer-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.footer-grid .brand-text small{color:var(--muted)}
+.footer-meta{text-align:end}
+.footer-meta p{color:var(--muted);font-size:.88rem;margin:.15rem 0}
+.footer-meta a{color:var(--cyan)}
+
+/* ---------- 404 ---------- */
+.error-wrap{min-height:70vh;display:grid;place-items:center;text-align:center}
+.error-wrap .code{font-family:var(--mono);font-size:clamp(4rem,16vw,9rem);font-weight:800;color:var(--water);line-height:1;letter-spacing:-.04em}
+.error-wrap p{color:var(--muted);margin:1rem 0 2rem;max-width:42ch;margin-inline:auto}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width:920px){
+  .nav-toggle{display:inline-flex}
+  .nav-menu{
+    position:absolute;inset-inline:16px;top:72px;display:none;flex-direction:column;align-items:stretch;
+    background:var(--elev);border:1px solid var(--line-strong);border-radius:18px;padding:12px;
+    box-shadow:var(--shadow);
+  }
+  .nav-menu.open{display:flex}
+  .nav-menu a{padding:.8rem 1rem}
+  .hero-grid,.split,.demo-grid,.fertigation-feature{grid-template-columns:1fr}
+  .tracks-grid,.projects-grid,.profiles-grid,.fertigation-cards{grid-template-columns:1fr 1fr}
+  .section{padding:72px 0}
+  .hero{padding:60px 0 64px}
+}
+@media (max-width:600px){
+  .wrap{width:min(100% - 28px,var(--wrap))}
+  .brand-text small{display:none}
+  .tracks-grid,.projects-grid,.profiles-grid,.fertigation-cards{grid-template-columns:1fr}
+  .section{padding:60px 0}
+  .console{padding:20px}
+  .channel{grid-template-columns:70px 1fr auto;gap:10px}
+  .contact-card{flex-direction:column;align-items:flex-start;padding:30px}
+  .footer-grid{flex-direction:column}
+  .footer-meta{text-align:start}
+}
+
+/* ============================================================
+   Motion preferences
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* ============================================================
+   Print
+   ============================================================ */
+@media print{
+  body{background:#fff;color:#000}
+  .site-header,.hero-actions,.contact-actions,.nav-toggle{display:none}
+  .card,.panel,.console,.contact-card{box-shadow:none;border-color:#ccc;background:#fff;color:#000}
+  .section{padding:18px 0}
+}
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AquaClimate Lab",
+    "url": "https://aquaclimatelab.com/",
+    "description": "An educational knowledge prototype connecting water, weather, climate, chemistry, data science, and precision fertigation for arid regions.",
+    "inLanguage": ["ar", "en"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">تجاوز إلى المحتوى الرئيسي</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav wrap" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#top" aria-label="AquaClimate Lab — الصفحة الرئيسية">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#04141d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.5c3.8 4.4 6 7.4 6 10.5a6 6 0 1 1-12 0c0-3.1 2.2-6.1 6-10.5Z" fill="rgba(255,255,255,.3)"/>
+            <path d="M9 13a3 3 0 0 0 3 3"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>AquaClimate Lab</strong>
+          <small>Water × Weather × Chemistry × Data</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bars" aria-hidden="true"></span><span>القائمة</span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#tracks">المسارات</a></li>
+        <li><a href="#fertigation">Smart Fertigation</a></li>
+        <li><a href="#arizona">لماذا أريزونا؟</a></li>
+        <li><a href="#saudi">السياق السعودي</a></li>
+        <li><a href="#projects">المشاريع</a></li>
+        <li><a href="#demo">العرض التفاعلي</a></li>
+        <li><a href="#team">الفريق</a></li>
+        <li><a href="#contact">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="section hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Arid-Region Science · Knowledge Prototype</p>
+          <h1>AquaClimate&nbsp;Lab</h1>
+          <p class="hero-sub">Water × Weather × Chemistry × Data</p>
+          <p class="lead">من أريزونا إلى السعودية — نموذج معرفي يشرح كيف يلتقي الماء والمناخ والكيمياء وعلوم البيانات في البيئات الجافة.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">استعرض المشاريع</a>
+            <a class="button ghost" href="#tracks">المسارات الثلاثة</a>
+          </div>
+          <div class="trust-strip" aria-label="المحاور الأساسية">
+            <span class="chip">Hydrology</span>
+            <span class="chip">Weather &amp; Climate</span>
+            <span class="chip">Water Chemistry</span>
+            <span class="chip">Data Science</span>
+            <span class="chip">AI</span>
+          </div>
+        </div>
+
+        <!-- Signature element: research console readout -->
+        <div class="console" role="img" aria-label="لوحة قراءات توضيحية تجمع محاور الماء والمناخ والكيمياء والبيانات">
+          <div class="console-top">
+            <span class="label">Convergence Readout</span>
+            <span class="console-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="channels">
+            <div class="channel" data-c="water">
+              <span class="name">WATER</span>
+              <span class="track"><span class="fill pulse"></span></span>
+              <span class="val">78%</span>
+            </div>
+            <div class="channel" data-c="climate">
+              <span class="name">CLIMATE</span>
+              <span class="track"><span class="fill pulse"></span></span>
+              <span class="val">64%</span>
+            </div>
+            <div class="channel" data-c="chem">
+              <span class="name">CHEMISTRY</span>
+              <span class="track"><span class="fill pulse"></span></span>
+              <span class="val">71%</span>
+            </div>
+            <div class="channel" data-c="data">
+              <span class="name">DATA · AI</span>
+              <span class="track"><span class="fill pulse"></span></span>
+              <span class="val">88%</span>
+            </div>
+          </div>
+          <div class="console-foot">
+            <span>signal · educational model</span>
+            <svg class="sparkline" viewBox="0 0 120 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 24 L18 18 L32 22 L48 10 L64 16 L80 6 L96 14 L118 8" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MISSION ===================== -->
+    <section class="section" id="mission">
+      <div class="wrap split">
+        <div class="panel feature">
+          <p class="eyebrow">Mission</p>
+          <h2>مختبر معرفة صغير، لا صفحة تعريف عادية.</h2>
+          <p class="lead">AquaClimate Lab مساحة تعليمية مستقلة تشرح كيف تتقاطع علوم الماء والمناخ والكيمياء والبيانات في مشكلات حقيقية بالبيئات الجافة.</p>
+        </div>
+        <div class="panel">
+          <p>الهدف بسيط وواضح: تقديم محتوى علمي مبسّط، ومشاريع تطبيقية عامة، وأدوات تفاعلية تعليمية — بصيغة احترافية قابلة للنشر والتطوير لاحقًا إلى مقالات ولوحات بيانات وأعمال محفظة.</p>
+          <p class="en muted">A clean, deployment-ready prototype that can grow into articles, dashboards, public datasets, and professional portfolios — without representing any employer, university, or government entity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRACKS ===================== -->
+    <section class="section" id="tracks">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Three Tracks</p>
+          <h2>ثلاثة مسارات، سؤال واحد.</h2>
+          <p>كل مسار مستقل بذاته، لكنه يخدم سؤالًا أكبر: كيف نقرأ البيئات الجافة بالعلم والقياس والبيانات؟</p>
+        </div>
+        <div class="tracks-grid">
+
+          <article class="card track-card" data-c="water">
+            <span class="code">TRACK / WATER · CLIMATE</span>
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3c3.6 4.2 5.6 7 5.6 9.8A5.6 5.6 0 1 1 6.4 12.8C6.4 10 8.4 7.2 12 3Z"/>
+                <path d="M9.5 13a2.6 2.6 0 0 0 2.5 2.5"/>
+              </svg>
+            </span>
+            <h3>Water &amp; Climate</h3>
+            <p>الهيدرولوجيا والطقس والمناخ، والجفاف والمياه الجوفية، وأنظمة المياه في المناطق الجافة.</p>
+            <ul>
+              <li>Hydrology &amp; groundwater recharge</li>
+              <li>Drought &amp; weather signals</li>
+              <li>Arid-region water systems</li>
+            </ul>
+          </article>
+
+          <article class="card track-card" data-c="chem">
+            <span class="code">TRACK / CHEMISTRY</span>
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3v6.5L4.5 17a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L15 9.5V3"/>
+                <path d="M8 3h8M7.5 14h9"/>
+              </svg>
+            </span>
+            <h3>Chemistry &amp; Industry</h3>
+            <p>جودة المياه، الـ pH، الأملاح الذائبة TDS، الملوحة، العسر، المعالجة، والمواد في السياق الصناعي.</p>
+            <ul>
+              <li>Water quality &amp; treatment</li>
+              <li>pH, TDS, salinity, hardness</li>
+              <li>Materials &amp; corrosion basics</li>
+            </ul>
+          </article>
+
+          <article class="card track-card" data-c="data">
+            <span class="code">TRACK / DATA · AI</span>
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19V5M4 19h16"/>
+                <path d="M7 16l3-4 3 2 4-6"/>
+              </svg>
+            </span>
+            <h3>Data Science &amp; AI</h3>
+            <p>Python و SQL و GIS، ولوحات البيانات، والبيانات البيئية، وتعلّم الآلة، والتحليل المدعوم بالذكاء الاصطناعي.</p>
+            <ul>
+              <li>Python, SQL &amp; GIS</li>
+              <li>Dashboards &amp; visualization</li>
+              <li>Machine learning &amp; responsible AI</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SMART FERTIGATION ===================== -->
+    <section class="section" id="fertigation">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Smart Fertigation · Root-Zone Layer</p>
+          <h2>Smart Fertilizer &amp; Precision Fertigation</h2>
+          <p class="lead">حيث يلتقي الماء والكيمياء والبيانات عند منطقة الجذور — الطبقة التي تُكمل مثلث AquaClimate Lab.</p>
+        </div>
+
+        <div class="fertigation-feature">
+          <figure class="fertigation-media">
+            <img src="/assets/smart-fertigation.png" width="1400" height="788" loading="lazy"
+                 alt="AI-powered precision fertigation with soil sensors, plant roots, drip irrigation, and smart fertilizer technology." />
+          </figure>
+          <div class="fertigation-intro">
+            <p>مستقبل التسميد ليس "سمادًا أكثر"، بل توصيلًا أذكى للعناصر الغذائية. في المناطق الجافة، السؤال ليس فقط أي عنصر يُضاف، بل <strong>متى وأين وكيف</strong> يصل إلى منطقة الجذور.</p>
+            <p class="en muted">Modern fertilizer technology is moving from bulk application toward intelligent nutrient delivery. The key question in arid regions is not only what nutrient is added, but when, where, and how it reaches the root zone. Precision fertigation connects irrigation, chemistry, sensors, and data science to reduce waste and improve nutrient-use thinking.</p>
+            <div class="skills">
+              <span class="chip">Controlled-release</span>
+              <span class="chip">Precision fertigation</span>
+              <span class="chip">Drip irrigation</span>
+              <span class="chip">Soil moisture</span>
+              <span class="chip">EC &amp; pH sensors</span>
+              <span class="chip">Nutrient timing</span>
+              <span class="chip">Root-zone delivery</span>
+              <span class="chip">Data dashboards</span>
+              <span class="chip">AI decision support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fertigation-cards">
+          <article class="card fert-card" data-c="chem">
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="8" width="18" height="8" rx="4"/>
+                <path d="M12 8v8"/>
+              </svg>
+            </span>
+            <h3>Controlled-Release Nutrients</h3>
+            <p>إطلاق بطيء أو متدرّج للعناصر الغذائية مصمّم ليطابق احتياج النبات ويقلّل الفاقد غير الضروري.</p>
+          </article>
+
+          <article class="card fert-card" data-c="water">
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3c3.4 4 5.2 6.6 5.2 9.2A5.2 5.2 0 1 1 6.8 12.2C6.8 9.6 8.6 7 12 3Z"/>
+                <path d="M12 21v-2M8.5 20l-.6-1.7M15.5 20l.6-1.7"/>
+              </svg>
+            </span>
+            <h3>Precision Fertigation</h3>
+            <p>توصيل الماء والمغذيات معًا عبر أنظمة الري، موجَّهًا بقراءات الـ EC والـ pH والرطوبة والتوقيت.</p>
+          </article>
+
+          <article class="card fert-card" data-c="data">
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3.5" y="4" width="17" height="13" rx="2"/>
+                <path d="M7 13l2.5-3 2 1.5L15 8M9 21h6"/>
+              </svg>
+            </span>
+            <h3>AI &amp; Sensor Feedback</h3>
+            <p>تحويل بيانات التربة والماء إلى لوحات تدعم قرارات أفضل حول الري وتوصيل المغذيات.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY ARIZONA ===================== -->
+    <section class="section" id="arizona">
+      <div class="wrap split">
+        <div class="panel">
+          <p class="eyebrow">Why Arizona?</p>
+          <h2>أريزونا نموذج تعليمي للتفكير في البيئات الجافة.</h2>
+          <p>أريزونا منطقة جافة حقيقية تجمع تحديات الماء والطقس والمناخ في مكان واحد: شُح الأمطار، الاعتماد على المياه الجوفية، موجات الحرارة، والجفاف الممتد.</p>
+          <p>نستخدمها كنموذج تعليمي لفهم كيف تُقاس هذه الظواهر وتُفسَّر — دون أي ادعاء بحثي أو تمثيل لأي جهة أكاديمية.</p>
+        </div>
+        <div class="panel">
+          <h3>ماذا نتعلّم منها؟</h3>
+          <ul class="factlist">
+            <li>كيف يتحوّل المطر النادر إلى تغذية للمياه الجوفية.</li>
+            <li>كيف تُقرأ مؤشرات الجفاف والطقس عبر الزمن.</li>
+            <li>كيف ترتبط جودة المياه بالمصدر والمناخ المحلي.</li>
+            <li>كيف تساعد البيانات على رؤية ما لا يظهر في قراءة واحدة.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SAUDI RELEVANCE ===================== -->
+    <section class="section" id="saudi">
+      <div class="wrap split">
+        <div class="panel amber">
+          <p class="eyebrow">Saudi Relevance</p>
+          <h2>السياق السعودي: بيئة جافة تحتاج تفكيرًا متعدد التخصصات.</h2>
+          <p>السعودية من أكثر البيئات جفافًا في العالم، وتعتمد بشكل كبير على إدارة الماء، والتحلية، وجودة المياه، والبيانات المناخية في التخطيط طويل المدى.</p>
+          <p>هنا يلتقي العلم بالتطبيق: قياس الماء، فهم كيميائه، قراءة المناخ، وتحويل كل ذلك إلى بيانات قابلة للتحليل والقرار.</p>
+        </div>
+        <div class="panel">
+          <h3>لماذا يهم الربط بين المسارات؟</h3>
+          <ul class="factlist">
+            <li>الماء لا يُفهم بمعزل عن كيميائه ومناخه.</li>
+            <li>قرارات البيئة الجافة تحتاج قياسًا، لا حدسًا.</li>
+            <li>البيانات تربط الملاحظة الميدانية بالنمذجة.</li>
+            <li>المهارات المتعددة تبني فهمًا أكثر اكتمالًا.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROCESS MODEL ===================== -->
+    <section class="section" id="model">
+      <div class="wrap split">
+        <div class="panel feature">
+          <p class="eyebrow">How We Work</p>
+          <h2>من القياس إلى المعنى.</h2>
+          <p class="lead">نموذج عمل بسيط يربط المسارات الثلاثة في سلسلة واحدة واضحة.</p>
+          <p class="muted">كل خطوة تبني على ما قبلها: نلاحظ، نفسّر، ننمذج، ثم نوصّل النتيجة بلغة مفهومة للطلاب والمهنيين.</p>
+        </div>
+        <ol class="steps" aria-label="مراحل العمل">
+          <li><div><strong>Observe — نلاحظ</strong><span>قياس المطر والحرارة والملوحة والمؤشرات.</span></div></li>
+          <li><div><strong>Explain — نفسّر</strong><span>شرح ما تعنيه القراءات كيميائيًا ومناخيًا.</span></div></li>
+          <li><div><strong>Model — ننمذج</strong><span>تحويل القراءات إلى خرائط ولوحات بيانات.</span></div></li>
+          <li><div><strong>Communicate — نوصّل</strong><span>كتابة النتائج بلغة واضحة وقابلة للمشاركة.</span></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Mini Projects</p>
+          <h2>مشاريع صغيرة تجعل المختبر أقوى من صفحة تعريف.</h2>
+          <p>مشاريع تعليمية عامة بالكامل — لا تعتمد على أي بيانات داخلية أو مشاريع عمل غير منشورة.</p>
+        </div>
+        <div class="projects-grid">
+
+          <article class="card project-card">
+            <span class="tag">01 · CHEMISTRY</span>
+            <h3>Water Quality Dashboard</h3>
+            <p>لوحة بصرية تشرح كيف تُقرأ مؤشرات جودة المياه: pH، TDS، العسر، والملوحة.</p>
+            <span class="status">Concept</span>
+          </article>
+
+          <article class="card project-card">
+            <span class="tag">02 · HYDROLOGY</span>
+            <h3>Rain to Groundwater Map</h3>
+            <p>خريطة تعليمية تتبع كيف يتحوّل المطر إلى تغذية للمياه الجوفية في البيئات الجافة.</p>
+            <span class="status">Concept</span>
+          </article>
+
+          <article class="card project-card">
+            <span class="tag">03 · CLIMATE</span>
+            <h3>Desert Climate Notes</h3>
+            <p>ملاحظات تعليمية حول الحرارة والجفاف وأنماط المناخ في المناطق الجافة.</p>
+            <span class="status">Concept</span>
+          </article>
+
+          <article class="card project-card">
+            <span class="tag">04 · CHEMISTRY</span>
+            <h3>Chemistry of Water Treatment</h3>
+            <p>من الماء الخام إلى المعالجة: ترسيب، ترشيح، ضبط أملاح وحموضة، وتعقيم.</p>
+            <span class="status">Concept</span>
+          </article>
+
+          <article class="card project-card">
+            <span class="tag">05 · DATA · AI</span>
+            <h3>Arid Region Data Explorer</h3>
+            <p>أداة استكشاف للبيانات البيئية العامة: تنظيف، تصوّر، وربط المؤشرات ببعضها.</p>
+            <span class="status">Concept</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INTERACTIVE DEMO ===================== -->
+    <section class="section" id="demo">
+      <div class="wrap demo-grid">
+        <div>
+          <p class="eyebrow">Interactive Demo</p>
+          <h2>إشارة جودة المياه — للتعليم فقط.</h2>
+          <p class="muted">حرّك المؤشرات لترى كيف تتغيّر "الإشارة" التفسيرية. هذه أداة توضيحية لشرح المفاهيم، وليست أداة مختبرية أو تشخيصًا لصلاحية مياه حقيقية.</p>
+          <div class="skills">
+            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Statistics</span>
+            <span class="chip">GIS</span><span class="chip">Dashboards</span><span class="chip">Machine Learning</span>
+            <span class="chip">Responsible AI</span>
+          </div>
+        </div>
+
+        <div class="card demo-card">
+          <h3>Water Quality Signal</h3>
+          <p class="demo-note">educational model · not a lab or health test</p>
+
+          <div class="field">
+            <div class="field-top">
+              <label for="ph">الحموضة — pH</label>
+              <span class="read"><span id="phOut">7.4</span></span>
+            </div>
+            <input id="ph" type="range" min="4" max="10" step="0.1" value="7.4"
+                   aria-describedby="signalBox" />
+          </div>
+
+          <div class="field">
+            <div class="field-top">
+              <label for="tds">الأملاح الذائبة — TDS</label>
+              <span class="read"><span id="tdsOut">620</span><small>ppm</small></span>
+            </div>
+            <input id="tds" type="range" min="50" max="2500" step="10" value="620"
+                   aria-describedby="signalBox" />
+          </div>
+
+          <div class="field">
+            <div class="field-top">
+              <label for="hard">العسر — Hardness</label>
+              <span class="read"><span id="hardOut">180</span><small>mg/L</small></span>
+            </div>
+            <input id="hard" type="range" min="20" max="500" step="5" value="180"
+                   aria-describedby="signalBox" />
+          </div>
+
+          <div class="field">
+            <div class="field-top">
+              <label for="sal">الملوحة — Salinity</label>
+              <span class="read"><span id="salOut">1.2</span><small>ppt</small></span>
+            </div>
+            <input id="sal" type="range" min="0" max="40" step="0.1" value="1.2"
+                   aria-describedby="signalBox" />
+          </div>
+
+          <div class="signal" id="signalBox" data-state="ok" role="status" aria-live="polite">
+            <div class="signal-head">
+              <span class="signal-dot" aria-hidden="true"></span>
+              <strong id="signalTitle">عيّنة تعليمية متوازنة</strong>
+            </div>
+            <p id="signalBody">القيم الحالية ضمن نطاق تعليمي متوازن. غيّر المؤشرات لرؤية كيف تتبدّل القراءة.</p>
+            <p class="disclaimer-inline">للتعليم فقط — ليست حكمًا على صلاحية مياه حقيقية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TEAM / PROFILES ===================== -->
+    <section class="section" id="team">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The Team</p>
+          <h2>ثلاثة أدوار تبني المختبر.</h2>
+          <p>أدوار عامة آمنة — تُحدَّث بالأسماء والروابط الرسمية لاحقًا عند الرغبة.</p>
+        </div>
+        <div class="profiles-grid">
+
+          <article class="card profile-card" data-c="water">
+            <span class="profile-avatar" aria-hidden="true">WC</span>
+            <h3>Water &amp; Climate Track Lead</h3>
+            <p class="role">HYDROLOGY · ATMOSPHERIC SCIENCE</p>
+            <p>خلفية في علوم الماء والغلاف الجوي، مع تركيز على المياه الجوفية والجفاف والمناخ في المناطق الجافة.</p>
+            <span class="profile-link">LinkedIn <span class="soon">Coming soon</span></span>
+          </article>
+
+          <article class="card profile-card" data-c="chem">
+            <span class="profile-avatar" aria-hidden="true">CI</span>
+            <h3>Chemistry &amp; Industry Track Lead</h3>
+            <p class="role">WATER CHEMISTRY · MATERIALS</p>
+            <p>خلفية في الكيمياء وجودة المياه والمعالجة والمواد، بلغة عامة آمنة دون تمثيل أي جهة عمل.</p>
+            <span class="profile-link">LinkedIn <span class="soon">Coming soon</span></span>
+          </article>
+
+          <article class="card profile-card" data-c="data">
+            <span class="profile-avatar" aria-hidden="true">DA</span>
+            <h3>Data Science &amp; AI Track Builder</h3>
+            <p class="role">PYTHON · SQL · GIS · ML</p>
+            <p>مسار ناشئ يبني مهارة حقيقية في البيانات والبرمجة والتحليل، مع توظيف الذكاء الاصطناعي كأداة مساعدة.</p>
+            <span class="profile-link">LinkedIn <span class="soon">Coming soon</span></span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DISCLAIMER ===================== -->
+    <section class="section" id="disclaimer">
+      <div class="wrap">
+        <div class="disclaimer">
+          <p class="eyebrow">Disclaimer</p>
+          <h2>حدود واضحة.</h2>
+          <p>هذا الموقع نموذج تعليمي ومحفظة أعمال (portfolio prototype). لا يقدّم استشارات زراعية أو بيئية أو مختبرية أو هندسية أو تنظيمية أو تجارية. لا يمثّل أي جهة عمل أو جامعة أو جهة حكومية، ولا يستخدم شعاراتها، ولا ينشر بيانات داخلية أو مشاريع غير عامة.</p>
+          <p class="en muted">This website is an educational and portfolio prototype. It does not provide agricultural, environmental, laboratory, engineering, regulatory, or commercial advice. It does not represent any employer, university, or government entity. Any real-world decision requires qualified review and official data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact-card">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>جاهز للتحويل إلى موقع منشور.</h2>
+            <p>استبدل البريد والروابط ببيانات الفريق، ثم انشره على Vercel كموقع ثابت خلال دقائق.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:hello@aquaclimatelab.com">hello@aquaclimatelab.com</a>
+            <a class="button ghost" href="#top">العودة للأعلى</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="brand-text">
+        <strong>AquaClimate Lab</strong>
+        <small>Water × Weather × Chemistry × Data</small>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> AquaClimate Lab — independent educational prototype.</p>
+        <p>Built as a fast, static, deployment-ready site · <a href="#disclaimer">Disclaimer</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+/* AquaClimate Lab — interactions (vanilla, no dependencies) */
+(function () {
+  "use strict";
+
+  /* ---------- Mobile navigation ---------- */
+  var navToggle = document.querySelector(".nav-toggle");
+  var navMenu = document.querySelector("#nav-menu");
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", function () {
+      var open = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!open));
+      navMenu.classList.toggle("open");
+    });
+    navMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navToggle.setAttribute("aria-expanded", "false");
+        navMenu.classList.remove("open");
+      });
+    });
+    // Close menu on Escape for keyboard users
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navMenu.classList.contains("open")) {
+        navToggle.setAttribute("aria-expanded", "false");
+        navMenu.classList.remove("open");
+        navToggle.focus();
+      }
+    });
+  }
+
+  /* ---------- Footer year ---------- */
+  var yearEl = document.querySelector("#year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------- Interactive water-quality demo ---------- */
+  var ph = document.querySelector("#ph");
+  var tds = document.querySelector("#tds");
+  var hard = document.querySelector("#hard");
+  var sal = document.querySelector("#sal");
+
+  var phOut = document.querySelector("#phOut");
+  var tdsOut = document.querySelector("#tdsOut");
+  var hardOut = document.querySelector("#hardOut");
+  var salOut = document.querySelector("#salOut");
+
+  var box = document.querySelector("#signalBox");
+  var title = document.querySelector("#signalTitle");
+  var body = document.querySelector("#signalBody");
+
+  function update() {
+    if (!ph || !tds || !hard || !sal || !box) return;
+
+    var phV = Number(ph.value);
+    var tdsV = Number(tds.value);
+    var hardV = Number(hard.value);
+    var salV = Number(sal.value);
+
+    if (phOut) phOut.textContent = phV.toFixed(1);
+    if (tdsOut) tdsOut.textContent = String(Math.round(tdsV));
+    if (hardOut) hardOut.textContent = String(Math.round(hardV));
+    if (salOut) salOut.textContent = salV.toFixed(1);
+
+    // Priority-ordered, simple educational interpretation.
+    var state = "ok";
+    var t = "عيّنة تعليمية متوازنة";
+    var b = "القيم الحالية ضمن نطاق تعليمي متوازن. غيّر المؤشرات لرؤية كيف تتبدّل القراءة.";
+
+    if (phV < 6.5 || phV > 8.5) {
+      state = "watch";
+      t = "إشارة pH خارج النطاق المتوازن";
+      b = "الحموضة خارج النطاق التعليمي المتوازن (6.5–8.5)؛ تحتاج تفسيرًا حسب مصدر العينة وسياقها.";
+    } else if (salV > 10) {
+      state = "watch";
+      t = "إشارة ملوحة مرتفعة";
+      b = "الملوحة مرتفعة وتقترب من المياه قليلة الملوحة (brackish)؛ ترتبط غالبًا بالمصدر أو التبخّر في المناطق الجافة.";
+    } else if (tdsV > 1000) {
+      state = "watch";
+      t = "إشارة أملاح ذائبة مرتفعة";
+      b = "ارتفاع TDS يشير إلى أملاح ذائبة أعلى، ويحتاج ربطًا بالمصدر ونوع المعالجة المطلوبة.";
+    } else if (hardV > 300) {
+      state = "watch";
+      t = "إشارة عسر مرتفع";
+      b = "العسر العالي يرتبط عادةً بالكالسيوم والمغنيسيوم، وقد يؤثر على الاستخدامات المنزلية والصناعية.";
+    }
+
+    box.setAttribute("data-state", state);
+    if (title) title.textContent = t;
+    if (body) body.textContent = b;
+  }
+
+  [ph, tds, hard, sal].forEach(function (el) {
+    if (el) el.addEventListener("input", update);
+  });
+  update();
+})();
+
+  </script>
+</body>
+</html>
