@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الماء بلا خوف — AquaClimate Lab</title>
+  <meta name="description" content="دليل عملي للمستهلك العادي: ماذا أشرب؟ ماذا أستخدم؟ ومتى أفحص الماء؟ اختيار الماء المعبأ، العبوات، الفلاتر، التحذيرات الرسمية، والمياه المعالجة بلا خوف ولا تسويق." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aquaclimatelab.com/water-without-fear.html" />
+  <meta name="theme-color" content="#0C2A43" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AquaClimate Lab" />
+  <meta property="og:title" content="الماء بلا خوف: ماذا أشرب؟ ماذا أستخدم؟ ومتى أفحص الماء؟" />
+  <meta property="og:description" content="دليل عملي للماء المعبأ، العبوات، الفلاتر، والتحقق الرسمي — بلا خوف ولا تسويق." />
+  <meta property="og:url" content="https://aquaclimatelab.com/water-without-fear.html" />
+  <meta property="og:image" content="https://aquaclimatelab.com/assets/img/og-image.png" />
+  <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" />
+  <!-- Fixed build: critical CSS embedded to prevent unstyled deployment on Vercel. -->
+  <style>
+/* ============================================================
+   AquaClimate Lab — Water × Weather × Chemistry × Data
+   Light "bright lab" theme — ice-white, calm, premium.
+   Static, dependency-free. RTL / Arabic-first.
+   ============================================================ */
+
+:root{
+  /* Base — ice white / soft blue */
+  --bg:#F2FAFD;          /* ice-white page */
+  --bg-2:#E4F1F8;        /* deeper ice for gradients */
+  --surface:#FFFFFF;     /* card surface */
+  --surface-2:#F6FCFE;   /* subtle alt surface */
+  --glass:rgba(255,255,255,.7);
+
+  /* Strong navy (header / footer / console / contact) */
+  --navy:#0C2A43;
+  --navy-2:#0A2236;
+
+  /* Accents */
+  --water:#0E84A8;       /* deep aqua — text/icon safe on white */
+  --water-bright:#17A2CB;/* brighter aqua for fills */
+  --cyan:#2BB6D4;        /* soft cyan accent */
+  --cyan-deep:#0E7C9E;   /* cyan text-safe */
+  --aqua-soft:#8BDCEE;
+  --amber:#B9781E;       /* deepened amber — text safe */
+  --amber-bright:#E9A23C;
+  --amber-soft:#F4B14D;
+  --violet:#5C6FD8;      /* data accent, text safe */
+
+  /* Text on light */
+  --ink:#0C2231;         /* near-navy body text */
+  --muted:#496579;       /* secondary */
+  --faint:#778FA3;       /* tertiary */
+
+  /* Text on navy zones */
+  --ink-invert:#EAF6FB;
+  --muted-invert:#A9C4D6;
+
+  /* Lines / structure */
+  --line:rgba(12,42,67,.10);
+  --line-strong:rgba(12,42,67,.18);
+
+  --radius:18px;
+  --radius-lg:26px;
+  --wrap:1180px;
+  --shadow:0 24px 60px rgba(12,42,67,.13);
+  --shadow-soft:0 10px 30px rgba(12,42,67,.08);
+
+  --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+  --sans:"Tajawal","IBM Plex Sans Arabic","Noto Kufi Arabic","Cairo",system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,"Segoe UI Arabic",Tahoma,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:106%}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  line-height:1.95;
+  font-size:1rem;
+  background-color:var(--bg);
+  /* soft ambient light + faint data grid */
+  background-image:
+    radial-gradient(circle at 12% -6%,rgba(23,162,203,.10),transparent 40%),
+    radial-gradient(circle at 92% 2%,rgba(139,220,238,.12),transparent 36%),
+    linear-gradient(rgba(12,42,67,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(12,42,67,.028) 1px,transparent 1px),
+    linear-gradient(180deg,var(--bg),var(--bg-2));
+  background-size:auto,auto,46px 46px,46px 46px,auto;
+  background-attachment:fixed,fixed,fixed,fixed,fixed;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+ul{margin:0}
+
+/* ---------- Shared utilities ---------- */
+.wrap{width:min(var(--wrap),calc(100% - 44px));margin-inline:auto}
+.section{padding:92px 0;position:relative}
+.eyebrow{
+  margin:0 0 1rem;font-family:var(--mono);font-size:.74rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--water);
+  display:inline-flex;align-items:center;gap:.6rem;direction:ltr;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--water);opacity:.7;display:inline-block}
+h1,h2,h3{margin:0;letter-spacing:-.01em;font-weight:800;color:var(--ink)}
+h1{font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.18;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.28}
+h3{font-size:1.22rem;line-height:1.5;font-weight:700}
+p{margin:0}
+.lead{font-size:clamp(1.05rem,1.6vw,1.28rem);color:#33506a;line-height:1.85}
+.muted{color:var(--muted)}
+.en{direction:ltr;unicode-bidi:isolate}
+.section-head{max-width:760px;margin-bottom:48px}
+.section-head p{color:var(--muted);font-size:1.06rem;margin-top:.9rem;line-height:1.85}
+
+.skip-link{
+  position:absolute;inset-inline-start:1rem;top:-5rem;z-index:50;
+  background:var(--water);color:#fff;padding:.65rem 1.1rem;border-radius:12px;font-weight:700;
+  transition:top .2s ease;
+}
+.skip-link:focus{top:1rem}
+
+:focus-visible{outline:2px solid var(--water);outline-offset:3px;border-radius:6px}
+
+/* ---------- Header / Nav ---------- */
+.site-header{
+  position:sticky;top:0;z-index:40;
+  background:rgba(12,42,67,.92);backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem;min-width:max-content}
+.brand-text strong{color:var(--ink-invert)}
+.brand-mark{
+  width:42px;height:42px;border-radius:13px;display:grid;place-items:center;flex-shrink:0;
+  background:linear-gradient(140deg,var(--water-bright),#0c6f8f);
+  box-shadow:0 8px 22px rgba(14,132,168,.45),inset 0 1px 0 rgba(255,255,255,.4);
+  position:relative;overflow:hidden;
+}
+.brand-mark svg{width:24px;height:24px}
+.brand-text{display:flex;flex-direction:column;line-height:1.3}
+.brand-text strong{font-size:1.02rem;letter-spacing:-.01em}
+.brand-text small{font-family:var(--mono);color:var(--aqua-soft);font-size:.66rem;letter-spacing:.12em;direction:ltr}
+.nav-menu{display:flex;align-items:center;gap:.2rem;list-style:none;padding:0;margin:0}
+.nav-menu a{display:block;padding:.55rem .8rem;border-radius:999px;color:#cfe2ee;font-size:.92rem;transition:background .18s,color .18s}
+.nav-menu a:hover,.nav-menu a:focus-visible{background:rgba(255,255,255,.12);color:#fff}
+.nav-toggle{
+  display:none;background:rgba(255,255,255,.08);color:var(--ink-invert);border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;padding:.55rem .7rem;font-family:var(--mono);font-size:.8rem;cursor:pointer;align-items:center;gap:.5rem;
+}
+.nav-toggle .bars{display:inline-block;width:18px;height:2px;background:currentColor;position:relative}
+.nav-toggle .bars::before,.nav-toggle .bars::after{content:"";position:absolute;left:0;width:18px;height:2px;background:currentColor}
+.nav-toggle .bars::before{top:-6px}.nav-toggle .bars::after{top:6px}
+
+/* ---------- Buttons ---------- */
+.button{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:50px;
+  padding:.8rem 1.5rem;border-radius:999px;font-weight:700;font-size:.98rem;font-family:inherit;
+  border:1px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.button.primary{background:linear-gradient(135deg,var(--water-bright),#0c7796);color:#fff;box-shadow:0 14px 30px rgba(14,132,168,.30)}
+.button.primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(14,132,168,.40)}
+.button.ghost{border-color:var(--line-strong);color:var(--ink);background:rgba(255,255,255,.7)}
+.button.ghost:hover{transform:translateY(-2px);background:#fff;border-color:var(--water)}
+
+/* ---------- Hero ---------- */
+.hero{padding:84px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+.hero h1{margin-bottom:.6rem}
+.hero h1 .accent{color:var(--water)}
+.hero-sub{
+  font-family:var(--mono);direction:ltr;text-align:start;
+  font-size:clamp(1.05rem,2vw,1.5rem);font-weight:600;letter-spacing:.02em;
+  color:var(--cyan-deep);margin-bottom:1.4rem;
+}
+.hero .lead{max-width:560px}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin:2.1rem 0 1.8rem}
+.trust-strip{display:flex;gap:.45rem;flex-wrap:wrap}
+.chip{
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.04em;direction:ltr;
+  border:1px solid var(--line);background:#fff;
+  padding:.34rem .7rem;border-radius:999px;color:var(--muted);
+}
+
+/* Hero instrument console (signature element — stays deep navy) */
+.console{
+  position:relative;border:1px solid rgba(255,255,255,.10);border-radius:var(--radius-lg);
+  background:linear-gradient(160deg,#103251,#0a2138);
+  box-shadow:var(--shadow);padding:26px;overflow:hidden;color:var(--ink-invert);
+}
+.console::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 80% -10%,rgba(23,162,203,.30),transparent 46%);
+}
+.console-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative}
+.console-top .label{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:var(--muted-invert);text-transform:uppercase;direction:ltr}
+.console-dots{display:flex;gap:.4rem}
+.console-dots i{width:9px;height:9px;border-radius:50%;display:block;opacity:.9}
+.console-dots i:nth-child(1){background:var(--water-bright)}
+.console-dots i:nth-child(2){background:var(--aqua-soft)}
+.console-dots i:nth-child(3){background:var(--amber-soft)}
+.channels{display:grid;gap:14px;position:relative}
+.channel{
+  display:grid;grid-template-columns:84px 1fr auto;align-items:center;gap:14px;
+  padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+}
+.channel .name{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:#cfe2ee;direction:ltr}
+.channel .track{height:6px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden;position:relative}
+.channel .fill{position:absolute;inset-block:0;inset-inline-start:0;border-radius:999px}
+.channel .val{font-family:var(--mono);font-size:.82rem;color:var(--ink-invert);min-width:48px;text-align:end;direction:ltr}
+.channel[data-c="water"] .fill{background:linear-gradient(90deg,var(--water-bright),var(--aqua-soft));width:78%}
+.channel[data-c="climate"] .fill{background:linear-gradient(90deg,var(--cyan),#bff3fb);width:64%}
+.channel[data-c="chem"] .fill{background:linear-gradient(90deg,var(--amber-bright),var(--amber-soft));width:71%}
+.channel[data-c="data"] .fill{background:linear-gradient(90deg,#9fb6ff,var(--aqua-soft));width:88%}
+.channel .pulse{animation:flow 3.4s ease-in-out infinite alternate}
+@keyframes flow{from{opacity:.78;transform:scaleX(.94);transform-origin:inset-inline-start}to{opacity:1;transform:scaleX(1)}}
+.console-foot{
+  margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.10);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.console-foot span{font-family:var(--mono);font-size:.72rem;color:var(--muted-invert);direction:ltr;letter-spacing:.05em}
+.sparkline{width:120px;height:32px;color:var(--aqua-soft)}
+
+/* ---------- Cards (shared) ---------- */
+.card{
+  border:1px solid var(--line);border-radius:var(--radius-lg);
+  background:var(--surface);
+  box-shadow:var(--shadow-soft);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:var(--water);box-shadow:var(--shadow)}
+
+/* ---------- Tracks ---------- */
+.tracks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.track-card{padding:30px;position:relative;overflow:hidden}
+.track-card .code{font-family:var(--mono);font-size:.74rem;color:var(--faint);letter-spacing:.14em;direction:ltr}
+.track-card .glyph,.fert-card .glyph{
+  width:52px;height:52px;border-radius:15px;margin:16px 0 20px;display:grid;place-items:center;
+  border:1px solid var(--line-strong);
+}
+.track-card .glyph svg,.fert-card .glyph svg{width:26px;height:26px}
+.track-card h3{margin-bottom:.7rem}
+.track-card p{color:var(--muted);margin-bottom:1.1rem}
+.track-card ul{list-style:none;padding:0;display:grid;gap:.5rem}
+.track-card li{display:flex;align-items:center;gap:.6rem;color:#3a566c;font-size:.94rem}
+.track-card li::before{content:"";width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.track-card[data-c="water"] .glyph,.fert-card[data-c="water"] .glyph{background:rgba(14,132,168,.10);color:var(--water)}
+.track-card[data-c="water"] li::before{background:var(--water)}
+.track-card[data-c="water"]{box-shadow:var(--shadow-soft),inset 0 2px 0 rgba(14,132,168,.5)}
+.track-card[data-c="chem"] .glyph,.fert-card[data-c="chem"] .glyph{background:rgba(185,120,30,.12);color:var(--amber)}
+.track-card[data-c="chem"] li::before{background:var(--amber)}
+.track-card[data-c="data"] .glyph,.fert-card[data-c="data"] .glyph{background:rgba(43,182,212,.12);color:var(--cyan-deep)}
+.track-card[data-c="data"] li::before{background:var(--cyan-deep)}
+
+/* ---------- Smart Fertigation ---------- */
+.fertigation-feature{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;margin-bottom:28px}
+.fertigation-media{margin:0;position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:3/2;background:linear-gradient(160deg,#e8f5fb,#d7ecf6);border:1px solid rgba(14,132,168,.28);box-shadow:0 24px 50px rgba(12,42,67,.16)}
+.fertigation-media::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(14,132,168,.12)}
+.fertigation-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 42%;border-radius:inherit}
+.fertigation-intro{display:flex;flex-direction:column}
+.fertigation-headline{font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.55;margin-bottom:1rem;color:var(--ink)}
+.fertigation-intro p{color:var(--muted)}
+.fertigation-intro p strong{color:var(--ink)}
+.fertigation-intro p + p{margin-top:1rem}
+.fertigation-intro .skills{margin-top:1.4rem}
+.fertigation-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fert-card{padding:28px}
+.fert-card .glyph{margin-top:0}
+.fert-card h3{margin-bottom:.6rem;font-size:1.12rem}
+.fert-card p{color:var(--muted);font-size:.95rem}
+
+/* ---------- Split / context sections ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.panel{padding:34px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow-soft)}
+.panel.feature{
+  background:linear-gradient(150deg,rgba(23,162,203,.10),#fff);
+  border-color:rgba(14,132,168,.26);
+}
+.panel.amber{background:linear-gradient(150deg,rgba(244,177,77,.14),#fff);border-color:rgba(185,120,30,.26)}
+.panel h2,.panel h3{margin-bottom:1rem}
+.panel p{color:var(--muted)}
+.panel p + p{margin-top:1rem}
+.panel .lead{color:#33506a}
+.factlist{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.8rem}
+.factlist li{display:flex;gap:.7rem;color:#3a566c;font-size:.96rem}
+.factlist li::before{content:"→";color:var(--water);font-family:var(--mono);flex-shrink:0}
+
+/* Process steps (a real sequence → numbered) */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:step}
+.steps li{
+  display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+  padding:18px;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);counter-increment:step;
+}
+.steps li::before{
+  content:counter(step,decimal-leading-zero);font-family:var(--mono);font-size:.86rem;font-weight:700;
+  color:var(--water);width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:rgba(14,132,168,.10);border:1px solid rgba(14,132,168,.22);
+}
+.steps strong{display:block;color:var(--ink)}
+.steps span{display:block;color:var(--muted);font-size:.92rem;margin-top:.2rem}
+
+/* ---------- Projects ---------- */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.project-card{padding:26px;display:flex;flex-direction:column;min-height:210px}
+.project-card .tag{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--cyan-deep);direction:ltr;
+  border:1px solid var(--line);border-radius:999px;padding:.26rem .6rem;align-self:flex-start;margin-bottom:1rem;
+}
+.project-card h3{margin-bottom:.6rem;font-size:1.12rem}
+.project-card p{color:var(--muted);font-size:.95rem}
+.project-card .status{
+  margin-top:auto;padding-top:1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;
+  color:var(--faint);direction:ltr;display:flex;align-items:center;gap:.5rem;
+}
+.project-card .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber-bright);box-shadow:0 0 0 3px rgba(244,177,77,.22)}
+
+/* ---------- Educational sections (Water Data, Hydrology, Map, Dataset, Questions) ---------- */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.edu-card{padding:24px}
+.edu-card .code{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--faint);direction:ltr}
+.edu-card h3{margin:.5rem 0 .7rem;font-size:1.12rem}
+.edu-card .meaning{color:#33506a;font-size:.95rem;margin-bottom:.6rem}
+.edu-card .interp{color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:.6rem}
+.edu-card .interp b{color:var(--cyan-deep);font-weight:700;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem;direction:ltr}
+.edu-card[data-c="water"]{box-shadow:var(--shadow-soft),inset 0 2px 0 var(--water)}
+.edu-card[data-c="cyan"]{box-shadow:var(--shadow-soft),inset 0 2px 0 var(--cyan)}
+.edu-card[data-c="chem"]{box-shadow:var(--shadow-soft),inset 0 2px 0 var(--amber-bright)}
+.edu-card[data-c="data"]{box-shadow:var(--shadow-soft),inset 0 2px 0 var(--violet)}
+.edu-note{margin-top:24px;padding:18px 22px;border:1px solid rgba(185,120,30,.28);background:rgba(244,177,77,.10);border-radius:16px;color:#6f5a33;font-size:.92rem;display:flex;gap:.7rem}
+.edu-note::before{content:"⚠";color:var(--amber);flex-shrink:0}
+
+/* Hydrology cards */
+.hydro-card .why{color:var(--muted);font-size:.92rem;border-top:1px solid var(--line);padding-top:.6rem;margin-top:.2rem}
+.hydro-card .why b{color:var(--water);font-weight:700;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem;direction:ltr}
+
+/* Chemistry × Hydrology flow map */
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin-bottom:24px}
+.flow-node{flex:1 1 150px;min-width:140px;padding:16px 14px;border:1px solid var(--line);border-radius:16px;background:var(--surface);box-shadow:var(--shadow-soft);text-align:center;display:flex;flex-direction:column;justify-content:center;gap:.3rem}
+.flow-node .n{font-family:var(--mono);font-size:.66rem;color:var(--cyan-deep);letter-spacing:.12em;direction:ltr}
+.flow-node strong{font-size:.96rem;color:var(--ink)}
+.flow-node small{color:var(--muted);font-size:.78rem}
+.flow-arrow{display:flex;align-items:center;color:var(--water);font-size:1.3rem;flex:0 0 auto}
+.flow-node:last-child{border-color:rgba(14,132,168,.4);background:linear-gradient(150deg,rgba(23,162,203,.14),#fff)}
+@media(max-width:760px){
+  .flow{flex-direction:column}
+  .flow-arrow{transform:rotate(-90deg);align-self:center}
+}
+
+/* Mini dataset table */
+.data-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-soft);-webkit-overflow-scrolling:touch}
+.data-table{width:100%;border-collapse:collapse;min-width:760px;font-size:.9rem}
+.data-table caption{caption-side:top;text-align:start;padding:14px 16px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--amber);direction:ltr}
+.data-table th,.data-table td{padding:11px 14px;text-align:start;border-bottom:1px solid var(--line);white-space:nowrap}
+.data-table thead th{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;direction:ltr;font-weight:700;background:var(--surface-2)}
+.data-table thead th .unit{display:block;color:var(--faint);font-size:.62rem;letter-spacing:.04em}
+.data-table tbody tr{cursor:pointer;transition:background .15s ease}
+.data-table tbody tr:hover,.data-table tbody tr:focus-visible{background:rgba(23,162,203,.08);outline:none}
+.data-table tbody tr[aria-selected="true"]{background:rgba(23,162,203,.14);box-shadow:inset 3px 0 0 var(--water)}
+.data-table td:first-child{font-family:var(--mono);color:var(--cyan-deep);direction:ltr}
+.dataset-hint{font-family:var(--mono);font-size:.74rem;color:var(--muted);direction:ltr;margin:14px 0 0}
+.dataset-readout{margin-top:16px;padding:20px;border:1px solid var(--line-strong);border-radius:16px;background:var(--surface)}
+.dataset-readout h4{margin:0 0 .3rem;font-size:1rem;color:var(--ink);direction:ltr}
+.dataset-readout .sub{color:var(--muted);font-size:.86rem;margin-bottom:.9rem}
+.signal-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.signal-tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.03em;direction:ltr;padding:.34rem .7rem;border-radius:999px;border:1px solid rgba(185,120,30,.4);background:rgba(244,177,77,.12);color:#8a6422}
+.signal-tag.clear{border-color:rgba(14,132,168,.4);background:rgba(23,162,203,.12);color:var(--cyan-deep)}
+
+/* Water Wonder Questions */
+.q-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.q-card{padding:24px;display:flex;gap:16px;align-items:flex-start}
+.q-card .qmark{flex:0 0 auto;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-family:var(--mono);font-weight:800;color:#fff;background:linear-gradient(135deg,var(--cyan),var(--water))}
+.q-card p{margin:0}
+.q-card .q-en{color:var(--ink);font-weight:600;line-height:1.6}
+.q-card .q-ar{color:var(--muted);font-size:.9rem;margin-top:.4rem}
+
+/* ---------- Demo ---------- */
+.demo-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:32px;align-items:start}
+.skills{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem}
+.demo-card{padding:30px}
+.demo-card h3{margin-bottom:.3rem}
+.demo-note{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:var(--muted);direction:ltr;margin-bottom:1.4rem}
+.field{margin:18px 0}
+.field-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.5rem}
+.field-top label{font-weight:700;color:var(--ink);font-size:.98rem}
+.field-top .read{font-family:var(--mono);font-weight:700;color:var(--cyan-deep);direction:ltr;font-size:.95rem}
+.field-top .read small{color:var(--muted);font-weight:400;margin-inline-start:.2rem}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;
+  background:rgba(12,42,67,.14);outline-offset:5px;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;
+  background:var(--water);border:3px solid #fff;box-shadow:0 2px 8px rgba(14,132,168,.5);cursor:pointer;
+}
+input[type=range]::-moz-range-thumb{
+  width:20px;height:20px;border-radius:50%;background:var(--water);border:3px solid #fff;
+  box-shadow:0 2px 8px rgba(14,132,168,.5);cursor:pointer;
+}
+.signal{
+  margin-top:24px;padding:20px;border-radius:16px;border:1px solid var(--line-strong);
+  background:var(--surface-2);transition:border-color .2s ease,background .2s ease;
+}
+.signal[data-state="watch"]{border-color:rgba(185,120,30,.45);background:rgba(244,177,77,.10)}
+.signal-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.signal-dot{width:10px;height:10px;border-radius:50%;background:var(--water);flex-shrink:0}
+.signal[data-state="watch"] .signal-dot{background:var(--amber-bright)}
+.signal strong{font-size:1.02rem}
+.signal p{color:var(--muted);font-size:.95rem}
+.disclaimer-inline{margin-top:1rem;font-size:.84rem;color:var(--faint);display:flex;gap:.5rem}
+.disclaimer-inline::before{content:"⚠";color:var(--amber);flex-shrink:0}
+
+/* ---------- Profiles ---------- */
+.profiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.profile-card{padding:28px;text-align:start}
+.profile-avatar{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:18px;
+  font-family:var(--mono);font-weight:700;font-size:1.1rem;color:#fff;direction:ltr;
+}
+.profile-card[data-c="water"] .profile-avatar{background:linear-gradient(135deg,var(--water),var(--cyan))}
+.profile-card[data-c="chem"] .profile-avatar{background:linear-gradient(135deg,var(--amber),var(--amber-bright))}
+.profile-card[data-c="data"] .profile-avatar{background:linear-gradient(135deg,var(--cyan),var(--violet))}
+.profile-card h3{font-size:1.1rem;margin-bottom:.3rem}
+.profile-card .role{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--cyan-deep);direction:ltr;margin-bottom:1rem}
+.profile-card p{color:var(--muted);font-size:.94rem;margin-bottom:1.2rem}
+.profile-link{
+  display:inline-flex;align-items:center;gap:.5rem;font-size:.86rem;color:var(--muted);
+  font-family:var(--mono);letter-spacing:.05em;direction:ltr;
+}
+.profile-link .soon{border:1px dashed var(--line-strong);border-radius:999px;padding:.2rem .6rem;font-size:.72rem}
+
+/* ---------- Disclaimer ---------- */
+.disclaimer{padding:34px;border:1px solid var(--line-strong);border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow-soft)}
+.disclaimer .eyebrow{color:var(--amber)}
+.disclaimer .eyebrow::before{background:var(--amber)}
+.disclaimer p{color:var(--muted)}
+.disclaimer p + p{margin-top:1rem}
+
+/* ---------- Contact ---------- */
+.contact-card{
+  padding:42px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+  border:1px solid rgba(255,255,255,.10);border-radius:var(--radius-lg);
+  background:linear-gradient(150deg,#103251,#0a2138);color:var(--ink-invert);box-shadow:var(--shadow);
+}
+.contact-card h2{margin-bottom:.7rem;color:var(--ink-invert)}
+.contact-card p{color:var(--muted-invert);max-width:46ch}
+.contact-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.contact-card .button.ghost{border-color:rgba(255,255,255,.28);color:var(--ink-invert);background:rgba(255,255,255,.08)}
+.contact-card .button.ghost:hover{background:rgba(255,255,255,.16);border-color:var(--aqua-soft)}
+
+/* ---------- Footer ---------- */
+.site-footer{border-top:1px solid rgba(255,255,255,.08);padding:40px 0;background:var(--navy-2);color:var(--muted-invert)}
+.footer-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.site-footer .brand-text strong{color:var(--ink-invert)}
+.footer-grid .brand-text small{color:var(--muted-invert)}
+.footer-meta{text-align:end}
+.footer-meta p{color:var(--muted-invert);font-size:.88rem;margin:.15rem 0}
+.footer-meta a{color:var(--aqua-soft)}
+
+/* ---------- 404 ---------- */
+.error-wrap{min-height:70vh;display:grid;place-items:center;text-align:center}
+.error-wrap .code{font-family:var(--mono);font-size:clamp(4rem,16vw,9rem);font-weight:800;color:var(--water);line-height:1;letter-spacing:-.04em}
+.error-wrap p{color:var(--muted);margin:1rem 0 2rem;max-width:42ch;margin-inline:auto}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width:920px){
+  .nav-toggle{display:inline-flex}
+  .nav-menu{
+    position:absolute;inset-inline:16px;top:72px;display:none;flex-direction:column;align-items:stretch;
+    background:var(--navy);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:12px;
+    box-shadow:var(--shadow);
+  }
+  .nav-menu.open{display:flex}
+  .nav-menu a{padding:.8rem 1rem}
+  .hero-grid,.split,.demo-grid,.fertigation-feature{grid-template-columns:1fr}
+  .tracks-grid,.projects-grid,.profiles-grid,.fertigation-cards{grid-template-columns:1fr 1fr}
+  .section{padding:72px 0}
+  .hero{padding:60px 0 64px}
+}
+@media (max-width:600px){
+  .wrap{width:min(100% - 28px,var(--wrap))}
+  .brand-text small{display:none}
+  .tracks-grid,.projects-grid,.profiles-grid,.fertigation-cards{grid-template-columns:1fr}
+  .section{padding:60px 0}
+  .console{padding:20px}
+  .channel{grid-template-columns:70px 1fr auto;gap:10px}
+  .contact-card{flex-direction:column;align-items:flex-start;padding:30px}
+  .footer-grid{flex-direction:column}
+  .footer-meta{text-align:start}
+}
+
+/* ============================================================
+   Motion preferences
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* ============================================================
+   Print
+   ============================================================ */
+@media print{
+  body{background:#fff;color:#000}
+  .site-header,.hero-actions,.contact-actions,.nav-toggle{display:none}
+  .card,.panel,.console,.contact-card{box-shadow:none;border-color:#ccc;background:#fff;color:#000}
+  .section{padding:18px 0}
+}
+
+/* ---------- Water Wonder practical article ---------- */
+.article-hero{padding:86px 0 54px;border-bottom:1px solid var(--line)}
+.article-hero .lead{max-width:820px;margin-top:1rem}
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:34px;align-items:start}
+.article-body{padding:38px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow-soft)}
+.article-body h2{font-size:clamp(1.45rem,2.4vw,2.1rem);margin:2.4rem 0 .8rem;padding-top:.4rem}
+.article-body h3{margin:1.7rem 0 .5rem;color:var(--water)}
+.article-body p{color:#2d4a62;margin:.78rem 0;line-height:2.05}
+.article-body strong{color:var(--ink)}
+.article-body .rule{margin:1.4rem 0;padding:18px 20px;border:1px solid rgba(14,132,168,.28);border-radius:16px;background:rgba(23,162,203,.08);color:#0d4a5e;font-weight:700}
+.article-body .warning{margin:1.4rem 0;padding:18px 20px;border:1px solid rgba(185,120,30,.30);border-radius:16px;background:rgba(244,177,77,.10);color:#6f5a33}
+.article-body ul{margin:1rem 0 1rem;padding-inline-start:1.4rem;color:#2d4a62}
+.article-body li{margin:.45rem 0}
+.article-side{position:sticky;top:96px;padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow-soft)}
+.article-side h3{font-size:1rem;margin-bottom:.8rem}
+.article-side a{display:block;color:var(--muted);padding:.5rem 0;border-top:1px solid var(--line);font-size:.92rem}
+.article-side a:hover{color:var(--water)}
+.article-sources{font-size:.92rem;color:var(--muted)}
+.article-sources a{color:var(--cyan-deep);text-decoration:underline;text-underline-offset:3px}
+.feature-article{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
+.feature-article .feature-copy{padding:32px}
+.feature-article .feature-copy p{color:var(--muted);margin-top:.8rem}
+.feature-article .feature-copy .button{margin-top:1.4rem}
+.feature-list{padding:28px;display:grid;gap:12px}
+.feature-list div{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2)}
+.feature-list strong{display:block;color:var(--ink)}
+.feature-list span{display:block;color:var(--muted);font-size:.92rem;margin-top:.2rem}
+@media (max-width:920px){.article-layout,.feature-article{grid-template-columns:1fr}.article-side{position:static}.article-body{padding:26px}}
+  
+.button-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:1.4rem}
+.button-row .button{margin-top:0!important}
+@media (max-width:600px){.button-row{flex-direction:column;align-items:stretch}.button-row .button{width:100%;justify-content:center}}
+
+  
+/* ---------- Career-OS additions ---------- */
+.career-os-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+.career-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.career-path{position:relative;overflow:hidden}
+.career-path .tag{margin-bottom:.7rem}
+.career-path h3{margin:.15rem 0 .55rem;font-size:1.35rem}
+.career-path ul,.career-os-list{margin:.8rem 0 0;padding:0;list-style:none;display:grid;gap:.62rem}
+.career-path li,.career-os-list li{padding:.72rem .85rem;border:1px solid var(--line);border-radius:14px;background:var(--surface-2)}
+.career-map{display:grid;gap:12px}
+.career-step{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.72)}
+.career-step strong{color:var(--water)}
+.step-no{inline-size:38px;block-size:38px;display:grid;place-items:center;border-radius:999px;background:linear-gradient(135deg,var(--water),var(--cyan));color:#fff;font-weight:800;box-shadow:var(--shadow-soft)}
+.cv-snippet{direction:ltr;text-align:left;font-family:var(--mono);font-size:.82rem;line-height:1.75;background:#082234;color:#DFF7FF;border-radius:16px;padding:14px;border:1px solid rgba(139,220,238,.2);margin-top:1rem}
+.career-note{border-inline-start:4px solid var(--cyan);background:rgba(23,162,203,.08);padding:14px 16px;border-radius:16px;color:var(--muted)}
+@media (max-width:900px){.career-os-grid,.career-paths{grid-template-columns:1fr}}
+
+  
+/* ---------- Career-OS decision upgrade ---------- */
+.decision-badge{display:inline-flex;gap:8px;align-items:center;padding:.5rem .75rem;border-radius:999px;background:rgba(14,132,168,.10);border:1px solid rgba(14,132,168,.22);color:var(--water);font-weight:800}
+.decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.decision-card{border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,var(--surface),var(--surface-2));padding:18px;box-shadow:var(--shadow-soft)}
+.decision-card h3{margin:.35rem 0 .55rem;font-size:1.2rem}
+.decision-card .chosen{font-size:1.1rem;color:var(--water);font-weight:800}
+.decision-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.decision-table th,.decision-table td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.decision-table th{background:#EAF6FB;color:var(--navy);font-weight:800;text-align:right}
+.decision-table tr:last-child td{border-bottom:0}
+.fact-lock{display:grid;gap:10px;margin-top:1rem}
+.fact-lock li{padding:.75rem .9rem;border-radius:14px;background:rgba(12,42,67,.045);border:1px solid var(--line)}
+.leadership-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.stack-card{padding:18px;border-radius:20px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-soft)}
+.stack-card strong{color:var(--water)}
+.source-list{display:grid;gap:.65rem;margin:1rem 0 0;padding:0;list-style:none}
+.source-list a{font-weight:800}
+@media (max-width:950px){.decision-grid,.leadership-stack{grid-template-columns:1fr}.decision-table{font-size:.95rem}}
+
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">تجاوز إلى المحتوى الرئيسي</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="التنقل الرئيسي">
+      <a class="brand" href="index.html#top" aria-label="AquaClimate Lab — الصفحة الرئيسية">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#04141d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c3.8 4.4 6 7.4 6 10.5a6 6 0 1 1-12 0c0-3.1 2.2-6.1 6-10.5Z" fill="rgba(255,255,255,.3)"/><path d="M9 13a3 3 0 0 0 3 3"/></svg>
+        </span>
+        <span class="brand-text"><strong>AquaClimate Lab</strong><small>Water × Weather × Chemistry × Data</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span class="bars" aria-hidden="true"></span><span>القائمة</span></button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html#waterwonder">Water Wonder</a></li>
+        <li><a href="index.html#waterdata">Water Data</a></li>
+        <li><a href="index.html#hydrology">Hydrology Signals</a></li>
+        <li><a href="career-os.html">Career-OS</a></li>
+        <li><a href="index.html#projects">المشاريع</a></li>
+        <li><a href="index.html#contact">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="article-hero">
+      <div class="wrap">
+        <p class="eyebrow">Water Wonder × Body Signals</p>
+        <h1>الماء بلا خوف</h1>
+        <p class="hero-sub">ماذا أشرب؟ ماذا أستخدم؟ ومتى أفحص الماء؟</p>
+        <p class="lead">دليل عملي للمستهلك العادي حول الماء المعبأ، العبوات، الفلاتر، التخزين، التحذيرات الرسمية، والمياه المعالجة — بلا خوف، بلا تسويق، وبلا ادعاء أن ماءً واحدًا يناسب الجميع.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#today">ماذا أفعل من اليوم؟</a>
+          <a class="button ghost" href="./water-as-body-operating-system-12-slides.pdf" download type="application/pdf" target="_blank" rel="noopener">تحميل العرض PDF</a>
+          <a class="button ghost" href="./download-water-wonder-pdf.html">رابط بديل للتحميل</a>
+          <a class="button ghost" href="index.html#waterwonder">العودة إلى Water Wonder</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap article-layout">
+        <article class="article-body">
+          <p>كثير من الناس اليوم يسمع كلامًا مخيفًا عن الماء: البلاستيك ضار، الفلاتر قد تكون مشكلة، ماء الشبكة غير مضمون، الماء المعبأ ليس دائمًا أفضل، والخزانات قد تتأثر بالحرارة.</p>
+          <p>لكن الشخص العادي لا يحتاج أن يعيش في خوف. هو يحتاج جوابًا عمليًا: ماذا أختار؟ ماذا أتجنب؟ متى أطمئن؟ ومتى أحتاج تحليلًا أو سؤالًا طبيًا؟</p>
+          <p>هذا المقال لا يبيع لك شركة مياه، ولا فلترًا، ولا يهاجم ماء الشبكة أو الماء المعبأ. هو يعطيك طريقة واضحة لاختيار الماء والعبوة والفلتر بدون خوف وبدون تسويق.</p>
+
+          <h2 id="source">1. لا تسأل أولًا: ما أفضل ماء؟ اسأل: ما مصدر الماء؟</h2>
+          <p>الماء لا يُحكم عليه من الاسم فقط. قد يكون الماء من شبكة المنزل، أو عبوة، أو فلتر منزلي، أو خزان، أو بئر، أو مصدر غير واضح. وكل مصدر له طريقة قراءة مختلفة.</p>
+          <p>ماء الشبكة يمر عبر منظومة معالجة ومراقبة، لكن تجربة البيت قد تتأثر بالخزان أو الأنابيب أو التخزين. الماء المعبأ له ملصق يمكن قراءته، لكنه ليس أفضل لمجرد أنه معبأ. الفلتر المنزلي قد يحسن الطعم أو يقلل ملوثًا معينًا، لكنه لا يجعل الماء مثاليًا تلقائيًا. ومياه الآبار أو المصادر غير الموثقة لا تكفي معها الثقة بالطعم أو اللون.</p>
+          <p class="rule">الماء الأفضل لك هو ماء معروف المصدر، محفوظ جيدًا، واضح الملصق أو التحليل، ولا توجد عليه تحذيرات رسمية.</p>
+
+          <h2 id="bottled">2. إذا كنت تشرب ماءً معبأ: كيف تختار؟</h2>
+          <p>لا تختَر الماء لأن العبوة جميلة، أو لأن الإعلان يقول “نقي”، أو لأن الناس يمدحونه. اقرأ الملصق بهدوء.</p>
+          <ul>
+            <li>TDS</li>
+            <li>pH</li>
+            <li>الصوديوم</li>
+            <li>تاريخ الإنتاج والانتهاء</li>
+            <li>اسم الشركة أو المصنع</li>
+            <li>طريقة التخزين</li>
+            <li>وجود تحذير رسمي من عدمه</li>
+          </ul>
+          <h3>TDS</h3>
+          <p>TDS يعني مجموع الأملاح والمعادن الذائبة في الماء. لا تجعل TDS وحده يقرر عنك؛ فهو مؤشر عام، ولا يكشف وحده نوع الأملاح أو وجود ملوثات.</p>
+          <p class="rule">اختر ماءً معبأً ضمن النطاق النظامي، لكن لا تعتبر TDS شهادة صحية كاملة.</p>
+          <h3>pH</h3>
+          <p>pH يعني درجة الحموضة أو القلوية. في المياه المعبأة، توجد حدود نظامية للنطاق المقبول، لكن هذا لا يعني أن الماء القلوي يعطي فائدة صحية خاصة.</p>
+          <p class="rule">pH مؤشر جودة وتنظيم، وليس علاجًا.</p>
+          <h3>الصوديوم</h3>
+          <p>الصوديوم مهم لمن لديه ضغط، قلب، كلى، أو حمية قليلة الصوديوم. الشخص السليم غالبًا لا يحتاج أن يخاف من كل صوديوم في الماء، لكن من لديه توجيه طبي بتقليل الصوديوم يجب أن يقرأ الملصق.</p>
+          <p class="rule">إذا لديك ضغط أو قلب أو كلى أو حمية قليلة الصوديوم، صوّر ملصق الماء واسأل طبيبك هل يناسبك.</p>
+          <h3>التخزين</h3>
+          <p>حتى لو كان الماء مطابقًا عند الإنتاج، التخزين السيئ قد يضعف الثقة. تجنب العبوات التي تُترك تحت الشمس أو داخل السيارة أو أمام المحلات في حرارة عالية.</p>
+          <p class="rule">ماء معبأ مرخص ومخزن جيدًا أفضل من ماء مشهور تُرك في الشمس.</p>
+
+          <h2 id="brand">3. هل أقول لك أفضل ماركة ماء؟</h2>
+          <p>ليس بصدق علمي. لا يمكن إعلان “أفضل ماركة” بدون مراجعة حديثة لكل الملصقات، والتحذيرات الرسمية، وظروف التخزين، وتاريخ الإنتاج، واحتياج الشخص الصحي.</p>
+          <p>لكن يمكن قول شيء أنفع: أفضل ماء معبأ هو الذي يكون مصدره وشركته واضحين، ملصقه واضح، ضمن المواصفات النظامية، صوديومه مناسبًا لحالتك إذا لديك قيود طبية، مخزنًا بعيدًا عن الشمس والحرارة، ولا يوجد عليه تحذير رسمي.</p>
+          <p class="rule">لا تبحث عن ماركة سحرية. ابحث عن ماء مرخص، واضح، محفوظ جيدًا، ومناسب لحالتك.</p>
+
+          <h2 id="plastic">4. البلاستيك: ما البديل العملي؟</h2>
+          <p>القول إن “البلاستيك ضار” لا يكفي. السؤال العملي هو: ماذا أستخدم بدلًا منه؟</p>
+          <h3>الأفضل للاستخدام اليومي</h3>
+          <p>الزجاج خيار ممتاز للتخزين المنزلي إذا كان آمنًا من الكسر. الستانلس ستيل الغذائي خيار ممتاز للخروج والعمل، خصوصًا 304 أو 316. هذه الخيارات مناسبة لمن يريد تقليل ملامسة البلاستيك، خصوصًا مع الحرارة.</p>
+          <h3>عبوات الماء الصغيرة</h3>
+          <p>غالبًا تكون من PET رقم 1. هذا النوع مصمم غالبًا للاستخدام مرة واحدة. استخدمه كما هو مقصود: اشربه، ولا تتركه في السيارة، ولا تعيد تعبئته أيامًا طويلة، ولا تستخدمه إذا تعرض لحرارة واضحة أو تغيّر شكله.</p>
+          <h3>عبوات التخزين أو الجوالين</h3>
+          <p>ابحث عن مواد غذائية واضحة مثل HDPE رقم 2 أو PP رقم 5، أو عبوات مكتوب عليها BPA-Free إذا كانت قابلة لإعادة الاستخدام. إذا كان المنتج من بلاستيك رقم 7 أو Polycarbonate، فالأفضل للمستهلك العادي أن يختار بديلًا أو يتأكد أنه BPA-Free ومن شركة موثوقة.</p>
+          <p class="rule">البديل ليس أن تلغي البلاستيك تمامًا، بل أن تستخدم المادة المناسبة: زجاج أو ستانلس للتكرار، PET مرة واحدة، وابتعد عن الحرارة وإعادة الاستخدام الطويل.</p>
+
+          <h2 id="filters">5. هل أحتاج فلترًا؟</h2>
+          <p>ليس دائمًا. الفلتر ليس علامة وعي إذا كان بلا سبب أو بلا صيانة. أحيانًا يكون مفيدًا، وأحيانًا يكون شراءً زائدًا، وأحيانًا يتحول إلى مشكلة إذا أُهمل.</p>
+          <p>اسأل أولًا: ما المشكلة التي أريد حلها؟ هل المشكلة طعم؟ رائحة كلور؟ عسر وترسبات؟ ماء بئر؟ نترات؟ رصاص؟ PFAS؟ ميكروبات؟ أم مجرد خوف عام؟</p>
+          <p class="rule">إذا لم تعرف المشكلة، لا تشترِ الحل.</p>
+
+          <h2 id="filter-types">6. كيف تختار نوع الفلتر؟</h2>
+          <h3>إذا المشكلة طعم أو رائحة كلور</h3>
+          <p>غالبًا تحتاج فلتر كربون نشط. ابحث عن اعتماد NSF/ANSI 42. هذا النوع مفيد غالبًا لتحسين الطعم والرائحة، وليس إعلانًا بأنه يزيل كل ملوث خطر.</p>
+          <h3>إذا القلق من ملوثات لها أثر صحي</h3>
+          <p>مثل الرصاص أو بعض المركبات الكيميائية أو PFAS، ابحث عن اعتماد NSF/ANSI 53 للمادة المحددة التي تريد تقليلها. لا يكفي أن يقول البائع: “يزيل السموم”. اسأل: يزيل ماذا؟ وبأي اعتماد؟ ومن أي جهة اختبرت المنتج؟</p>
+          <h3>إذا لديك ماء بئر أو نترات أو أملاح عالية</h3>
+          <p>لا تبدأ بشراء فلتر. ابدأ بتحليل الماء. قد يكون RO مناسبًا لبعض الحالات، لكن RO ليس ضروريًا للجميع. إذا اخترت RO، ابحث عن NSF/ANSI 58، وافهم أنه يحتاج صيانة، وقد يقلل المعادن، وقد يهدر جزءًا من الماء، وقد يحتاج متابعة للفلتر والغشاء والخزان.</p>
+          <h3>إذا القلق من ميكروبات</h3>
+          <p>لا تعتمد على فلتر طعم. قد تحتاج تحليلًا، وقد يكون UV جزءًا من الحل في بعض الحالات. ابحث عن NSF/ANSI 55 لأنظمة الأشعة فوق البنفسجية، مع التأكد أن الماء نفسه مناسب لدخول جهاز UV وأن النظام يُصان جيدًا.</p>
+          <h3>إذا المشكلة عسر الماء وترسبات الأجهزة</h3>
+          <p>قد تحتاج نظام معالجة عسر أو Softener، لكنه ليس بالضرورة أفضل خيار لماء الشرب. بعض أنظمة إزالة العسر تستبدل الكالسيوم والمغنيسيوم بالصوديوم أو البوتاسيوم، وهذا مهم لمن لديهم قيود صحية.</p>
+          <p class="rule">لا تشترِ فلترًا لأنه “الأقوى”. اشترِ فلترًا لأنه يناسب مشكلة محددة، وباعتماد واضح، وصيانة واضحة.</p>
+
+          <h2 id="test">7. متى أفحص الماء؟</h2>
+          <p>لا تحتاج أن تفحص كل ماء تشربه. لكن الفحص يصبح مهمًا في حالات واضحة: ماء بئر، مصدر غير موثق، خزان قديم أو مهمل، تغير مستمر في الطعم أو الرائحة أو اللون، استخدام ماء لتحضير رضعات أطفال من مصدر غير واضح، شك في نترات أو ملوثات، اعتماد كامل على فلتر لا تعرف ماذا يزيل، شكاوى متكررة في البيت أو الحي، أو مياه تُخزن في ظروف حرارة سيئة.</p>
+          <p>جهاز TDS المنزلي لا يكفي للحكم على السلامة. هو يعطي رقمًا عامًا عن الأملاح، لكنه لا يكشف البكتيريا، ولا النترات بدقة، ولا المعادن الثقيلة، ولا البرومات، ولا كل الملوثات.</p>
+          <p class="rule">إذا كان السؤال عن السلامة، فالتحليل المعتمد أهم من جهاز منزلي.</p>
+
+          <h2 id="warnings">8. هل توجد شكاوى أو تحذيرات من مياه؟</h2>
+          <p>نعم، قد تصدر تحذيرات رسمية من منتجات مخالفة. وهذا لا يعني أن كل المياه المعبأة سيئة، ولا أن ماء الشبكة سيئ. يعني أن هناك رقابة، وأن المستهلك الذكي يراجع المصدر الرسمي بدل الإشاعة.</p>
+          <p>إذا سمعت عن مشكلة في منتج، لا تعتمد على واتساب. راجع تحذيرات هيئة الغذاء والدواء. لا تشترِ منتجًا عليه تحذير رسمي. إذا لاحظت مشكلة في ماء الشبكة، استخدم قنوات البلاغ الرسمية. وإذا كانت المشكلة من الخزان، أصلح الخزان بدل أن تتهم كل مصدر الماء.</p>
+          <p class="rule">لا تتبع الإشاعة. اتبع التحذير الرسمي.</p>
+
+          <h2 id="reused">9. هل تُستخدم مياه الصرف بعد تنظيفها؟</h2>
+          <p>نعم، في بعض الدول تُستخدم المياه المعالجة بعد مراحل متقدمة، لكن الاستخدام يختلف: قد تُستخدم للزراعة، أو الصناعة، أو التبريد، وقد تدخل في دول معينة ضمن منظومة شرب غير مباشرة بعد معالجة متقدمة ورقابة صارمة.</p>
+          <p>في السعودية، توجد مشروعات لاستخدام المياه المعالجة في مجالات مثل الزراعة والصناعة. هذا لا يعني أن ماء الصرف يدخل بيتك للشرب بنفس صورته الشعبية التي يتخيلها الناس.</p>
+          <p>وفي سنغافورة، يوجد نموذج معروف اسمه NEWater، حيث تُعالج المياه المستخدمة بمراحل متقدمة تشمل الترشيح الدقيق أو الفائق، ثم التناضح العكسي، ثم الأشعة فوق البنفسجية، وتُستخدم أساسًا للصناعة والتبريد، ويدخل جزء منها في منظومة المياه بطريقة منظمة وتحت رقابة عالية.</p>
+          <p class="rule">الماء المعالج ليس كلمة واحدة. الحكم يكون بالمعالجة والمعيار والاستخدام، لا بالخوف من الاسم.</p>
+
+          <h2 id="today">10. ماذا أفعل من اليوم؟</h2>
+          <ul>
+            <li><strong>في البيت:</strong> استخدم ماء شبكة أو ماء معبأ مرخصًا، مع خزان نظيف وصيانة واضحة.</li>
+            <li><strong>في الخروج والعمل:</strong> استخدم قارورة زجاج أو ستانلس ستيل غذائي إن أمكن. وإذا استخدمت عبوة PET صغيرة، لا تتركها في السيارة ولا تعيد استخدامها طويلًا.</li>
+            <li><strong>عند شراء ماء معبأ:</strong> اقرأ TDS وpH والصوديوم، وتأكد من التخزين، وتجنب العبوات المشوهة أو المعروضة في الشمس.</li>
+            <li><strong>عند استخدام فلتر:</strong> اختره حسب المشكلة: طعم ورائحة، ملوثات صحية محددة، RO، أو UV. ولا تنسَ الصيانة.</li>
+            <li><strong>عند وجود مرض كلى أو قلب أو ضغط:</strong> لا تعتمد على مقال عام. اسأل طبيبك عن السوائل والصوديوم ونوع الماء المناسب لك.</li>
+            <li><strong>عند وجود مصدر غير موثق:</strong> لا تخمّن. حلل الماء.</li>
+            <li><strong>عند ظهور أعراض خطر:</strong> إذا ظهر تشوش، إغماء، ألم صدر، ضيق نفس، قلة بول شديدة، قيء أو إسهال مستمر، أو أعراض حرارة شديدة، فلا تجعل الماء هو الخطة. اطلب تقييمًا طبيًا.</li>
+          </ul>
+
+          <h2 id="summary">الخلاصة</h2>
+          <p>لا نحتاج أن نكرر أسطوانة الخوف: البلاستيك خطر، الفلاتر مشكلة، ماء الشبكة مشكلة، الماء المعبأ مشكلة. هذا لا يغير حياة الناس.</p>
+          <p>التغيير الحقيقي هو أن نقول: استخدم الزجاج أو الستانلس عند التكرار. استخدم PET مرة واحدة وبعيدًا عن الحرارة. اقرأ ملصق الماء المعبأ. انتبه للصوديوم إذا لديك قيود طبية. لا تجعل TDS حكمًا نهائيًا. اختر الفلتر حسب المشكلة لا حسب الإعلان. حلل الماء إذا كان المصدر غير موثق. راجع التحذيرات الرسمية بدل الإشاعات. وافهم أن المياه المعالجة تُقرأ حسب المعالجة والاستخدام والمعيار، لا حسب الخوف من الاسم.</p>
+          <p class="rule">الماء الأفضل لك هو ماء معروف المصدر، محفوظ بطريقة صحيحة، مقروء الملصق أو التحليل، مناسب لحالتك، ولا توجد عليه تحذيرات رسمية.</p>
+
+          <h2 id="next">ماذا بعد؟</h2>
+          <p>في المقال القادم: <strong>كيف تقرأ ملصق الماء؟ TDS وpH والصوديوم والعسر دون خوف ودون تسويق.</strong></p>
+
+          <h2 id="notice">تنبيه</h2>
+          <p class="warning">هذا المقال تعليمي فقط. لا يشخص الجفاف، ولا يصف علاجًا، ولا يحدد كمية الماء المناسبة لكل شخص، ولا يحكم على سلامة مصدر ماء بعينه. من لديهم أمراض كلى أو قلب أو ضغط، أو يستخدمون مدرات بول أو أدوية تؤثر على السوائل والأملاح، يناقشون احتياجهم مع الطبيب. سلامة الماء تُثبت بالمعايير الرسمية والتحاليل المعتمدة، وليس بالطعم أو اللون أو جهاز منزلي بسيط فقط.</p>
+
+          <h2 id="sources">مصادر التحقق</h2>
+          <p class="article-sources">تستند صياغة المقال إلى مراجع تنظيمية وتعليمية عامة، منها: <a href="https://www.sfda.gov.sa/en/news/1871" target="_blank" rel="noopener">SFDA: المياه المعبأة، pH وTDS والصوديوم</a>، <a href="https://www.sfda.gov.sa/en/warnings/2326508" target="_blank" rel="noopener">SFDA: مثال تحذير رسمي لمنتج مياه بسبب البرومات</a>، <a href="https://www.nsf.org/consumer-resources/articles/standards-water-treatment-systems" target="_blank" rel="noopener">NSF: معايير أنظمة معالجة مياه الشرب</a>، و<a href="https://www.pub.gov.sg/Public/WaterLoop/OurWaterStory/NEWater" target="_blank" rel="noopener">PUB Singapore: NEWater</a>.</p>
+        </article>
+
+        <aside class="article-side" aria-label="فهرس المقال">
+          <h3>فهرس سريع</h3>
+          <a href="#source">مصدر الماء</a>
+          <a href="#bottled">الماء المعبأ</a>
+          <a href="#plastic">البلاستيك والبدائل</a>
+          <a href="#filters">الفلاتر</a>
+          <a href="#test">متى أفحص الماء؟</a>
+          <a href="#warnings">التحذيرات الرسمية</a>
+          <a href="#reused">المياه المعالجة</a>
+          <a href="#today">ماذا أفعل من اليوم؟</a>
+          <a href="./water-as-body-operating-system-12-slides.pdf" download type="application/pdf" target="_blank" rel="noopener">تحميل PDF: الماء كنظام تشغيل للجسم</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="brand-text"><strong>AquaClimate Lab</strong><small>Water × Weather × Chemistry × Data</small></div>
+      <div class="footer-meta"><p>© <span id="year">2026</span> AquaClimate Lab — independent educational prototype.</p><p><a href="index.html#disclaimer">Disclaimer</a> · <a href="index.html#top">Home</a></p></div>
+    </div>
+  </footer>
+  <script>
+/* AquaClimate Lab — interactions (vanilla, no dependencies) */
+(function () {
+  "use strict";
+
+  /* ---------- Mobile navigation ---------- */
+  var navToggle = document.querySelector(".nav-toggle");
+  var navMenu = document.querySelector("#nav-menu");
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", function () {
+      var open = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!open));
+      navMenu.classList.toggle("open");
+    });
+    navMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navToggle.setAttribute("aria-expanded", "false");
+        navMenu.classList.remove("open");
+      });
+    });
+    // Close menu on Escape for keyboard users
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navMenu.classList.contains("open")) {
+        navToggle.setAttribute("aria-expanded", "false");
+        navMenu.classList.remove("open");
+        navToggle.focus();
+      }
+    });
+  }
+
+  /* ---------- Footer year ---------- */
+  var yearEl = document.querySelector("#year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------- Interactive water-quality demo ---------- */
+  var ph = document.querySelector("#ph");
+  var tds = document.querySelector("#tds");
+  var hard = document.querySelector("#hard");
+  var sal = document.querySelector("#sal");
+
+  var phOut = document.querySelector("#phOut");
+  var tdsOut = document.querySelector("#tdsOut");
+  var hardOut = document.querySelector("#hardOut");
+  var salOut = document.querySelector("#salOut");
+
+  var box = document.querySelector("#signalBox");
+  var title = document.querySelector("#signalTitle");
+  var body = document.querySelector("#signalBody");
+
+  function update() {
+    if (!ph || !tds || !hard || !sal || !box) return;
+
+    var phV = Number(ph.value);
+    var tdsV = Number(tds.value);
+    var hardV = Number(hard.value);
+    var salV = Number(sal.value);
+
+    if (phOut) phOut.textContent = phV.toFixed(1);
+    if (tdsOut) tdsOut.textContent = String(Math.round(tdsV));
+    if (hardOut) hardOut.textContent = String(Math.round(hardV));
+    if (salOut) salOut.textContent = salV.toFixed(1);
+
+    // Priority-ordered, simple educational interpretation.
+    var state = "ok";
+    var t = "عيّنة تعليمية متوازنة";
+    var b = "القيم الحالية ضمن نطاق تعليمي متوازن. غيّر المؤشرات لرؤية كيف تتبدّل القراءة.";
+
+    if (phV < 6.5 || phV > 8.5) {
+      state = "watch";
+      t = "إشارة pH خارج النطاق المتوازن";
+      b = "الحموضة خارج النطاق التعليمي المتوازن (6.5–8.5)؛ تحتاج تفسيرًا حسب مصدر العينة وسياقها.";
+    } else if (salV > 10) {
+      state = "watch";
+      t = "إشارة ملوحة مرتفعة";
+      b = "الملوحة مرتفعة وتقترب من المياه قليلة الملوحة (brackish)؛ ترتبط غالبًا بالمصدر أو التبخّر في المناطق الجافة.";
+    } else if (tdsV > 1000) {
+      state = "watch";
+      t = "إشارة أملاح ذائبة مرتفعة";
+      b = "ارتفاع TDS يشير إلى أملاح ذائبة أعلى، ويحتاج ربطًا بالمصدر ونوع المعالجة المطلوبة.";
+    } else if (hardV > 300) {
+      state = "watch";
+      t = "إشارة عسر مرتفع";
+      b = "العسر العالي يرتبط عادةً بالكالسيوم والمغنيسيوم، وقد يؤثر على الاستخدامات المنزلية والصناعية.";
+    }
+
+    box.setAttribute("data-state", state);
+    if (title) title.textContent = t;
+    if (body) body.textContent = b;
+  }
+
+  [ph, tds, hard, sal].forEach(function (el) {
+    if (el) el.addEventListener("input", update);
+  });
+  update();
+})();
+  </script>
+</body>
+</html>
