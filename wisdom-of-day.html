@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>حكمة اليوم — AquaClimate Lab × Career-OS</title>
+  <meta name="description" content="حكمة اليوم: محرك ثابت وخفيف يحول مبادئ الحكمة إلى فعل يومي، سؤال مراجعة، ومخرج مهني موثق ضمن AquaClimate Lab وCareer-OS." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aquaclimatelab.com/wisdom-of-day.html" />
+  <meta name="theme-color" content="#0C2A43" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" />
+  <style>
+/* ============================================================
+   AquaClimate Lab — Water × Weather × Chemistry × Data
+   Light "bright lab" theme — ice-white, calm, premium.
+   Static, dependency-free. RTL / Arabic-first.
+   ============================================================ */
+
+:root{
+  /* Base — ice white / soft blue */
+  --bg:#F2FAFD;          /* ice-white page */
+  --bg-2:#E4F1F8;        /* deeper ice for gradients */
+  --surface:#FFFFFF;     /* card surface */
+  --surface-2:#F6FCFE;   /* subtle alt surface */
+  --glass:rgba(255,255,255,.7);
+
+  /* Strong navy (header / footer / console / contact) */
+  --navy:#0C2A43;
+  --navy-2:#0A2236;
+
+  /* Accents */
+  --water:#0E84A8;       /* deep aqua — text/icon safe on white */
+  --water-bright:#17A2CB;/* brighter aqua for fills */
+  --cyan:#2BB6D4;        /* soft cyan accent */
+  --cyan-deep:#0E7C9E;   /* cyan text-safe */
+  --aqua-soft:#8BDCEE;
+  --amber:#B9781E;       /* deepened amber — text safe */
+  --amber-bright:#E9A23C;
+  --amber-soft:#F4B14D;
+  --violet:#5C6FD8;      /* data accent, text safe */
+
+  /* Text on light */
+  --ink:#0C2231;         /* near-navy body text */
+  --muted:#496579;       /* secondary */
+  --faint:#778FA3;       /* tertiary */
+
+  /* Text on navy zones */
+  --ink-invert:#EAF6FB;
+  --muted-invert:#A9C4D6;
+
+  /* Lines / structure */
+  --line:rgba(12,42,67,.10);
+  --line-strong:rgba(12,42,67,.18);
+
+  --radius:18px;
+  --radius-lg:26px;
+  --wrap:1180px;
+  --shadow:0 24px 60px rgba(12,42,67,.13);
+  --shadow-soft:0 10px 30px rgba(12,42,67,.08);
+
+  --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+  --sans:"Tajawal","IBM Plex Sans Arabic","Noto Kufi Arabic","Cairo",system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,"Segoe UI Arabic",Tahoma,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:106%}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  line-height:1.95;
+  font-size:1rem;
+  background-color:var(--bg);
+  /* soft ambient light + faint data grid */
+  background-image:
+    radial-gradient(circle at 12% -6%,rgba(23,162,203,.10),transparent 40%),
+    radial-gradient(circle at 92% 2%,rgba(139,220,238,.12),transparent 36%),
+    linear-gradient(rgba(12,42,67,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(12,42,67,.028) 1px,transparent 1px),
+    linear-gradient(180deg,var(--bg),var(--bg-2));
+  background-size:auto,auto,46px 46px,46px 46px,auto;
+  background-attachment:fixed,fixed,fixed,fixed,fixed;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+ul{margin:0}
+
+/* ---------- Shared utilities ---------- */
+.wrap{width:min(var(--wrap),calc(100% - 44px));margin-inline:auto}
+.section{padding:92px 0;position:relative}
+.eyebrow{
+  margin:0 0 1rem;font-family:var(--mono);font-size:.74rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--water);
+  display:inline-flex;align-items:center;gap:.6rem;direction:ltr;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--water);opacity:.7;display:inline-block}
+h1,h2,h3{margin:0;letter-spacing:-.01em;font-weight:800;color:var(--ink)}
+h1{font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.18;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.28}
+h3{font-size:1.22rem;line-height:1.5;font-weight:700}
+p{margin:0}
+.lead{font-size:clamp(1.05rem,1.6vw,1.28rem);color:#33506a;line-height:1.85}
+.muted{color:var(--muted)}
+.en{direction:ltr;unicode-bidi:isolate}
+.section-head{max-width:760px;margin-bottom:48px}
+.section-head p{color:var(--muted);font-size:1.06rem;margin-top:.9rem;line-height:1.85}
+
+.skip-link{
+  position:absolute;inset-inline-start:1rem;top:-5rem;z-index:50;
+  background:var(--water);color:#fff;padding:.65rem 1.1rem;border-radius:12px;font-weight:700;
+  transition:top .2s ease;
+}
+.skip-link:focus{top:1rem}
+
+:focus-visible{outline:2px solid var(--water);outline-offset:3px;border-radius:6px}
+
+/* ---------- Header / Nav ---------- */
+.site-header{
+  position:sticky;top:0;z-index:40;
+  background:rgba(12,42,67,.92);backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem;min-width:max-content}
+.brand-text strong{color:var(--ink-invert)}
+.brand-mark{
+  width:42px;height:42px;border-radius:13px;display:grid;place-items:center;flex-shrink:0;
+  background:linear-gradient(140deg,var(--water-bright),#0c6f8f);
+  box-shadow:0 8px 22px rgba(14,132,168,.45),inset 0 1px 0 rgba(255,255,255,.4);
+  position:relative;overflow:hidden;
+}
+.brand-mark svg{width:24px;height:24px}
+.brand-text{display:flex;flex-direction:column;line-height:1.3}
+.brand-text strong{font-size:1.02rem;letter-spacing:-.01em}
+.brand-text small{font-family:var(--mono);color:var(--aqua-soft);font-size:.66rem;letter-spacing:.12em;direction:ltr}
+.nav-menu{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;row-gap:.1rem;gap:.2rem;list-style:none;padding:0;margin:0;min-width:0}
+.nav-menu a{display:block;padding:.55rem .8rem;border-radius:999px;color:#cfe2ee;font-size:.92rem;transition:background .18s,color .18s}
+.nav-menu a:hover,.nav-menu a:focus-visible{background:rgba(255,255,255,.12);color:#fff}
+.nav-toggle{
+  display:none;background:rgba(255,255,255,.08);color:var(--ink-invert);border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;padding:.55rem .7rem;font-family:var(--mono);font-size:.8rem;cursor:pointer;align-items:center;gap:.5rem;
+}
+.nav-toggle .bars{display:inline-block;width:18px;height:2px;background:currentColor;position:relative}
+.nav-toggle .bars::before,.nav-toggle .bars::after{content:"";position:absolute;left:0;width:18px;height:2px;background:currentColor}
+.nav-toggle .bars::before{top:-6px}.nav-toggle .bars::after{top:6px}
+
+/* ---------- Buttons ---------- */
+.button{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:50px;
+  padding:.8rem 1.5rem;border-radius:999px;font-weight:700;font-size:.98rem;font-family:inherit;
+  border:1px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.button.primary{background:linear-gradient(135deg,var(--water-bright),#0c7796);color:#fff;box-shadow:0 14px 30px rgba(14,132,168,.30)}
+.button.primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(14,132,168,.40)}
+.button.ghost{border-color:var(--line-strong);color:var(--ink);background:rgba(255,255,255,.7)}
+.button.ghost:hover{transform:translateY(-2px);background:#fff;border-color:var(--water)}
+
+/* ---------- Hero ---------- */
+.hero{padding:84px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+.hero h1{margin-bottom:.6rem}
+.hero h1 .accent{color:var(--water)}
+.hero-sub{
+  font-family:var(--mono);direction:ltr;text-align:start;
+  font-size:clamp(1.05rem,2vw,1.5rem);font-weight:600;letter-spacing:.02em;
+  color:var(--cyan-deep);margin-bottom:1.4rem;
+}
+.hero .lead{max-width:560px}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin:2.1rem 0 1.8rem}
+.trust-strip{display:flex;gap:.45rem;flex-wrap:wrap}
+.chip{
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.04em;direction:ltr;
+  border:1px solid var(--line);background:#fff;
+  padding:.34rem .7rem;border-radius:999px;color:var(--muted);
+}
+
+/* Hero instrument console (signature element — stays deep navy) */
+.console{
+  position:relative;border:1px solid rgba(255,255,255,.10);border-radius:var(--radius-lg);
+  background:linear-gradient(160deg,#103251,#0a2138);
+  box-shadow:var(--shadow);padding:26px;overflow:hidden;color:var(--ink-invert);
+}
+.console::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 80% -10%,rgba(23,162,203,.30),transparent 46%);
+}
+.console-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative}
+.console-top .label{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:var(--muted-invert);text-transform:uppercase;direction:ltr}
+.console-dots{display:flex;gap:.4rem}
+.console-dots i{width:9px;height:9px;border-radius:50%;display:block;opacity:.9}
+.console-dots i:nth-child(1){background:var(--water-bright)}
+.console-dots i:nth-child(2){background:var(--aqua-soft)}
+.console-dots i:nth-child(3){background:var(--amber-soft)}
+.channels{display:grid;gap:14px;position:relative}
+.channel{
+  display:grid;grid-template-columns:84px 1fr auto;align-items:center;gap:14px;
+  padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+}
+.channel .name{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:#cfe2ee;direction:ltr}
+.channel .track{height:6px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden;position:relative}
+.channel .fill{position:absolute;inset-block:0;inset-inline-start:0;border-radius:999px}
+.channel .val{font-family:var(--mono);font-size:.82rem;color:var(--ink-invert);min-width:48px;text-align:end;direction:ltr}
+.channel[data-c="water"] .fill{background:linear-gradient(90deg,var(--water-bright),var(--aqua-soft));width:78%}
+.channel[data-c="climate"] .fill{background:linear-gradient(90deg,var(--cyan),#bff3fb);width:64%}
+.channel[data-c="chem"] .fill{background:linear-gradient(90deg,var(--amber-bright),var(--amber-soft));width:71%}
+.channel[data-c="data"] .fill{background:linear-gradient(90deg,#9fb6ff,var(--aqua-soft));width:88%}
+.channel .pulse{animation:flow 3.4s ease-in-out infinite alternate}
+@keyframes flow{from{opacity:.78;transform:scaleX(.94);transform-origin:inset-inline-start}to{opacity:1;transform:scaleX(1)}}
+.console-foot{
+  margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.10);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.console-foot span{font-family:var(--mono);font-size:.72rem;color:var(--muted-invert);direction:ltr;letter-spacing:.05em}
+.sparkline{width:120px;height:32px;color:var(--aqua-soft)}
+
+/* ---------- Cards (shared) ---------- */
+.card{
+  border:1px solid var(--line);border-radius:var(--radius-lg);
+  background:var(--surface);
+  box-shadow:var(--shadow-soft);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:var(--water);box-shadow:var(--shadow)}
+
+/* ---------- Tracks ---------- */
+.tracks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.track-card{padding:30px;position:relative;overflow:hidden}
+.track-card .code{font-family:var(--mono);font-size:.74rem;color:var(--faint);letter-spacing:.14em;direction:ltr}
+.track-card .glyph,.fert-card .glyph{
+  width:52px;height:52px;border-radius:15px;margin:16px 0 20px;display:grid;place-items:center;
+  border:1px solid var(--line-strong);
+}
+.track-card .glyph svg,.fert-card .glyph svg{width:26px;height:26px}
+.track-card h3{margin-bottom:.7rem}
+.track-card p{color:var(--muted);margin-bottom:1.1rem}
+.track-card ul{list-style:none;padding:0;display:grid;gap:.5rem}
+.track-card li{display:flex;align-items:center;gap:.6rem;color:#3a566c;font-size:.94rem}
+.track-card li::before{content:"";width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.track-card[data-c="water"] .glyph,.fert-card[data-c="water"] .glyph{background:rgba(14,132,168,.10);color:var(--water)}
+.track-card[data-c="water"] li::before{background:var(--water)}
+.track-card[data-c="water"]{box-shadow:var(--shadow-soft),inset 0 2px 0 rgba(14,132,168,.5)}
+.track-card[data-c="chem"] .glyph,.fert-card[data-c="chem"] .glyph{background:rgba(185,120,30,.12);color:var(--amber)}
+.track-card[data-c="chem"] li::before{background:var(--amber)}
+.track-card[data-c="data"] .glyph,.fert-card[data-c="data"] .glyph{background:rgba(43,182,212,.12);color:var(--cyan-deep)}
+.track-card[data-c="data"] li::before{background:var(--cyan-deep)}
+
+/* ---------- Smart Fertigation ---------- */
+.fertigation-feature{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;margin-bottom:28px}
+.fertigation-media{margin:0;position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:3/2;background:linear-gradient(160deg,#e8f5fb,#d7ecf6);border:1px solid rgba(14,132,168,.28);box-shadow:0 24px 50px rgba(12,42,67,.16)}
+.fertigation-media::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(14,132,168,.12)}
+.fertigation-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 42%;border-radius:inherit}
+.fertigation-intro{display:flex;flex-direction:column}
+.fertigation-headline{font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.55;margin-bottom:1rem;color:var(--ink)}
+.fertigation-intro p{color:var(--muted)}
+.fertigation-intro p strong{color:var(--ink)}
+.fertigation-intro p + p{margin-top:1rem}
+.fertigation-intro .skills{margin-top:1.4rem}
+.fertigation-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fert-card{padding:28px}
+.fert-card .glyph{margin-top:0}
+.fert-card h3{margin-bottom:.6rem;font-size:1.12rem}
+.fert-card p{color:var(--muted);font-size:.95rem}
+
+/* ---------- Split / context sections ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.panel{padding:34px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow-soft)}
+.panel.feature{
+  background:linear-gradient(150deg,rgba(23,162,203,.10),#fff);
+  border-color:rgba(14,132,168,.26);
+}
+.panel.amber{background:linear-gradient(150deg,rgba(244,177,77,.14),#fff);border-color:rgba(185,120,30,.26)}
+.panel h2,.panel h3{margin-bottom:1rem}
+.panel p{color:var(--muted)}
+.panel p + p{margin-top:1rem}
+.panel .lead{color:#33506a}
+.factlist{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.8rem}
+.factlist li{display:flex;gap:.7rem;color:#3a566c;font-size:.96rem}
+.factlist li::before{content:"→";color:var(--water);font-family:var(--mono);flex-shrink:0}
+
+/* Process steps (a real sequence → numbered) */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:step}
+.steps li{
+  display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+  padding:18px;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);counter-increment:step;
+}
+.steps li::before{
+  content:counter(step,decimal-leading-zero);font-family:var(--mono);font-size:.86rem;font-weight:700;
+  color:var(--water);width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:rgba(14,132,168,.10);border:1px solid rgba(14,132,168,.22);
+}
+.steps strong{display:block;color:var(--ink)}
+.steps span{display:block;color:var(--muted);font-size:.92rem;margin-top:.2rem}
+
+/* ---------- Projects ---------- */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.project-card{padding:26px;display:flex;flex-direction:column;min-height:210px}
+.project-card .tag{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--cyan-deep);direction:ltr;
+  border:1px solid var(--line);border-radius:999px;padding:.26rem .6rem;align-self:flex-start;margin-bottom:1rem;
+}
+.project-card h3{margin-bottom:.6rem;font-size:1.12rem}
+.project-card p{color:var(--muted);font-size:.95rem}
+.project-card .status{
+  margin-top:auto;padding-top:1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;
+  color:var(--faint);direction:ltr;display:flex;align-items:center;gap:.5rem;
+}
+.project-card .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber-bright);box-shadow:0 0 0 3px rgba(244,177,77,.22)}
+
+/* ---------- Educational sections (Water Data, Hydrology, Map, Dataset, Questions) ---------- */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.edu-card{padding:24px}
+.edu-card .code{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--faint);direction:ltr}
+.edu-card h3{margin:.5rem 0 .7rem;font-size:1.12rem}
+.edu-card .meaning{color:#33506a;font-size:.95rem;margin-bottom:.6rem}
+.edu-card .interp{color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:.6rem}
+.edu-card .interp b{color:var(--cyan-deep);font-weight:700;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem;direction:ltr}
+.edu-card[data-c="water"]{box-shadow:var(--shadow-soft),inset 0 2px 0 var(--water)}
+.edu-card[data-c="cyan"]{box-shadow:var(--shadow-soft),inset 0 2px 0 var(--cyan)}
+.edu-card[data-c="chem"]{box-shadow:var(--shadow-soft),inset 0 2px 0 var(--amber-bright)}
+.edu-card[data-c="data"]{box-shadow:var(--shadow-soft),inset 0 2px 0 var(--violet)}
+.edu-note{margin-top:24px;padding:18px 22px;border:1px solid rgba(185,120,30,.28);background:rgba(244,177,77,.10);border-radius:16px;color:#6f5a33;font-size:.92rem;display:flex;gap:.7rem}
+.edu-note::before{content:"⚠";color:var(--amber);flex-shrink:0}
+
+/* Hydrology cards */
+.hydro-card .why{color:var(--muted);font-size:.92rem;border-top:1px solid var(--line);padding-top:.6rem;margin-top:.2rem}
+.hydro-card .why b{color:var(--water);font-weight:700;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem;direction:ltr}
+
+/* Chemistry × Hydrology flow map */
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin-bottom:24px}
+.flow-node{flex:1 1 150px;min-width:140px;padding:16px 14px;border:1px solid var(--line);border-radius:16px;background:var(--surface);box-shadow:var(--shadow-soft);text-align:center;display:flex;flex-direction:column;justify-content:center;gap:.3rem}
+.flow-node .n{font-family:var(--mono);font-size:.66rem;color:var(--cyan-deep);letter-spacing:.12em;direction:ltr}
+.flow-node strong{font-size:.96rem;color:var(--ink)}
+.flow-node small{color:var(--muted);font-size:.78rem}
+.flow-arrow{display:flex;align-items:center;color:var(--water);font-size:1.3rem;flex:0 0 auto}
+.flow-node:last-child{border-color:rgba(14,132,168,.4);background:linear-gradient(150deg,rgba(23,162,203,.14),#fff)}
+@media(max-width:760px){
+  .flow{flex-direction:column}
+  .flow-arrow{transform:rotate(-90deg);align-self:center}
+}
+
+/* Mini dataset table */
+.data-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-soft);-webkit-overflow-scrolling:touch}
+.data-table{width:100%;border-collapse:collapse;min-width:760px;font-size:.9rem}
+.data-table caption{caption-side:top;text-align:start;padding:14px 16px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--amber);direction:ltr}
+.data-table th,.data-table td{padding:11px 14px;text-align:start;border-bottom:1px solid var(--line);white-space:nowrap}
+.data-table thead th{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;direction:ltr;font-weight:700;background:var(--surface-2)}
+.data-table thead th .unit{display:block;color:var(--faint);font-size:.62rem;letter-spacing:.04em}
+.data-table tbody tr{cursor:pointer;transition:background .15s ease}
+.data-table tbody tr:hover,.data-table tbody tr:focus-visible{background:rgba(23,162,203,.08);outline:none}
+.data-table tbody tr[aria-selected="true"]{background:rgba(23,162,203,.14);box-shadow:inset 3px 0 0 var(--water)}
+.data-table td:first-child{font-family:var(--mono);color:var(--cyan-deep);direction:ltr}
+.dataset-hint{font-family:var(--mono);font-size:.74rem;color:var(--muted);direction:ltr;margin:14px 0 0}
+.dataset-readout{margin-top:16px;padding:20px;border:1px solid var(--line-strong);border-radius:16px;background:var(--surface)}
+.dataset-readout h4{margin:0 0 .3rem;font-size:1rem;color:var(--ink);direction:ltr}
+.dataset-readout .sub{color:var(--muted);font-size:.86rem;margin-bottom:.9rem}
+.signal-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.signal-tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.03em;direction:ltr;padding:.34rem .7rem;border-radius:999px;border:1px solid rgba(185,120,30,.4);background:rgba(244,177,77,.12);color:#8a6422}
+.signal-tag.clear{border-color:rgba(14,132,168,.4);background:rgba(23,162,203,.12);color:var(--cyan-deep)}
+
+/* Water Wonder Questions */
+.q-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.q-card{padding:24px;display:flex;gap:16px;align-items:flex-start}
+.q-card .qmark{flex:0 0 auto;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-family:var(--mono);font-weight:800;color:#fff;background:linear-gradient(135deg,var(--cyan),var(--water))}
+.q-card p{margin:0}
+.q-card .q-en{color:var(--ink);font-weight:600;line-height:1.6}
+.q-card .q-ar{color:var(--muted);font-size:.9rem;margin-top:.4rem}
+
+/* ---------- Demo ---------- */
+.demo-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:32px;align-items:start}
+.skills{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem}
+.demo-card{padding:30px}
+.demo-card h3{margin-bottom:.3rem}
+.demo-note{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:var(--muted);direction:ltr;margin-bottom:1.4rem}
+.field{margin:18px 0}
+.field-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.5rem}
+.field-top label{font-weight:700;color:var(--ink);font-size:.98rem}
+.field-top .read{font-family:var(--mono);font-weight:700;color:var(--cyan-deep);direction:ltr;font-size:.95rem}
+.field-top .read small{color:var(--muted);font-weight:400;margin-inline-start:.2rem}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;
+  background:rgba(12,42,67,.14);outline-offset:5px;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;
+  background:var(--water);border:3px solid #fff;box-shadow:0 2px 8px rgba(14,132,168,.5);cursor:pointer;
+}
+input[type=range]::-moz-range-thumb{
+  width:20px;height:20px;border-radius:50%;background:var(--water);border:3px solid #fff;
+  box-shadow:0 2px 8px rgba(14,132,168,.5);cursor:pointer;
+}
+.signal{
+  margin-top:24px;padding:20px;border-radius:16px;border:1px solid var(--line-strong);
+  background:var(--surface-2);transition:border-color .2s ease,background .2s ease;
+}
+.signal[data-state="watch"]{border-color:rgba(185,120,30,.45);background:rgba(244,177,77,.10)}
+.signal-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.signal-dot{width:10px;height:10px;border-radius:50%;background:var(--water);flex-shrink:0}
+.signal[data-state="watch"] .signal-dot{background:var(--amber-bright)}
+.signal strong{font-size:1.02rem}
+.signal p{color:var(--muted);font-size:.95rem}
+.disclaimer-inline{margin-top:1rem;font-size:.84rem;color:var(--faint);display:flex;gap:.5rem}
+.disclaimer-inline::before{content:"⚠";color:var(--amber);flex-shrink:0}
+
+/* ---------- Profiles ---------- */
+.profiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.profile-card{padding:28px;text-align:start}
+.profile-avatar{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:18px;
+  font-family:var(--mono);font-weight:700;font-size:1.1rem;color:#fff;direction:ltr;
+}
+.profile-card[data-c="water"] .profile-avatar{background:linear-gradient(135deg,var(--water),var(--cyan))}
+.profile-card[data-c="chem"] .profile-avatar{background:linear-gradient(135deg,var(--amber),var(--amber-bright))}
+.profile-card[data-c="data"] .profile-avatar{background:linear-gradient(135deg,var(--cyan),var(--violet))}
+.profile-card h3{font-size:1.1rem;margin-bottom:.3rem}
+.profile-card .role{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--cyan-deep);direction:ltr;margin-bottom:1rem}
+.profile-card p{color:var(--muted);font-size:.94rem;margin-bottom:1.2rem}
+.profile-link{
+  display:inline-flex;align-items:center;gap:.5rem;font-size:.86rem;color:var(--muted);
+  font-family:var(--mono);letter-spacing:.05em;direction:ltr;
+}
+.profile-link .soon{border:1px dashed var(--line-strong);border-radius:999px;padding:.2rem .6rem;font-size:.72rem}
+
+/* ---------- Disclaimer ---------- */
+.disclaimer{padding:34px;border:1px solid var(--line-strong);border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow-soft)}
+.disclaimer .eyebrow{color:var(--amber)}
+.disclaimer .eyebrow::before{background:var(--amber)}
+.disclaimer p{color:var(--muted)}
+.disclaimer p + p{margin-top:1rem}
+
+/* ---------- Contact ---------- */
+.contact-card{
+  padding:42px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+  border:1px solid rgba(255,255,255,.10);border-radius:var(--radius-lg);
+  background:linear-gradient(150deg,#103251,#0a2138);color:var(--ink-invert);box-shadow:var(--shadow);
+}
+.contact-card h2{margin-bottom:.7rem;color:var(--ink-invert)}
+.contact-card p{color:var(--muted-invert);max-width:46ch}
+.contact-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.contact-card .button.ghost{border-color:rgba(255,255,255,.28);color:var(--ink-invert);background:rgba(255,255,255,.08)}
+.contact-card .button.ghost:hover{background:rgba(255,255,255,.16);border-color:var(--aqua-soft)}
+
+/* ---------- Footer ---------- */
+.site-footer{border-top:1px solid rgba(255,255,255,.08);padding:40px 0;background:var(--navy-2);color:var(--muted-invert)}
+.footer-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.site-footer .brand-text strong{color:var(--ink-invert)}
+.footer-grid .brand-text small{color:var(--muted-invert)}
+.footer-meta{text-align:end}
+.footer-meta p{color:var(--muted-invert);font-size:.88rem;margin:.15rem 0}
+.footer-meta a{color:var(--aqua-soft)}
+
+/* ---------- 404 ---------- */
+.error-wrap{min-height:70vh;display:grid;place-items:center;text-align:center}
+.error-wrap .code{font-family:var(--mono);font-size:clamp(4rem,16vw,9rem);font-weight:800;color:var(--water);line-height:1;letter-spacing:-.04em}
+.error-wrap p{color:var(--muted);margin:1rem 0 2rem;max-width:42ch;margin-inline:auto}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width:920px){
+  .nav-toggle{display:inline-flex}
+  .nav-menu{
+    position:absolute;inset-inline:16px;top:72px;display:none;flex-direction:column;align-items:stretch;
+    background:var(--navy);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:12px;
+    box-shadow:var(--shadow);
+  }
+  .nav-menu.open{display:flex}
+  .nav-menu a{padding:.8rem 1rem}
+  .hero-grid,.split,.demo-grid,.fertigation-feature{grid-template-columns:1fr}
+  .tracks-grid,.projects-grid,.profiles-grid,.fertigation-cards{grid-template-columns:1fr 1fr}
+  .section{padding:72px 0}
+  .hero{padding:60px 0 64px}
+}
+@media (max-width:600px){
+  .wrap{width:min(100% - 28px,var(--wrap))}
+  .brand-text small{display:none}
+  .tracks-grid,.projects-grid,.profiles-grid,.fertigation-cards{grid-template-columns:1fr}
+  .section{padding:60px 0}
+  .console{padding:20px}
+  .channel{grid-template-columns:70px 1fr auto;gap:10px}
+  .contact-card{flex-direction:column;align-items:flex-start;padding:30px}
+  .footer-grid{flex-direction:column}
+  .footer-meta{text-align:start}
+}
+
+/* ============================================================
+   Motion preferences
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* ============================================================
+   Print
+   ============================================================ */
+@media print{
+  body{background:#fff;color:#000}
+  .site-header,.hero-actions,.contact-actions,.nav-toggle{display:none}
+  .card,.panel,.console,.contact-card{box-shadow:none;border-color:#ccc;background:#fff;color:#000}
+  .section{padding:18px 0}
+}
+
+/* ---------- Water Wonder practical article ---------- */
+.article-hero{padding:86px 0 54px;border-bottom:1px solid var(--line)}
+.article-hero .lead{max-width:820px;margin-top:1rem}
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:34px;align-items:start}
+.article-body{padding:38px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow-soft)}
+.article-body h2{font-size:clamp(1.45rem,2.4vw,2.1rem);margin:2.4rem 0 .8rem;padding-top:.4rem}
+.article-body h3{margin:1.7rem 0 .5rem;color:var(--water)}
+.article-body p{color:#2d4a62;margin:.78rem 0;line-height:2.05}
+.article-body strong{color:var(--ink)}
+.article-body .rule{margin:1.4rem 0;padding:18px 20px;border:1px solid rgba(14,132,168,.28);border-radius:16px;background:rgba(23,162,203,.08);color:#0d4a5e;font-weight:700}
+.article-body .warning{margin:1.4rem 0;padding:18px 20px;border:1px solid rgba(185,120,30,.30);border-radius:16px;background:rgba(244,177,77,.10);color:#6f5a33}
+.article-body ul{margin:1rem 0 1rem;padding-inline-start:1.4rem;color:#2d4a62}
+.article-body li{margin:.45rem 0}
+.article-side{position:sticky;top:96px;padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow-soft)}
+.article-side h3{font-size:1rem;margin-bottom:.8rem}
+.article-side a{display:block;color:var(--muted);padding:.5rem 0;border-top:1px solid var(--line);font-size:.92rem}
+.article-side a:hover{color:var(--water)}
+.article-sources{font-size:.92rem;color:var(--muted)}
+.article-sources a{color:var(--cyan-deep);text-decoration:underline;text-underline-offset:3px}
+.feature-article{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
+.feature-article .feature-copy{padding:32px}
+.feature-article .feature-copy p{color:var(--muted);margin-top:.8rem}
+.feature-article .feature-copy .button{margin-top:1.4rem}
+.feature-list{padding:28px;display:grid;gap:12px}
+.feature-list div{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2)}
+.feature-list strong{display:block;color:var(--ink)}
+.feature-list span{display:block;color:var(--muted);font-size:.92rem;margin-top:.2rem}
+@media (max-width:920px){.article-layout,.feature-article{grid-template-columns:1fr}.article-side{position:static}.article-body{padding:26px}}
+
+
+.button-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:1.4rem}
+.button-row .button{margin-top:0!important}
+@media (max-width:600px){.button-row{flex-direction:column;align-items:stretch}.button-row .button{width:100%;justify-content:center}}
+
+  
+/* ---------- Career-OS additions ---------- */
+.career-os-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+.career-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.career-path{position:relative;overflow:hidden}
+.career-path .tag{margin-bottom:.7rem}
+.career-path h3{margin:.15rem 0 .55rem;font-size:1.35rem}
+.career-path ul,.career-os-list{margin:.8rem 0 0;padding:0;list-style:none;display:grid;gap:.62rem}
+.career-path li,.career-os-list li{padding:.72rem .85rem;border:1px solid var(--line);border-radius:14px;background:var(--surface-2)}
+.career-map{display:grid;gap:12px}
+.career-step{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.72)}
+.career-step strong{color:var(--water)}
+.step-no{inline-size:38px;block-size:38px;display:grid;place-items:center;border-radius:999px;background:linear-gradient(135deg,var(--water),var(--cyan));color:#fff;font-weight:800;box-shadow:var(--shadow-soft)}
+.cv-snippet{direction:ltr;text-align:left;font-family:var(--mono);font-size:.82rem;line-height:1.75;background:#082234;color:#DFF7FF;border-radius:16px;padding:14px;border:1px solid rgba(139,220,238,.2);margin-top:1rem}
+.career-note{border-inline-start:4px solid var(--cyan);background:rgba(23,162,203,.08);padding:14px 16px;border-radius:16px;color:var(--muted)}
+@media (max-width:900px){.career-os-grid,.career-paths{grid-template-columns:1fr}}
+
+  
+/* ---------- Career-OS decision upgrade ---------- */
+.decision-badge{display:inline-flex;gap:8px;align-items:center;padding:.5rem .75rem;border-radius:999px;background:rgba(14,132,168,.10);border:1px solid rgba(14,132,168,.22);color:var(--water);font-weight:800}
+.decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.decision-card{border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,var(--surface),var(--surface-2));padding:18px;box-shadow:var(--shadow-soft)}
+.decision-card h3{margin:.35rem 0 .55rem;font-size:1.2rem}
+.decision-card .chosen{font-size:1.1rem;color:var(--water);font-weight:800}
+.decision-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.decision-table th,.decision-table td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.decision-table th{background:#EAF6FB;color:var(--navy);font-weight:800;text-align:right}
+.decision-table tr:last-child td{border-bottom:0}
+.fact-lock{display:grid;gap:10px;margin-top:1rem}
+.fact-lock li{padding:.75rem .9rem;border-radius:14px;background:rgba(12,42,67,.045);border:1px solid var(--line)}
+.leadership-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.stack-card{padding:18px;border-radius:20px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-soft)}
+.stack-card strong{color:var(--water)}
+.source-list{display:grid;gap:.65rem;margin:1rem 0 0;padding:0;list-style:none}
+.source-list a{font-weight:800}
+@media (max-width:950px){.decision-grid,.leadership-stack{grid-template-columns:1fr}.decision-table{font-size:.95rem}}
+
+
+/* ---------- Wisdom of the Day v31 ---------- */
+.wisdom-entry{position:relative;overflow:hidden;border:1px solid rgba(14,132,168,.20);background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(246,252,254,.96));}
+.wisdom-entry::before{content:"";position:absolute;inset-inline-end:-90px;top:-90px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(244,177,77,.22),transparent 70%);pointer-events:none}
+.wisdom-hero-card{padding:28px;border-radius:28px;background:linear-gradient(160deg,#102f4b,#092137);color:var(--ink-invert);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12)}
+.wisdom-hero-card .tag{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#dff5fb}
+.wisdom-quote{margin-top:18px;padding:20px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+.wisdom-quote blockquote{margin:0;font-size:1.05rem;line-height:1.9;font-weight:700;color:#fff}
+.wisdom-quote cite{display:block;margin-top:.8rem;color:var(--aqua-soft);font-style:normal;font-family:var(--mono);direction:ltr;font-size:.78rem}
+.wisdom-shell{display:grid;grid-template-columns:1.12fr .88fr;gap:24px;align-items:start}
+.daily-wisdom-card{position:relative;padding:30px;border-radius:28px;background:linear-gradient(180deg,#fff,var(--surface-2));border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+.daily-wisdom-card::after{content:"";position:absolute;inset-inline-start:-70px;bottom:-90px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(23,162,203,.16),transparent 70%);pointer-events:none}
+.wisdom-date{display:inline-flex;gap:.45rem;align-items:center;font-family:var(--mono);direction:ltr;color:var(--cyan-deep);font-size:.8rem;letter-spacing:.06em;border:1px solid rgba(14,132,168,.22);background:rgba(23,162,203,.08);padding:.35rem .7rem;border-radius:999px}
+.wisdom-title{font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.35;margin:1rem 0 .5rem;color:var(--navy)}
+.wisdom-en{direction:ltr;text-align:start;font-family:var(--mono);letter-spacing:.03em;color:var(--amber);font-size:.82rem;margin-bottom:1rem}
+.wisdom-text{font-size:1.15rem;line-height:2;color:#213f56;margin-bottom:1.2rem}
+.wisdom-fields{display:grid;gap:12px;margin-top:18px}
+.wisdom-field{padding:16px 18px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.wisdom-field b{display:block;color:var(--water);margin-bottom:.25rem}
+.wisdom-field p{color:#36556c;line-height:1.85}
+.wisdom-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:20px;position:relative;z-index:2}
+.wisdom-index-panel{padding:24px;border-radius:26px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+.wisdom-index-panel h3{margin-bottom:.6rem}
+.wisdom-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.wisdom-stat{padding:12px;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);text-align:center}
+.wisdom-stat strong{display:block;font-family:var(--mono);direction:ltr;color:var(--water);font-size:1.15rem}.wisdom-stat span{font-size:.85rem;color:var(--muted)}
+.wisdom-theme-list{display:grid;gap:8px;max-height:520px;overflow:auto;padding-inline-end:4px}
+.wisdom-theme-list button{font:inherit;text-align:start;cursor:pointer;border:1px solid var(--line);border-radius:14px;background:#fff;padding:.72rem .85rem;color:#36556c;transition:background .15s,border-color .15s,transform .15s}
+.wisdom-theme-list button:hover,.wisdom-theme-list button:focus-visible{background:rgba(23,162,203,.08);border-color:rgba(14,132,168,.30);transform:translateY(-1px)}
+.wisdom-theme-list small{display:block;direction:ltr;font-family:var(--mono);color:var(--faint);font-size:.68rem;margin-top:.1rem}
+.wisdom-how{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:26px}
+.wisdom-step{padding:18px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+.wisdom-step span{font-family:var(--mono);direction:ltr;color:var(--amber);font-weight:800;font-size:.75rem}.wisdom-step p{margin-top:.35rem;color:#36556c;line-height:1.8}
+.wisdom-source-note{margin-top:24px;padding:20px;border:1px dashed rgba(14,132,168,.35);border-radius:20px;background:rgba(23,162,203,.07);color:#36556c}
+.wisdom-source-note strong{color:var(--navy)}
+@media (max-width:1000px){.wisdom-shell{grid-template-columns:1fr}.wisdom-how{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.wisdom-how,.wisdom-stats{grid-template-columns:1fr}.daily-wisdom-card,.wisdom-index-panel,.wisdom-hero-card{padding:20px}.wisdom-title{font-size:1.55rem}.wisdom-text{font-size:1.03rem}.wisdom-theme-list{max-height:360px}}
+
+  </style>
+  <link rel="stylesheet" href="assets/css/mobile-ux.css" />
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">تجاوز إلى المحتوى الرئيسي</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="التنقل الرئيسي">
+      <a class="brand" href="index.html#top" aria-label="AquaClimate Lab — الصفحة الرئيسية">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#04141d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c3.8 4.4 6 7.4 6 10.5a6 6 0 1 1-12 0c0-3.1 2.2-6.1 6-10.5Z" fill="rgba(255,255,255,.3)"/><path d="M9 13a3 3 0 0 0 3 3"/></svg>
+        </span>
+        <span class="brand-text"><strong>AquaClimate Lab</strong><small>Daily Wisdom · Agent</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span class="bars" aria-hidden="true"></span><span>Menu</span></button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="career-os.html">Career-OS</a></li>
+        <li><a href="career-os.html#book-derived-tools">Book Tools</a></li>
+        <li><a href="wisdom-of-day.html">Wisdom</a></li>
+        <li><a href="life-operating-calendar.html">Life Calendar</a></li>
+        <li><a href="year-operating-wheel.html">Year Wheel</a></li>
+        <li><a href="water-without-fear.html">Water Wonder</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Daily Wisdom Agent · حكمة اليوم</p>
+          <h1>حكمة صغيرة كل يوم، تتحول إلى فعل ومخرج موثّق.</h1>
+          <p class="hero-sub">Wisdom → 10-Minute Practice → Reflection → Evidence</p>
+          <p class="lead">هذه ليست صفحة اقتباسات للزينة. كل بطاقة يومية تقدم مبدأ قصيرًا، فعلًا عمليًا خلال عشر دقائق، سؤال مراجعة، ومخرجًا صغيرًا يمكن الاحتفاظ به داخل ملف الجاهزية المهنية.</p>
+          <div class="hero-actions"><a class="button primary" href="#today">اعرض حكمة اليوم</a><a class="button ghost" href="career-os.html#book-derived-tools">العودة لأدوات الكتب</a></div>
+        </div>
+        <div class="wisdom-hero-card">
+          <span class="tag">OPENING QUOTE</span>
+          <div class="wisdom-quote">
+            <blockquote>“Success is not measured only by what you accomplish, but by the courage with which you continue through resistance.”</blockquote>
+            <cite>Adapted from Orison Swett Marden</cite>
+          </div>
+          <p style="margin-top:16px;color:#cfe2ee;line-height:1.9">النجاح هنا ليس نتيجة نهائية فقط؛ بل ممارسة يومية تُظهر الشجاعة، الاتزان، والقدرة على تحويل المعنى إلى فعل.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="today">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Today’s Card</p>
+          <h2>بطاقة اليوم.</h2>
+          <p>يتغير الاختيار تلقائيًا حسب التاريخ. الصفحة ثابتة بالكامل ولا تحتاج خادمًا أو اشتراكًا أو Agent خارجيًا.</p>
+        </div>
+        <div class="wisdom-shell">
+          <article class="daily-wisdom-card" aria-live="polite">
+            <span class="wisdom-date" id="wisdomDate">DAILY CARD</span>
+            <h3 class="wisdom-title" id="wisdomTitle">...</h3>
+            <p class="wisdom-en" id="wisdomEn">...</p>
+            <p class="wisdom-text" id="wisdomText">...</p>
+            <div class="wisdom-fields">
+              <div class="wisdom-field"><b>فعل 10 دقائق</b><p id="wisdomAction">...</p></div>
+              <div class="wisdom-field"><b>سؤال مراجعة</b><p id="wisdomReflection">...</p></div>
+              <div class="wisdom-field"><b>المخرج الموثق</b><p id="wisdomArtifact">...</p></div>
+            </div>
+            <div class="wisdom-actions"><button class="button primary" type="button" id="copyWisdom">انسخ بطاقة اليوم</button><button class="button ghost" type="button" id="randomWisdom">أظهر حكمة أخرى</button></div>
+            <nav class="related-links" aria-label="روابط ذات صلة">
+              <a href="life-operating-calendar.html">↪ افتح تقويم الحياة</a>
+              <a href="year-operating-wheel.html">↪ افتح العجلة السنوية</a>
+            </nav>
+          </article>
+          <aside class="wisdom-index-panel" id="wisdom-library">
+            <span class="tag">60 THEMES</span>
+            <h3>فهرس الحكم اليومية</h3>
+            <p class="muted">مبنية كموضوعات أصلية مستخلصة من ثلاثة مسارات: الاتجاه، الممارسة، والفهم. اضغط أي موضوع لعرض بطاقته.</p>
+            <div class="wisdom-stats"><div class="wisdom-stat"><strong>20</strong><span>Right Attitude</span></div><div class="wisdom-stat"><strong>20</strong><span>Right Practice</span></div><div class="wisdom-stat"><strong>20</strong><span>Right Understanding</span></div></div>
+            <div class="wisdom-theme-list" id="wisdomList"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-to-use">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">How To Use</p>
+          <h2>طريقة الاستخدام: حكمة واحدة فقط في اليوم.</h2>
+          <p>لا نريد صفحة مزدحمة بالحكم. نريد ممارسة صغيرة قابلة للتوثيق.</p>
+        </div>
+        <div class="wisdom-how">
+          <article class="wisdom-step"><span>01</span><p>افتح بطاقة اليوم في بداية العمل أو نهايته.</p></article>
+          <article class="wisdom-step"><span>02</span><p>نفذ فعل العشر دقائق كما هو، دون تحويله إلى مشروع كبير.</p></article>
+          <article class="wisdom-step"><span>03</span><p>أجب عن سؤال المراجعة بسطرين فقط.</p></article>
+          <article class="wisdom-step"><span>04</span><p>احتفظ بالمخرج في ملف جاهزيتك المهنية.</p></article>
+          <article class="wisdom-step"><span>05</span><p>بعد 30 يومًا راجع المخرجات لا المزاج.</p></article>
+        </div>
+        <div class="wisdom-source-note">
+          <strong>بيان أمان المحتوى:</strong> هذه الصفحة لا تنشر نصوص الكتب ولا تقدم نصيحة نفسية أو طبية أو وعودًا مهنية. تم تحويل موضوعات الحكمة إلى بطاقات عمل أصلية: حكمة، فعل، سؤال، ومخرج.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="brand-text"><strong>AquaClimate Lab</strong><small>Daily Wisdom · Career-OS</small></div>
+      <div class="footer-meta"><p>© <span id="year">2026</span> AquaClimate Lab — independent educational prototype.</p><p>Static wisdom cards · <a href="year-operating-wheel.html">العجلة السنوية</a> · <a href="index.html#disclaimer">Disclaimer</a></p></div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/mobile-ux.js" defer></script>
+  <script>
+  (function(){
+    "use strict";
+    var WISDOM = [
+  {
+    "category": "Right Attitude",
+    "theme": "Balanced",
+    "title": "الاتزان",
+    "wisdom": "لا تجعل مشروعًا واحدًا يبتلع كل الطاقة. التقدّم يحتاج قوة، لكن القوة تحتاج مساحة استعادة حتى لا يتحول الإنجاز إلى استنزاف.",
+    "action": "اختر التزامًا واحدًا يحتاج كامل تركيزك اليوم، وحدد مقابله مساحة استعادة قصيرة لا تتنازل عنها.",
+    "reflection": "أين خرجت عن الاتزان هذا الأسبوع؟ وهل كان ذلك اختيارًا مؤقتًا أم نمطًا يتكرر؟",
+    "artifact": "Balance Check Card"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Calm",
+    "title": "الهدوء",
+    "wisdom": "الهدوء ليس برودًا؛ هو المسافة الصغيرة التي تسمح للعقل أن يرى قبل أن يرد.",
+    "action": "قبل الرد على رسالة مزعجة، اكتب الرد ثم انتظر عشر دقائق واقرأه كأنك الطرف الآخر.",
+    "reflection": "ما القرار الذي كان سيتغير لو انتظرت عشر دقائق؟",
+    "artifact": "Calm Response Log"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Committed",
+    "title": "الالتزام",
+    "wisdom": "الالتزام ليس حماس البداية؛ هو العودة إلى الفعل عندما يصبح الفعل عاديًا ومتعبًا.",
+    "action": "اختر ممارسة مهنية صغيرة وكررها اليوم في وقت ثابت مهما كان المزاج.",
+    "reflection": "ما الالتزام الذي تقول إنه مهم لكن جدولك لا يحميه؟",
+    "artifact": "Commitment Streak"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Compassionate",
+    "title": "الرحمة المهنية",
+    "wisdom": "الرحمة لا تعني ترك الخطأ بلا حدود؛ تعني أن تصحح السلوك دون أن تكسر الإنسان.",
+    "action": "اكتب ملاحظة تصحيحية تبدأ بالموقف لا بالشخص، وتنتهي بخطوة مساعدة واضحة.",
+    "reflection": "هل كنت حازمًا مع المشكلة أم قاسيًا على الشخص؟",
+    "artifact": "Compassionate Feedback Note"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Confident",
+    "title": "الثقة الهادئة",
+    "wisdom": "الثقة القوية لا تقوم على أن كل نتيجة ستنجح، بل على أنك قادر على التعلم من النتيجة دون أن تفقد قيمتك.",
+    "action": "ادخل اجتماعًا اليوم بسؤال واحد محضّر بدل انتظار الشعور الكامل بالثقة.",
+    "reflection": "أي فعل صغير سيبني الثقة أكثر من التفكير فيها؟",
+    "artifact": "Confidence Action Card"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Courageous",
+    "title": "الشجاعة",
+    "wisdom": "الشجاعة ليست غياب الخوف؛ هي أن يتحرك القرار رغم وجود الخوف عندما يكون الفعل مناسبًا.",
+    "action": "اكتب موقفًا تتجنبه، ثم حدد خطوة آمنة واحدة نحوه خلال 24 ساعة.",
+    "reflection": "هل الخوف يحميني من خطر حقيقي أم يمنعني من نمو ضروري؟",
+    "artifact": "Courage Step Sheet"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Creative",
+    "title": "الإبداع",
+    "wisdom": "الإبداع يبدأ حين تتوقف عن تكرار الحل الذي لم يعد يعمل وتسأل: ما زاوية الرؤية التي لم نجربها؟",
+    "action": "حوّل مشكلة واحدة إلى ثلاثة بدائل: حل سريع، حل جذري، وحل تجريبي صغير.",
+    "reflection": "ما الفكرة التي نرفضها لأنها غير مألوفة لا لأنها غير منطقية؟",
+    "artifact": "Option Map"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Disciplined",
+    "title": "الانضباط",
+    "wisdom": "الانضباط ليس عقوبة؛ هو تصميم البيئة بحيث يصبح الفعل الصحيح أسهل من المشتت.",
+    "action": "احذف مشتتًا واحدًا من بداية يومك، وضع المهمة الأهم في أول نافذة تركيز.",
+    "reflection": "ما السلوك الذي أحتاج أن أصممه لا أن أقاومه؟",
+    "artifact": "Discipline Environment Check"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Fearless",
+    "title": "تقليل الخوف",
+    "wisdom": "لا تحتاج أن تصبح بلا خوف. يكفي أن تفصل الخوف المفيد الذي يدعوك للاستعداد عن الخوف الذي يجمّدك بلا دليل.",
+    "action": "اكتب خوفًا واحدًا ثم صنفه: خطر حقيقي، احتمال، أم قصة ذهنية؟",
+    "reflection": "ما الدليل الذي أملكه؟ وما الدليل الذي أحتاجه؟",
+    "artifact": "Fear Evidence Card"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Flexible",
+    "title": "المرونة",
+    "wisdom": "الفكرة الجامدة تجعل كل تغيير تهديدًا. المرونة تجعل التغيير معلومة جديدة لا إهانة للخطة.",
+    "action": "استبدل جملة “يجب أن يحدث كذا” بسؤال: ما البديل العملي إذا لم يحدث؟",
+    "reflection": "أين أصبحت الخطة أهم من الهدف؟",
+    "artifact": "Flexibility Reframe"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Grateful",
+    "title": "الامتنان العملي",
+    "wisdom": "الامتنان في العمل ليس عاطفة ناعمة؛ هو عدسة ترى ما يعمل حتى لا تركز فقط على ما تعطل.",
+    "action": "اكتب ثلاثة أشياء نجحت هذا الأسبوع وسبب نجاحها العملي.",
+    "reflection": "ما الأصل الموجود الذي تجاهلناه لأنه صار معتادًا؟",
+    "artifact": "What Worked Log"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Honest",
+    "title": "الصدق",
+    "wisdom": "الصدق المهني يبدأ من تسمية الواقع كما هو، لا كما نريده أن يبدو في التقرير.",
+    "action": "اكتب فجوة واحدة بين الخطة والواقع دون لوم، ثم أضف سببًا قابلاً للفحص.",
+    "reflection": "ما الحقيقة التي نؤجل قولها لأنها ستغير القرار؟",
+    "artifact": "Reality Gap Note"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Meticulous",
+    "title": "الدقة",
+    "wisdom": "الدقة ليست بطئًا؛ هي احترام للتفاصيل التي لو تُركت صغيرة أصبحت مشكلة كبيرة.",
+    "action": "راجع مستندًا واحدًا قبل إرساله عبر قائمة من خمس نقاط تحقق.",
+    "reflection": "أي خطأ صغير يتكرر لأنه لا توجد له قائمة تحقق؟",
+    "artifact": "Five-Point Quality Check"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Mindful",
+    "title": "الحضور",
+    "wisdom": "الحضور يعني أن تعرف أين يذهب انتباهك قبل أن يسرقه الضجيج.",
+    "action": "ابدأ مهمة مهمة بدقيقتين تحدد فيهما: الهدف، العائق، ونهاية المهمة.",
+    "reflection": "ما الذي أخذ انتباهي اليوم دون قرار مني؟",
+    "artifact": "Attention Start Card"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Non-judgemental",
+    "title": "تقليل الأحكام",
+    "wisdom": "الحكم السريع يغلق باب الفهم. الملاحظة الدقيقة تفتح باب الحل.",
+    "action": "استبدل حكمًا عن شخص بوصف سلوكين قابلين للملاحظة وسؤال توضيحي.",
+    "reflection": "هل أتعامل مع دليل أم مع انطباع؟",
+    "artifact": "Observation Not Judgement Sheet"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Open-minded",
+    "title": "الانفتاح",
+    "wisdom": "الذهن المفتوح لا يعني قبول كل شيء؛ يعني إعطاء الفكرة فرصة اختبار عادلة قبل رفضها.",
+    "action": "اسأل في الاجتماع: ما الجزء الصالح في هذا الاقتراح حتى لو لم نطبقه كاملًا؟",
+    "reflection": "ما الفكرة التي رفضتها لأنها جاءت من شخص غير متوقع؟",
+    "artifact": "Open-Mind Test"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Patient",
+    "title": "الصبر",
+    "wisdom": "الصبر لا يعني البطء. يعني إعطاء العملية وقتها دون أن تستعجل ثمرة لم تنضج بعد.",
+    "action": "حدد مؤشر تقدم صغير لمشروع طويل بدل الحكم عليه من النتيجة النهائية فقط.",
+    "reflection": "ما الشيء الذي يحتاج متابعة لا استعجال؟",
+    "artifact": "Progress Patience Marker"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Persistent",
+    "title": "المثابرة",
+    "wisdom": "المثابرة ليست تكرار الخطأ؛ هي البقاء مع الهدف مع تعديل الطريقة.",
+    "action": "اكتب محاولة فشلت، ثم عدل متغيرًا واحدًا فقط في المحاولة التالية.",
+    "reflection": "هل أحتاج ثباتًا في الهدف أم تغييرًا في الطريقة؟",
+    "artifact": "Persistence Iteration Log"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Respectful",
+    "title": "الاحترام",
+    "wisdom": "الاحترام يظهر في التفاصيل: وقت الناس، طريقة السؤال، ونبرة التصحيح.",
+    "action": "ابدأ طلبًا صعبًا بتوضيح سبب الطلب وأثره على الشخص الآخر.",
+    "reflection": "هل كان طلبي واضحًا ومحترمًا أم فقط عاجلًا؟",
+    "artifact": "Respectful Request Template"
+  },
+  {
+    "category": "Right Attitude",
+    "theme": "Responsible",
+    "title": "المسؤولية",
+    "wisdom": "المسؤولية هي الانتقال من: من السبب؟ إلى: ما الخطوة التي أملكها الآن؟",
+    "action": "اكتب مشكلة حالية وحدد دائرة التحكم الخاصة بك فيها فقط.",
+    "reflection": "ما الجزء الذي أستطيع فعله دون انتظار أحد؟",
+    "artifact": "Responsibility Circle"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Act",
+    "title": "الفعل",
+    "wisdom": "الفكرة التي لا تتحول إلى فعل تبقى عبئًا ذهنيًا. الفعل الصغير يختبر الحقيقة أسرع من التفكير الطويل.",
+    "action": "اختر فكرة مؤجلة ونفذ نسخة مصغرة منها اليوم لمدة عشر دقائق.",
+    "reflection": "ما الدليل الذي سأحصل عليه من الفعل بدل التخمين؟",
+    "artifact": "10-Minute Action Test"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Change",
+    "title": "التغيير",
+    "wisdom": "التغيير الحقيقي لا يبدأ بإعلان كبير؛ يبدأ بتعديل صغير في النظام اليومي.",
+    "action": "غيّر ترتيب خطوة واحدة في يوم العمل واجعلها أقرب إلى الهدف.",
+    "reflection": "ما التغيير الصغير الذي لو تكرر 30 يومًا يصنع فرقًا؟",
+    "artifact": "Change Lever Card"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Compete",
+    "title": "المنافسة",
+    "wisdom": "أفضل منافسة هي التي تجعلك أوضح لا أكثر توترًا: قارن أداءك بمعيار التعلم لا بقلق المقارنة.",
+    "action": "اختر معيارًا واحدًا لتحسينه هذا الأسبوع بدل مقارنة عامة بالآخرين.",
+    "reflection": "ما الذي أريد تحسينه تحديدًا؟",
+    "artifact": "Benchmark Focus Card"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Compromise",
+    "title": "التنازل الذكي",
+    "wisdom": "التنازل ليس خسارة إذا حمى الهدف الأكبر. الخسارة هي التمسك بتفصيل يقتل النتيجة.",
+    "action": "حدد في قرار واحد: ما الثابت؟ وما القابل للتفاوض؟",
+    "reflection": "هل أفاوض على الجوهر أم على الشكل؟",
+    "artifact": "Non-Negotiable Map"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Decide",
+    "title": "القرار",
+    "wisdom": "القرار الجيد لا يحتاج كل المعلومات؛ يحتاج معلومات كافية ومعيارًا واضحًا للمفاضلة.",
+    "action": "اكتب ثلاثة خيارات ومعيارين فقط، ثم اختر خطوة تجريبية.",
+    "reflection": "ما المعيار الذي سيمنعني من الدوران؟",
+    "artifact": "Decision Two-Criteria Sheet"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Defend",
+    "title": "الدفاع عن الحدود",
+    "wisdom": "الدفاع المهني ليس صراعًا؛ هو حماية واضحة للوقت والجودة والنطاق.",
+    "action": "اكتب رفضًا مهنيًا قصيرًا يشرح الأثر ويقترح بديلًا.",
+    "reflection": "ما الحد الذي إذا لم أحمه ستتضرر الجودة؟",
+    "artifact": "Boundary Response Card"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Focus",
+    "title": "التركيز",
+    "wisdom": "التركيز ليس أن تفعل أكثر؛ هو أن تمنع الأقل أهمية من أكل وقت الأهم.",
+    "action": "اختر نافذة تركيز واحدة بلا اجتماعات أو إشعارات وسمّها باسم المخرج المطلوب.",
+    "reflection": "ما المخرج الذي يستحق حماية انتباهي؟",
+    "artifact": "Focus Window Log"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Forgive",
+    "title": "التسامح العملي",
+    "wisdom": "التسامح في العمل لا يمحو الدرس؛ يحرر الطاقة من التكرار العاطفي ويُبقي التحسين.",
+    "action": "اكتب خطأ قديمًا، ثم استخرج منه قاعدة تشغيل واحدة للمستقبل.",
+    "reflection": "ما الدرس الذي أحتفظ به دون حمل الغضب؟",
+    "artifact": "Lesson Without Burden Note"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Give",
+    "title": "العطاء",
+    "wisdom": "العطاء المهني الأقوى هو مشاركة معرفة تجعل الفريق أقل اعتمادًا عليك.",
+    "action": "علّم شخصًا خطوة واحدة كنت تحتفظ بها لنفسك، ووثقها في قالب بسيط.",
+    "reflection": "أي معرفة إذا شاركتها ستقوي الفريق؟",
+    "artifact": "Knowledge Gift Card"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Let go",
+    "title": "ترك ما لا يخدم",
+    "wisdom": "ترك الشيء ليس فشلًا دائمًا؛ أحيانًا هو قرار يحرر الطاقة لما يستحق.",
+    "action": "احذف مهمة أو اجتماعًا لا ينتج مخرجًا واضحًا هذا الأسبوع.",
+    "reflection": "ما الذي أستمر فيه فقط لأنه كان موجودًا سابقًا؟",
+    "artifact": "Let-Go Decision Log"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Listen",
+    "title": "الإصغاء",
+    "wisdom": "الإصغاء ليس انتظار دورك في الكلام؛ هو اختبار فهمك قبل تقديم الحل.",
+    "action": "في محادثة واحدة، لخّص ما فهمته بجملتين قبل إبداء رأيك.",
+    "reflection": "هل فهمت المشكلة كما يراها صاحبها؟",
+    "artifact": "Listen-Reflect Card"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Pause",
+    "title": "التوقف",
+    "wisdom": "التوقف القصير يقطع سلسلة رد الفعل ويعيد القرار إلى يدك.",
+    "action": "قبل قرار متوتر، خذ دقيقة صمت واكتب: ما الحقيقة؟ ما الافتراض؟",
+    "reflection": "ما الذي ظهر عندما توقفت بدل أن تندفع؟",
+    "artifact": "Pause Minute Note"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Plan",
+    "title": "التخطيط",
+    "wisdom": "الخطة ليست توقعًا للمستقبل؛ هي ترتيب للفعل عندما يتغير المستقبل.",
+    "action": "اكتب خطة من ثلاث خطوات مع علامة مراجعة واحدة في منتصف الطريق.",
+    "reflection": "ما نقطة الفحص التي ستمنع الخطة من الانفصال عن الواقع؟",
+    "artifact": "Three-Step Plan"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Play",
+    "title": "اللعب الجاد",
+    "wisdom": "اللعب يفتح احتمالات لا يراها العقل المرهق. مساحة التجريب ليست ترفًا إذا أنتجت تعلمًا.",
+    "action": "جرّب حلًا على نسخة مصغرة آمنة دون ربطه بقرار نهائي.",
+    "reflection": "ما الذي سأتعلمه لو سمحت بتجربة صغيرة؟",
+    "artifact": "Safe Experiment Card"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Question",
+    "title": "السؤال",
+    "wisdom": "جودة السؤال تحدد جودة الانتباه. السؤال الجيد يفتح نظامًا لا إجابة فقط.",
+    "action": "حوّل شكوى واحدة إلى سؤال يبدأ بـ: كيف يمكننا؟",
+    "reflection": "هل سؤالي يفتح حلًا أم يثبت لومًا؟",
+    "artifact": "Better Question Sheet"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Relax",
+    "title": "الاسترخاء",
+    "wisdom": "العقل المتوتر يرى خيارات أقل. الاسترخاء القصير قد يكون أداة جودة لا استراحة فقط.",
+    "action": "ضع فاصلًا دقيقًا بين اجتماعين لتفريغ الملاحظات والتنفس قبل التالي.",
+    "reflection": "متى أحتاج استعادة كي أحافظ على جودة القرار؟",
+    "artifact": "Recovery Micro-Break Log"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Simplify",
+    "title": "التبسيط",
+    "wisdom": "التبسيط لا يعني تسطيح الفكرة؛ يعني إزالة ما يمنع الفهم والتنفيذ.",
+    "action": "اختصر تقريرًا إلى: المشكلة، الدليل، الخيار، القرار المطلوب.",
+    "reflection": "ما الجزء الذي يربك القارئ دون أن يضيف قيمة؟",
+    "artifact": "One-Page Clarity Format"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Stretch",
+    "title": "التمدد",
+    "wisdom": "النمو يحدث عند حافة القدرة، لا في منطقة الراحة ولا في الفوضى.",
+    "action": "اختر مهمة تزيد صعوبتها درجة واحدة فقط عن المعتاد، وحدد دعمًا بسيطًا لها.",
+    "reflection": "ما التحدي المناسب: ليس سهلًا ولا مدمّرًا؟",
+    "artifact": "Stretch Assignment Card"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Trust",
+    "title": "الثقة",
+    "wisdom": "الثقة تُبنى عندما يتطابق الوعد الصغير مع الفعل المتكرر.",
+    "action": "قدّم وعدًا صغيرًا اليوم وأنجزه في موعده، ثم وثّقه.",
+    "reflection": "هل أطلب ثقة أكبر من سجل أفعالي؟",
+    "artifact": "Trust Deposit Log"
+  },
+  {
+    "category": "Right Practice",
+    "theme": "Win",
+    "title": "الفوز",
+    "wisdom": "الفوز الحقيقي لا يكتمل إذا كسر النظام الذي صنعه. اختر فوزًا يحسن الطريقة لا النتيجة فقط.",
+    "action": "عرّف الفوز اليوم بمخرج قابل للقياس وسلوك يحافظ على الفريق.",
+    "reflection": "هل فزت بالنتيجة أم تحسن النظام؟",
+    "artifact": "Win Definition Card"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Awareness",
+    "title": "الوعي",
+    "wisdom": "الوعي هو أن ترى النمط قبل أن يصبح مصيرًا.",
+    "action": "راقب تكرارًا واحدًا في يومك: متى يبدأ؟ وما المحفز؟",
+    "reflection": "ما النمط الذي كان يعمل في الخلفية دون أن أسميه؟",
+    "artifact": "Pattern Awareness Log"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Control",
+    "title": "التحكم",
+    "wisdom": "التحكم الحكيم يبدأ بتمييز ما تملكه من ما تؤثر فيه ومن ما تقبله مؤقتًا.",
+    "action": "قسّم ضغطًا واحدًا إلى: تحكم، تأثير، استجابة.",
+    "reflection": "أين أستهلك طاقتي في دائرة لا أملكها؟",
+    "artifact": "Control-Triage Sheet"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Ease",
+    "title": "اليسر",
+    "wisdom": "اليسر لا يعني غياب الجهد؛ يعني إزالة الاحتكاك غير الضروري من الطريق.",
+    "action": "ابحث عن خطوة في العمل تسبب احتكاكًا متكررًا واجعلها أوضح أو أقصر.",
+    "reflection": "ما الذي يمكن أن يصبح أسهل دون أن يصبح أقل جودة؟",
+    "artifact": "Friction Removal Note"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Energy",
+    "title": "الطاقة",
+    "wisdom": "الطاقة مورد إداري. لا توزع مهامًا عالية التركيز في أوقات الانخفاض المتوقعة.",
+    "action": "حدد أعلى ساعتين تركيز لديك اليوم وضع فيهما أهم مخرج.",
+    "reflection": "هل أدير الوقت فقط أم أدير الطاقة أيضًا؟",
+    "artifact": "Energy Allocation Card"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Faith",
+    "title": "الثقة بالمسار",
+    "wisdom": "الثقة بالمسار ليست إنكارًا للمخاطر؛ هي العمل المنتظم رغم أن النتيجة لم تكتمل بعد.",
+    "action": "اكتب خطوة اليوم التي تخدم الهدف حتى لو لم يظهر أثرها الآن.",
+    "reflection": "ما العمل الذي يحتاج صبرًا قبل أن يثبت قيمته؟",
+    "artifact": "Path Trust Note"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Freedom",
+    "title": "الحرية",
+    "wisdom": "الحرية المهنية تزيد عندما تقل الالتزامات غير الواعية.",
+    "action": "راجع التزامًا واحدًا وقرر: أستمر، أعيد التفاوض، أم أوقف؟",
+    "reflection": "أي التزام قبلته دون معيار واضح؟",
+    "artifact": "Commitment Review Card"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Goals",
+    "title": "الأهداف",
+    "wisdom": "الهدف الجيد لا يعلّقك بالمستقبل؛ يوجه سلوك اليوم.",
+    "action": "حوّل هدفًا كبيرًا إلى فعل يومي واحد ومؤشر أسبوعي واحد.",
+    "reflection": "ما السلوك اليومي الذي يثبت أن الهدف حي؟",
+    "artifact": "Goal-to-Behavior Map"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Health",
+    "title": "الصحة العملية",
+    "wisdom": "الصحة في سياق العمل تعني قدرة النظام على الاستمرار دون انهيار صامت.",
+    "action": "راجع مؤشرات الاستنزاف في الفريق: تأخير، أخطاء، رسائل خارج الوقت، تكرار شكاوى.",
+    "reflection": "ما الإشارة الصغيرة التي تخبرني أن النظام يتعب؟",
+    "artifact": "Sustainable Work Check"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Joy",
+    "title": "البهجة",
+    "wisdom": "البهجة ليست عكس الجدية؛ هي الوقود الذي يجعل الجدية قابلة للاستمرار.",
+    "action": "أضف لحظة تقدير حقيقية في الاجتماع: ما الذي تحسن؟ ومن ساهم؟",
+    "reflection": "أين اختفى معنى العمل وسط ضغط التسليم؟",
+    "artifact": "Joy Recognition Note"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Knowledge",
+    "title": "المعرفة",
+    "wisdom": "المعرفة لا تنفع حتى تتحول إلى طريقة عمل أو قرار أفضل.",
+    "action": "بعد قراءة فكرة، اكتب: أين سأطبقها؟ وما القالب الناتج؟",
+    "reflection": "ما المعرفة التي أملكها ولم تتحول إلى أداة؟",
+    "artifact": "Knowledge-to-Tool Card"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Luck",
+    "title": "الحظ",
+    "wisdom": "ما نسميه حظًا كثيرًا ما يظهر لمن جهز المكان لاستقباله.",
+    "action": "حسّن نقطة استعداد واحدة: ملف، شبكة تواصل، مهارة، أو قالب جاهز.",
+    "reflection": "أي فرصة لن أراها إذا لم أجهز نظامي؟",
+    "artifact": "Preparedness Card"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Mastery",
+    "title": "الإتقان",
+    "wisdom": "الإتقان ليس لحظة وصول؛ هو علاقة طويلة مع التحسين الهادئ.",
+    "action": "اختر مهارة واحدة وطبق عليها مراجعة: ما المستوى الحالي؟ ما التمرين القادم؟",
+    "reflection": "هل أكرر العمل أم أتمرن عليه بوعي؟",
+    "artifact": "Mastery Practice Log"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Non-attachment",
+    "title": "عدم التعلق",
+    "wisdom": "عدم التعلق لا يعني عدم الاهتمام؛ يعني أن تقدم أفضل عملك دون أن تربط قيمتك بنتيجة واحدة.",
+    "action": "حدد نتيجة تريدها، ثم اكتب ما ستتعلمه إذا لم تحدث.",
+    "reflection": "ما الذي سأبقى قادرًا على فعله مهما كانت النتيجة؟",
+    "artifact": "Outcome Detachment Sheet"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Peace",
+    "title": "السلام الداخلي",
+    "wisdom": "السلام لا يأتي من انعدام العمل، بل من وضوح ما ستفعله وما ستتركه اليوم.",
+    "action": "اكتب قائمة قصيرة: أفعل، أؤجل، أترك. ثم أغلق اليوم بوعي.",
+    "reflection": "ما القرار الذي سيمنح يومي نهاية واضحة؟",
+    "artifact": "Close-the-Day List"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Power",
+    "title": "القوة",
+    "wisdom": "القوة الهادئة لا تحتاج ضجيجًا؛ تظهر في وضوح القرار وتحمل أثره.",
+    "action": "اكتب قرارًا صعبًا بصيغة: السبب، الأثر، الخطوة، المراجعة.",
+    "reflection": "هل أستخدم القوة لحماية الجودة أم لإثبات السيطرة؟",
+    "artifact": "Power with Responsibility Note"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Purpose",
+    "title": "المعنى",
+    "wisdom": "المعنى هو الجسر بين المهمة اليومية والأثر الأكبر الذي تخدمه.",
+    "action": "اربط مهمة روتينية واحدة بسببها الأكبر: من يستفيد؟ وكيف؟",
+    "reflection": "ما المهمة التي تبدو صغيرة لكنها تحمي شيئًا مهمًا؟",
+    "artifact": "Purpose Link Card"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Success",
+    "title": "النجاح",
+    "wisdom": "النجاح الذي لا تستطيع تفسير طريقه يصعب تكراره. وثّق الطريقة لا النتيجة فقط.",
+    "action": "اختر نجاحًا صغيرًا واكتب: ما العوامل التي صنعته؟",
+    "reflection": "ما الذي أريد أن يصبح قابلًا للتكرار؟",
+    "artifact": "Success Replication Note"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Time",
+    "title": "الوقت",
+    "wisdom": "الوقت لا يُدار كأرقام فقط؛ يُحمى كوعاء لما تقرر أنه مهم.",
+    "action": "احجز أولًا وقتًا لمخرج مهم ثم دع الاجتماعات تملأ الباقي لا العكس.",
+    "reflection": "هل يعكس تقويمي أولوياتي أم ضغوط الآخرين؟",
+    "artifact": "Calendar Priority Audit"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Values",
+    "title": "القيم",
+    "wisdom": "القيم ليست كلمات جميلة؛ هي ما تختاره عندما يكون الاختيار مكلفًا.",
+    "action": "اكتب قيمة واحدة ثم قرارًا هذا الأسبوع يثبتها عمليًا.",
+    "reflection": "أي قيمة أقولها لكن لا يظهر أثرها في قراراتي؟",
+    "artifact": "Values-in-Action Card"
+  },
+  {
+    "category": "Right Understanding",
+    "theme": "Wisdom",
+    "title": "الحكمة",
+    "wisdom": "الحكمة هي اختيار الفعل المناسب في الوقت المناسب بالمقدار المناسب.",
+    "action": "قبل قرار مهم، اسأل: هل هذا وقت الفعل، الانتظار، السؤال، أم الترك؟",
+    "reflection": "ما الفعل المناسب للمقام لا للمزاج؟",
+    "artifact": "Wisdom Decision Prompt"
+  }
+];
+    var els = {date:document.getElementById('wisdomDate'), title:document.getElementById('wisdomTitle'), en:document.getElementById('wisdomEn'), text:document.getElementById('wisdomText'), action:document.getElementById('wisdomAction'), reflection:document.getElementById('wisdomReflection'), artifact:document.getElementById('wisdomArtifact'), list:document.getElementById('wisdomList')};
+    function dayOfYear(d) {
+      var start = new Date(d.getFullYear(),0,0);
+      return Math.floor((d - start) / 86400000);
+    }
+    function labelCategory(c) {
+      if(c === 'Right Attitude') return 'الاتجاه الصحيح';
+      if(c === 'Right Practice') return 'الممارسة الصحيحة';
+      return 'الفهم الصحيح';
+    }
+    function render(i) {
+      var item = WISDOM[((i % WISDOM.length) + WISDOM.length) % WISDOM.length];
+      var today = new Date();
+      els.date.textContent = today.toISOString().slice(0,10) + ' · ' + labelCategory(item.category);
+      els.title.textContent = item.title;
+      els.en.textContent = item.category + ' · ' + item.theme;
+      els.text.textContent = item.wisdom;
+      els.action.textContent = item.action;
+      els.reflection.textContent = item.reflection;
+      els.artifact.textContent = item.artifact;
+      document.querySelectorAll('[data-wisdom-index]').forEach(function(b){b.setAttribute('aria-current', b.getAttribute('data-wisdom-index') == String(i));});
+    }
+    if(els.list) {
+      WISDOM.forEach(function(item, i) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('data-wisdom-index', String(i));
+        b.innerHTML = '<strong>' + String(i+1).padStart(2,'0') + ' · ' + item.title + '</strong><small>' + item.category + ' · ' + item.theme + '</small>';
+        b.addEventListener('click', function() { render(i); document.getElementById('today').scrollIntoView({behavior:'smooth', block:'start'}); });
+        els.list.appendChild(b);
+      });
+    }
+    var current = dayOfYear(new Date()) - 1;
+    render(current);
+    var randomBtn = document.getElementById('randomWisdom');
+    if(randomBtn) randomBtn.addEventListener('click', function(){ current = (current + 7 + Math.floor(Math.random()*13)) % WISDOM.length; render(current); });
+    var copyBtn = document.getElementById('copyWisdom');
+    if(copyBtn) copyBtn.addEventListener('click', function(){
+      var item = WISDOM[((current % WISDOM.length) + WISDOM.length) % WISDOM.length];
+      var txt = 'حكمة اليوم: ' + item.title + '\n' + item.wisdom + '\n\nفعل 10 دقائق: ' + item.action + '\nسؤال مراجعة: ' + item.reflection + '\nالمخرج: ' + item.artifact;
+      if(navigator.clipboard) navigator.clipboard.writeText(txt).then(function(){ copyBtn.textContent='تم النسخ'; setTimeout(function(){copyBtn.textContent='انسخ بطاقة اليوم';}, 1600); });
+    });
+  })();
+  </script>
+</body>
+</html>
