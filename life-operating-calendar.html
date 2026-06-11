@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تقويم التشغيل العملي للحياة — AquaClimate Lab × إشارات الجسد</title>
+  <meta name="description" content="تقويم تشغيل يومي وأسبوعي ينظم الوقت والأعمال والأهمية ومتطلبات الحياة، مع رادار حماية مبكرة يجمع النوم والأكل والضغط والحركة والأعراض والأدوية والمكملات والتحاليل دون تشخيص أو علاج." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aquaclimatelab.com/life-operating-calendar.html" />
+  <meta name="theme-color" content="#0C2A43" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AquaClimate Lab" />
+  <meta property="og:title" content="تقويم التشغيل العملي للحياة" />
+  <meta property="og:description" content="من الوقت والمهام إلى الطاقة والحماية المبكرة: تقويم ثابت يحول اليوم إلى بطاقة تشغيل ومخرج موثق." />
+  <meta property="og:url" content="https://aquaclimatelab.com/life-operating-calendar.html" />
+  <meta property="og:image" content="https://aquaclimatelab.com/assets/img/og-image.png" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .life-hero-card{padding:28px;border-radius:28px;background:linear-gradient(160deg,#102f4b,#092137);color:var(--ink-invert);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12)}
+    .life-hero-card .tag{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#dff5fb}
+    .life-hero-card p{color:#d7edf6;line-height:1.9;margin-top:12px}
+    .life-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
+    .life-panel{padding:24px;border-radius:26px;background:linear-gradient(180deg,#fff,var(--surface-2));border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+    .life-panel.strong{box-shadow:var(--shadow);border-color:rgba(14,132,168,.18)}
+    .life-panel h3{font-size:1.25rem;margin-bottom:.55rem;color:var(--navy)}
+    .life-panel p{color:#36556c;line-height:1.9}
+    .calendar-shell{display:grid;grid-template-columns:1.12fr .88fr;gap:24px;align-items:start}
+    .field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    .field label{font-weight:800;color:var(--navy);font-size:.94rem}
+    .field input,.field textarea,.field select{width:100%;border:1px solid var(--line-strong);border-radius:16px;padding:.85rem 1rem;font-family:inherit;font-size:1rem;background:#fff;color:var(--ink);outline:none;transition:border .18s,box-shadow .18s}
+    .field textarea{min-height:90px;resize:vertical;line-height:1.75}
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(14,132,168,.45);box-shadow:0 0 0 4px rgba(23,162,203,.12)}
+    .checklist{display:grid;gap:10px;margin-top:18px}
+    .check-item{display:flex;align-items:flex-start;gap:10px;padding:12px 13px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+    .check-item input{margin-top:.55rem;accent-color:var(--water)}
+    .check-item span{line-height:1.7;color:#2a4356}
+    .risk-box{margin-top:16px;padding:16px;border-radius:20px;border:1px solid rgba(196,72,72,.20);background:rgba(196,72,72,.06)}
+    .risk-box h4{margin:0 0 .6rem;color:#8e2929;font-size:1.04rem}
+    .ok-box{margin-top:16px;padding:16px;border-radius:20px;border:1px solid rgba(14,132,168,.18);background:rgba(23,162,203,.07)}
+    .ok-box h4{margin:0 0 .6rem;color:var(--water);font-size:1.04rem}
+    .matrix{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+    .matrix-card{padding:16px;border-radius:18px;background:#fff;border:1px solid var(--line);min-height:130px}
+    .matrix-card strong{display:block;color:var(--navy);margin-bottom:.5rem}
+    .matrix-card textarea{width:100%;min-height:76px;border:0;background:rgba(12,42,67,.04);border-radius:12px;padding:.7rem;font-family:inherit;resize:vertical;line-height:1.65}
+    .life-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
+    .life-index article{padding:18px;border-radius:20px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+    .life-index strong{display:block;color:var(--water);margin-bottom:.35rem}
+    .agent-steps{counter-reset:steps;display:grid;gap:12px;margin-top:20px;padding:0;list-style:none}
+    .agent-steps li{counter-increment:steps;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:14px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+    .agent-steps li::before{content:counter(steps);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,var(--water),var(--cyan));color:#fff;font-family:var(--mono);font-weight:800}
+    .copy-output{white-space:pre-wrap;direction:rtl;text-align:right;min-height:180px;background:#071f33;color:#eaf6fb;border-radius:22px;padding:20px;line-height:1.8;border:1px solid rgba(255,255,255,.10);font-family:var(--sans)}
+    .status-note{margin-top:14px;font-weight:800;color:var(--water);min-height:1.4rem}
+    .tools-bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .small-tag{display:inline-flex;align-items:center;gap:.4rem;padding:.33rem .65rem;border-radius:999px;background:rgba(23,162,203,.09);border:1px solid rgba(14,132,168,.18);font-family:var(--mono);font-size:.74rem;color:var(--cyan-deep);direction:ltr}
+    .week-strip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;margin-top:18px}
+    .day-card{padding:14px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+    .day-card strong{display:block;color:var(--navy);margin-bottom:.45rem;text-align:center}
+    .day-card textarea{width:100%;min-height:82px;border:1px solid var(--line);background:rgba(12,42,67,.035);border-radius:12px;padding:.55rem;font-family:inherit;resize:vertical;line-height:1.55}
+    .evidence-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:18px;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:#fff}
+    .evidence-table th,.evidence-table td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:right}
+    .evidence-table th{background:#EAF6FB;color:var(--navy);font-weight:800}
+    .evidence-table tr:last-child td{border-bottom:0}
+    .source-note{margin-top:18px;font-size:.95rem;color:var(--muted)}
+    .source-note strong{color:var(--navy)}
+    @media (max-width:1000px){.life-grid,.calendar-shell{grid-template-columns:1fr}.life-index{grid-template-columns:1fr 1fr}.week-strip{grid-template-columns:1fr 1fr}.matrix{grid-template-columns:1fr}}
+    @media (max-width:640px){.field-grid,.life-index,.week-strip{grid-template-columns:1fr}.life-panel{padding:18px}.wrap{width:min(var(--wrap),calc(100% - 28px))}}
+  </style>
+  <link rel="stylesheet" href="assets/css/mobile-ux.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="التنقل الرئيسي">
+      <a class="brand" href="index.html" aria-label="AquaClimate Lab home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C9 7.5 6 10.7 6 14.2A6 6 0 0 0 18 14.2C18 10.7 15 7.5 12 3Z" stroke="white" stroke-width="2"/><path d="M8.5 14.5C10.5 15.5 13.5 15.5 15.5 14.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand-text"><strong>AquaClimate Lab</strong><small>WATER × CLIMATE × DATA</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span class="bars" aria-hidden="true"></span><span>القائمة</span></button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="career-os.html">Career-OS</a></li>
+        <li><a href="career-os.html#book-derived-tools">Book Tools</a></li>
+        <li><a href="wisdom-of-day.html">حكمة اليوم</a></li>
+        <li><a href="#daily-calendar">تقويم اليوم</a></li>
+        <li><a href="#early-protection">الحماية المبكرة</a></li>
+        <li><a href="#weekly-system">مراجعة الأسبوع</a></li>
+        <li><a href="year-operating-wheel.html">العجلة السنوية</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Life Operating Calendar · Early Protection Radar</p>
+          <h1>تقويم التشغيل العملي للحياة</h1>
+          <p class="hero-sub">ينظم الوقت، الأعمال، الأهمية، ومتطلبات الحياة قبل أن تتحول الفوضى إلى استنزاف.</p>
+          <p class="lead">هذه الصفحة تحول فكرة التقويم من جدول مواعيد إلى نظام تشغيل يومي: ماذا يجب أن يُنجز؟ ماذا يجب أن يُحمى؟ ما الإشارة التي لا يجوز تطبيعها؟ وما المخرج الذي يوثق اليوم بدل أن يضيع في الذاكرة؟</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#daily-calendar">ابدأ تقويم اليوم</a>
+            <a class="button ghost" href="#early-protection">افتح رادار الحماية</a>
+            <a class="button ghost" href="#weekly-system">مراجعة الأسبوع</a>
+          </div>
+        </div>
+        <div class="life-hero-card">
+          <span class="tag">TWO AGENTS · STATIC SITE</span>
+          <h3>الفكرتان اللتان دخلتا الموقع</h3>
+          <p><strong>1) تقويم تشغيل الحياة:</strong> يومك لا يُقاس بعدد المهام فقط؛ بل بترتيب الأهمية، حماية الطاقة، وتقليل القرارات الصغيرة.</p>
+          <p><strong>2) رادار الحماية المبكرة:</strong> النوم، الأكل، الضغط، الحركة، الأعراض، الأدوية، المكملات، والتحاليل تُجمع كصورة منظمة لا كتخمين.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="operating-idea">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Why this works</p>
+          <h2>ليس تقويم مواعيد فقط. هو تقويم قرار.</h2>
+          <p>الهدف ليس ملء اليوم، بل منع اليوم من أكل الاحتياطي: قرارات كثيرة، نوم أقل، ضغط بلا تفريغ، أعراض مؤجلة، ومهام مهمة تُدفن تحت العاجل.</p>
+        </div>
+        <div class="life-index">
+          <article><strong>طبقة الوقت</strong><p>ما الذي يجب حجزه قبل أن يملأ الآخرون يومك؟ تركيز، اجتماع، مراجعة، راحة.</p></article>
+          <article><strong>طبقة الأهمية</strong><p>ما المخرج الأهم اليوم؟ وما المهمة التي تبدو عاجلة لكنها لا تصنع فرقًا؟</p></article>
+          <article><strong>طبقة الحياة</strong><p>النوم، الأكل، الحركة، الضغط، والأعراض ليست هامشًا؛ هي شروط تشغيل.</p></article>
+          <article><strong>طبقة الحماية</strong><p>الانحراف الصامت يُلتقط مبكرًا عندما يصبح مرئيًا في سجل يومي وأسبوعي.</p></article>
+          <article><strong>طبقة الطبيب</strong><p>عند الحاجة، يتحول التقويم إلى خط زمني وأسئلة وبيانات ناقصة بدل زيارة فوضوية.</p></article>
+          <article><strong>طبقة الدليل</strong><p>كل يوم ينتج مخرجًا: بطاقة يوم، قرار مؤجل، إشارة مرصودة، أو تقرير أسبوعي.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="daily-calendar">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Daily Operating Card</p>
+          <h2>بطاقة اليوم: أعمال + أهمية + متطلبات حياة.</h2>
+          <p>اكتب القليل، لكن اكتبه كل يوم. الفكرة ليست الكمال؛ الفكرة أن ترى أين يذهب اليوم قبل أن ينتهي.</p>
+        </div>
+        <div class="calendar-shell">
+          <article class="life-panel strong">
+            <h3>تقويم اليوم</h3>
+            <div class="field-grid">
+              <div class="field"><label for="today-date">التاريخ</label><input id="today-date" type="date" /></div>
+              <div class="field"><label for="day-mode">وضع اليوم</label><select id="day-mode"><option>تشغيل عادي</option><option>ضغط عالٍ</option><option>تعافي وحماية</option><option>تسليم مهم</option><option>مراجعة وتنظيف</option></select></div>
+              <div class="field full"><label for="daily-mission">مهمة اليوم في جملة واحدة</label><input id="daily-mission" placeholder="مثال: إنهاء تقرير واحد مهم مع حماية النوم وتخفيف المقاطعات" /></div>
+              <div class="field"><label for="big1">المخرج الأهم 1</label><input id="big1" placeholder="مخرج قابل للتسليم" /></div>
+              <div class="field"><label for="big2">المخرج الأهم 2</label><input id="big2" placeholder="مخرج قابل للتسليم" /></div>
+              <div class="field full"><label for="big3">المخرج الأهم 3</label><input id="big3" placeholder="مخرج قابل للتسليم" /></div>
+            </div>
+            <div class="matrix" aria-label="مصفوفة الأهمية اليومية">
+              <div class="matrix-card"><strong>مهم وعاجل</strong><textarea id="m-urgent" placeholder="لا يزيد عن بندين"></textarea></div>
+              <div class="matrix-card"><strong>مهم غير عاجل</strong><textarea id="m-important" placeholder="احجز له وقتًا قبل أن يختفي"></textarea></div>
+              <div class="matrix-card"><strong>عاجل غير مهم</strong><textarea id="m-noise" placeholder="تفويض، تجميع، أو رفض مهذب"></textarea></div>
+              <div class="matrix-card"><strong>يُحذف أو يؤجل</strong><textarea id="m-drop" placeholder="ما الذي يأكل وقتك بلا أثر؟"></textarea></div>
+            </div>
+          </article>
+          <aside class="life-panel">
+            <h3>متطلبات تشغيل الحياة</h3>
+            <p>ضع علامة على ما يحتاج حماية اليوم. هذه ليست رفاهية؛ هي شروط استمرار.</p>
+            <div class="checklist" id="life-checks">
+              <label class="check-item"><input type="checkbox" value="حماية النوم الليلة"><span>حماية النوم الليلة: لا قرار كبير آخر اليوم إن كان الإرهاق واضحًا.</span></label>
+              <label class="check-item"><input type="checkbox" value="وجبة حقيقية لا ترقيع"><span>وجبة حقيقية لا ترقيع: لا تترك الوقود للصدفة.</span></label>
+              <label class="check-item"><input type="checkbox" value="تفريغ ضغط قصير"><span>تفريغ ضغط قصير: مشي، تنفس، كتابة، أو إغلاق شاشة.</span></label>
+              <label class="check-item"><input type="checkbox" value="حركة مناسبة لا قسوة"><span>حركة مناسبة لا قسوة: لا تمرين قاسٍ فوق إرهاق شديد.</span></label>
+              <label class="check-item"><input type="checkbox" value="تسجيل عرض متكرر"><span>تسجيل عرض متكرر بدل تطبيعه أو نسيانه.</span></label>
+              <label class="check-item"><input type="checkbox" value="مراجعة أدوية أو مكملات"><span>مراجعة قائمة الأدوية والمكملات: ماذا أستخدم؟ ولماذا؟</span></label>
+            </div>
+            <div class="ok-box">
+              <h4>قاعدة اليوم</h4>
+              <p>لا تضف مهمة جديدة قبل أن تسأل: هل لدي طاقة وسعة وسبب واضح؟</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="early-protection">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Early Protection Radar</p>
+          <h2>رادار الحماية المبكرة: التقاط الانحراف الصامت.</h2>
+          <p>هذا القسم لا يشخص ولا يعالج ولا يستبدل الطبيب. وظيفته تنظيم الصورة، كشف الانحراف المبكر، تقليل الضرر الممكن تفاديه، وتجهيز زيارة طبية أوضح عند الحاجة.</p>
+        </div>
+        <div class="life-grid">
+          <article class="life-panel strong">
+            <h3>ملفات الإدخال اليومية</h3>
+            <div class="field-grid">
+              <div class="field"><label for="sleep-note">النوم والتعافي</label><input id="sleep-note" placeholder="ساعات / جودة / استيقاظ مرهق" /></div>
+              <div class="field"><label for="food-note">الأكل والوقود</label><input id="food-note" placeholder="وجبات / هبوط طاقة / سوائل" /></div>
+              <div class="field"><label for="stress-note">الضغط العصبي</label><input id="stress-note" placeholder="توتر مستمر / تفكير زائد / قلق" /></div>
+              <div class="field"><label for="movement-note">الحركة والألم</label><input id="movement-note" placeholder="جلوس طويل / رقبة / ظهر / ركبة" /></div>
+              <div class="field full"><label for="symptom-note">الأعراض المتكررة</label><textarea id="symptom-note" placeholder="صداع، خفقان، هضم، تساقط شعر، ألم، تعب... اكتب الزمن والتكرار والشدة"></textarea></div>
+              <div class="field"><label for="med-note">الأدوية والمكملات</label><input id="med-note" placeholder="اسم / جرعة / سبب / من وصف؟" /></div>
+              <div class="field"><label for="lab-note">التحاليل أو البيانات الناقصة</label><input id="lab-note" placeholder="ماذا ينقص قبل الزيارة؟" /></div>
+            </div>
+          </article>
+          <aside class="life-panel">
+            <h3>الإشارات الحمراء</h3>
+            <p>عند ظهور إشارة حمراء، لا تكتف بالمراقبة. رتّب تقييمًا طبيًا مناسبًا حسب الشدة والأنظمة المحلية.</p>
+            <div class="checklist" id="red-flags">
+              <label class="check-item"><input type="checkbox" value="ألم شديد أو متكرر"><span>ألم شديد أو متكرر</span></label>
+              <label class="check-item"><input type="checkbox" value="ضيق نفس"><span>ضيق نفس</span></label>
+              <label class="check-item"><input type="checkbox" value="خفقان مستمر"><span>خفقان مستمر</span></label>
+              <label class="check-item"><input type="checkbox" value="نزيف غير طبيعي"><span>نزيف غير طبيعي</span></label>
+              <label class="check-item"><input type="checkbox" value="إغماء أو تغير وعي"><span>إغماء أو تغير وعي</span></label>
+              <label class="check-item"><input type="checkbox" value="فقدان وزن سريع بلا تفسير"><span>فقدان وزن سريع بلا تفسير</span></label>
+              <label class="check-item"><input type="checkbox" value="تعب لا يتحسن"><span>تعب لا يتحسن</span></label>
+              <label class="check-item"><input type="checkbox" value="تدهور سريع واضح"><span>تدهور سريع واضح</span></label>
+            </div>
+            <div class="risk-box" id="red-alert" hidden>
+              <h4>تنبيه حماية</h4>
+              <p>تم تحديد إشارة حمراء. أوقف التطبيع، واستخدم هذه البطاقة لتجهيز المعلومات، ثم اطلب تقييمًا طبيًا مناسبًا.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="weekly-system">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Weekly Review</p>
+          <h2>مراجعة الأسبوع: أين استُهلك الاحتياطي؟</h2>
+          <p>التقويم لا ينجح يومًا واحدًا فقط. قوته تظهر عندما يكشف نمطًا متكررًا: نفس السهر، نفس الضغط، نفس المهمة المؤجلة، أو نفس العرض الذي يتم تطبيعه.</p>
+        </div>
+        <article class="life-panel strong">
+          <h3>تقويم الأسبوع المختصر</h3>
+          <div class="week-strip">
+            <div class="day-card"><strong>الأحد</strong><textarea id="w-sun" placeholder="مخرج + حماية"></textarea></div>
+            <div class="day-card"><strong>الاثنين</strong><textarea id="w-mon" placeholder="مخرج + حماية"></textarea></div>
+            <div class="day-card"><strong>الثلاثاء</strong><textarea id="w-tue" placeholder="مخرج + حماية"></textarea></div>
+            <div class="day-card"><strong>الأربعاء</strong><textarea id="w-wed" placeholder="مخرج + حماية"></textarea></div>
+            <div class="day-card"><strong>الخميس</strong><textarea id="w-thu" placeholder="مخرج + حماية"></textarea></div>
+            <div class="day-card"><strong>الجمعة</strong><textarea id="w-fri" placeholder="تعافي / عائلة / ترتيب"></textarea></div>
+            <div class="day-card"><strong>السبت</strong><textarea id="w-sat" placeholder="مراجعة / تجهيز"></textarea></div>
+          </div>
+          <table class="evidence-table" aria-label="مخرجات مراجعة الأسبوع">
+            <thead><tr><th>السؤال</th><th>المخرج المطلوب</th></tr></thead>
+            <tbody>
+              <tr><td>ما أهم مخرج عمل تحقق؟</td><td>سطر واحد قابل للتوثيق.</td></tr>
+              <tr><td>ما الشيء الذي أكل الاحتياطي؟</td><td>نوم، ضغط، مقاطعات، أكل، ألم، أو قرار زائد.</td></tr>
+              <tr><td>ما النمط المتكرر؟</td><td>تكرار في وقت أو شخص أو نوع مهمة أو عرض.</td></tr>
+              <tr><td>ما التعديل الواحد للأسبوع القادم؟</td><td>قرار واحد فقط: حذف، تفويض، حجز وقت، مراجعة، أو تصعيد.</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="section" id="year-wheel-link">
+      <div class="wrap">
+        <div class="life-panel strong">
+          <span class="small-tag">YEAR OPERATING WHEEL</span>
+          <h2>حوّل التقويم اليومي إلى دائرة سنوية.</h2>
+          <p>إذا كان تقويم الحياة ينظم اليوم والأسبوع، فإن العجلة السنوية تريك كيف يتكرر الإيقاع عبر الشهر والربع والسنة: إنجاز، استنزاف، قرار إيقاف، عادة، إشارة جسد، ومشروع مهني.</p>
+          <div class="tools-bar" style="margin-top:18px"><a class="button primary" href="year-operating-wheel.html">افتح العجلة السنوية</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="copy-report">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Output</p>
+          <h2>حوّل التقويم إلى بطاقة قابلة للنسخ.</h2>
+          <p>النسخ لا يرسل أي بيانات خارج جهازك. الصفحة ثابتة، والبيانات تبقى محلية في المتصفح عند الحفظ.</p>
+        </div>
+        <div class="calendar-shell">
+          <article class="life-panel strong">
+            <h3>أوامر التشغيل</h3>
+            <div class="tools-bar">
+              <button class="button primary" id="build-report" type="button">أنشئ بطاقة اليوم</button>
+              <button class="button ghost" id="copy-report-btn" type="button">انسخ البطاقة</button>
+              <button class="button ghost" id="save-day" type="button">احفظ محليًا</button>
+              <button class="button ghost" id="clear-day" type="button">تفريغ الحقول</button>
+            </div>
+            <p class="status-note" id="status-note" aria-live="polite"></p>
+            <ol class="agent-steps">
+              <li><div><strong>حدد المهمة.</strong><br>مهمة واحدة تشرح لماذا يستحق اليوم أن يبدأ.</div></li>
+              <li><div><strong>احجز الثلاثة الكبار.</strong><br>ثلاثة مخرجات لا أكثر، والباقي يفرز.</div></li>
+              <li><div><strong>احمِ شروط التشغيل.</strong><br>نوم، وقود، حركة، ضغط، أعراض.</div></li>
+              <li><div><strong>التقط الإشارة.</strong><br>ما الذي لا يجوز تطبيعه؟ وما الذي يحتاج مراجعة؟</div></li>
+              <li><div><strong>أخرج دليلًا.</strong><br>بطاقة يومية أو تقرير أسبوعي، لا شعور عام فقط.</div></li>
+            </ol>
+          </article>
+          <aside>
+            <div class="copy-output" id="copy-output">اضغط "أنشئ بطاقة اليوم" لعرض بطاقة قابلة للنسخ.</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="safety">
+      <div class="wrap">
+        <div class="life-panel">
+          <span class="small-tag">SAFETY NOTE</span>
+          <h2>حدود التقويم واضحة.</h2>
+          <p>هذا النظام لا يشخّص، لا يعالج، ولا يصف دواء. هو أداة تنظيم وحماية مبكرة: يجمع الصورة، يوضح الانحراف، يخفف الفوضى، ويجهزك لسؤال أفضل ومراجعة أوضح. عند وجود إشارة حمراء أو تدهور سريع، التصعيد الطبي أهم من أي تقويم.</p>
+          <p class="source-note"><strong>مصدر الفكرة:</strong> تم بناء الصفحة من ملفين مرفقين: نظام الحماية المبكرة الذي يؤكد أن الوظيفة هي تنظيم الصورة وكشف الانحراف المبكر وتحسين الوصول للطبيب، ونظام تشغيلي عملي للحياة الذي يوضح أن الإنتاجية والطاقة تتآكل قليلًا كل يوم عندما يغيب النظام.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html" aria-label="AquaClimate Lab home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C9 7.5 6 10.7 6 14.2A6 6 0 0 0 18 14.2C18 10.7 15 7.5 12 3Z" stroke="white" stroke-width="2"/><path d="M8.5 14.5C10.5 15.5 13.5 15.5 15.5 14.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <span class="brand-text"><strong>AquaClimate Lab</strong><small>BODY SIGNALS × CAREER-OS</small></span>
+        </a>
+        <p class="footer-note">تقويم تشغيل وحماية مبكرة. تعليمي وتنظيمي فقط، لا يقدّم تشخيصًا أو علاجًا.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="career-os.html">Career-OS</a>
+        <a href="wisdom-of-day.html">حكمة اليوم</a>
+        <a href="year-operating-wheel.html">العجلة السنوية</a>
+        <a href="water-without-fear.html">Water Wonder</a>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="العودة إلى أعلى الصفحة">↑</button>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/mobile-ux.js" defer></script>
+  <script>
+    (function(){
+      const $ = (id) => document.getElementById(id);
+      const today = new Date();
+      const pad = n => String(n).padStart(2,'0');
+      const defaultDate = today.getFullYear() + '-' + pad(today.getMonth()+1) + '-' + pad(today.getDate());
+      const dateInput = $('today-date');
+      if(dateInput && !dateInput.value) dateInput.value = defaultDate;
+      const ids = ['today-date','day-mode','daily-mission','big1','big2','big3','m-urgent','m-important','m-noise','m-drop','sleep-note','food-note','stress-note','movement-note','symptom-note','med-note','lab-note','w-sun','w-mon','w-tue','w-wed','w-thu','w-fri','w-sat'];
+      const checkedValues = (rootId) => Array.from(document.querySelectorAll('#'+rootId+' input:checked')).map(i=>i.value);
+      function updateRedAlert(){ const active = checkedValues('red-flags'); const box = $('red-alert'); if(box) box.hidden = active.length === 0; }
+      document.querySelectorAll('#red-flags input').forEach(i => i.addEventListener('change', updateRedAlert));
+      function val(id){ return ($(id) && $(id).value || '').trim(); }
+      function dayKey(){ return 'life-calendar-v32-' + (val('today-date') || defaultDate); }
+      function buildReport(){
+        const life = checkedValues('life-checks');
+        const red = checkedValues('red-flags');
+        const lines = [];
+        lines.push('بطاقة تشغيل اليوم');
+        lines.push('التاريخ: ' + (val('today-date') || defaultDate));
+        lines.push('وضع اليوم: ' + val('day-mode'));
+        lines.push('');
+        lines.push('مهمة اليوم: ' + (val('daily-mission') || 'غير محددة'));
+        lines.push('');
+        lines.push('الثلاثة الكبار:');
+        lines.push('1. ' + (val('big1') || '-'));
+        lines.push('2. ' + (val('big2') || '-'));
+        lines.push('3. ' + (val('big3') || '-'));
+        lines.push('');
+        lines.push('مصفوفة الأهمية:');
+        lines.push('مهم وعاجل: ' + (val('m-urgent') || '-'));
+        lines.push('مهم غير عاجل: ' + (val('m-important') || '-'));
+        lines.push('عاجل غير مهم: ' + (val('m-noise') || '-'));
+        lines.push('يؤجل أو يحذف: ' + (val('m-drop') || '-'));
+        lines.push('');
+        lines.push('متطلبات التشغيل المحمية:');
+        lines.push(life.length ? life.map(x=>'• '+x).join('\n') : '-');
+        lines.push('');
+        lines.push('رادار الحماية المبكرة:');
+        lines.push('النوم: ' + (val('sleep-note') || '-'));
+        lines.push('الأكل: ' + (val('food-note') || '-'));
+        lines.push('الضغط: ' + (val('stress-note') || '-'));
+        lines.push('الحركة والألم: ' + (val('movement-note') || '-'));
+        lines.push('الأعراض: ' + (val('symptom-note') || '-'));
+        lines.push('الأدوية والمكملات: ' + (val('med-note') || '-'));
+        lines.push('التحاليل أو البيانات الناقصة: ' + (val('lab-note') || '-'));
+        lines.push('');
+        lines.push('الإشارات الحمراء: ' + (red.length ? red.join('، ') : 'لا توجد محددة في البطاقة'));
+        if(red.length){ lines.push('تنبيه: لا تكتف بالمراقبة. رتّب تقييمًا طبيًا مناسبًا حسب الشدة.'); }
+        lines.push('');
+        lines.push('مراجعة أسبوعية مختصرة:');
+        const weekIds = [['الأحد','w-sun'],['الاثنين','w-mon'],['الثلاثاء','w-tue'],['الأربعاء','w-wed'],['الخميس','w-thu'],['الجمعة','w-fri'],['السبت','w-sat']];
+        weekIds.forEach(([name,id]) => { if(val(id)) lines.push(name + ': ' + val(id)); });
+        lines.push('');
+        lines.push('حدود الاستخدام: تنظيم وحماية مبكرة فقط، لا تشخيص ولا علاج ولا بديل عن الطبيب.');
+        $('copy-output').textContent = lines.join('\n');
+        $('status-note').textContent = 'تم إنشاء بطاقة اليوم.';
+        return lines.join('\n');
+      }
+      $('build-report')?.addEventListener('click', buildReport);
+      $('copy-report-btn')?.addEventListener('click', async () => {
+        const text = $('copy-output').textContent.includes('اضغط') ? buildReport() : $('copy-output').textContent;
+        try{ await navigator.clipboard.writeText(text); $('status-note').textContent='تم نسخ البطاقة.'; }catch(e){ $('status-note').textContent='تعذر النسخ تلقائيًا. انسخ النص يدويًا.'; }
+      });
+      $('save-day')?.addEventListener('click', () => {
+        const data = {};
+        ids.forEach(id => data[id] = val(id));
+        data.lifeChecks = checkedValues('life-checks');
+        data.redFlags = checkedValues('red-flags');
+        localStorage.setItem(dayKey(), JSON.stringify(data));
+        $('status-note').textContent = 'تم الحفظ محليًا لهذا التاريخ.';
+      });
+      $('clear-day')?.addEventListener('click', () => {
+        ids.forEach(id => { if($(id) && id !== 'today-date') $(id).value = ''; });
+        document.querySelectorAll('#life-checks input,#red-flags input').forEach(i => i.checked=false);
+        updateRedAlert();
+        $('copy-output').textContent = 'اضغط "أنشئ بطاقة اليوم" لعرض بطاقة قابلة للنسخ.';
+        $('status-note').textContent = 'تم تفريغ الحقول.';
+      });
+      function load(){
+        try{
+          const raw = localStorage.getItem(dayKey()); if(!raw) return;
+          const data = JSON.parse(raw);
+          ids.forEach(id => { if($(id) && data[id] !== undefined) $(id).value = data[id]; });
+          document.querySelectorAll('#life-checks input').forEach(i => i.checked = (data.lifeChecks||[]).includes(i.value));
+          document.querySelectorAll('#red-flags input').forEach(i => i.checked = (data.redFlags||[]).includes(i.value));
+          updateRedAlert();
+          $('status-note').textContent = 'تم تحميل بيانات محفوظة لهذا التاريخ.';
+        }catch(e){}
+      }
+      dateInput?.addEventListener('change', load);
+      load();
+    })();
+  </script>
+</body>
+</html>
