@@ -1,0 +1,597 @@
+/* ============================================================
+   AquaClimate Lab × إشارات الجسد — Mobile UX layer (v35)
+   Progressive enhancement only. Loads AFTER each page's base
+   styles. Never required for legibility; refines spacing,
+   touch targets, focus, tables, and adds shared components
+   (hub cards, quick-nav, Book-Tools index & summaries).
+   Falls back to plain hex if a token is missing.
+   ============================================================ */
+
+:root{
+  --mux-water:var(--water,#0E84A8);
+  --mux-navy:var(--navy,#0C2A43);
+  --mux-amber:var(--amber,#B9781E);
+  --mux-line:var(--line,rgba(12,42,67,.10));
+  --mux-surface:var(--surface,#fff);
+  --mux-ink:var(--ink,#0C2231);
+  --mux-muted:var(--muted,#496579);
+}
+
+/* ---------- Accessibility utility ---------- */
+.visually-hidden{
+  position:absolute !important;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);
+  white-space:nowrap;border:0;
+}
+
+/* ---------- Overflow guard ----------
+   Root overflow-x:hidden can disable position:sticky, so we only
+   apply it at mobile widths where the sticky side-panels are already
+   switched to static. Element-level guards apply everywhere. */
+img,svg,video,canvas,table{max-width:100%;}
+*{min-width:0;}
+@media (max-width:760px){
+  html,body{overflow-x:hidden;}
+}
+
+/* ---------- Consistent, visible keyboard focus ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible{
+  outline:3px solid var(--mux-water);
+  outline-offset:2px;
+  border-radius:8px;
+}
+
+/* ---------- Current page in top navigation ----------
+   mobile-ux.js sets aria-current="page"; this makes it visible,
+   reusing the nav's existing focus treatment (no new colors). */
+.nav-menu a[aria-current="page"]{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  font-weight:800;
+}
+
+/* ---------- Comfortable touch targets ---------- */
+@media (max-width:760px){
+  .nav-menu a{
+    display:block;
+    padding:.7rem .2rem;
+    min-height:44px;
+    line-height:1.5;
+  }
+  .footer-links a{
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+    padding:.3rem .55rem;
+  }
+  .button{
+    min-height:46px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+  /* Long pages breathe a little more, calmly */
+  .section{padding-block:clamp(40px,9vw,64px);}
+}
+
+/* ---------- Tables: scroll instead of overflowing on phones ---------- */
+.table-wrap{position:relative;}
+@media (max-width:760px){
+  .table-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    border-radius:14px;
+  }
+  .table-wrap.is-scrollable::after{
+    content:"اسحب أفقيًا ←";
+    position:absolute;
+    inset-inline-end:10px;
+    bottom:8px;
+    font-size:.68rem;
+    font-family:var(--mono,monospace);
+    color:var(--mux-water);
+    background:rgba(255,255,255,.86);
+    border:1px solid var(--mux-line);
+    border-radius:999px;
+    padding:.15rem .5rem;
+    pointer-events:none;
+  }
+}
+
+/* =====================================================================
+   Homepage Mobile Hub — system map of cards
+   (hub markup is embedded in index.html; styles can live here too)
+   ===================================================================== */
+.hub{padding-block:clamp(34px,8vw,68px);}
+.hub-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-top:22px;
+}
+.hub-card{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  background:linear-gradient(180deg,#fff,var(--surface-2,#F6FCFE));
+  border:1px solid var(--mux-line);
+  border-radius:22px;
+  padding:20px;
+  box-shadow:var(--shadow-soft,0 10px 30px rgba(12,42,67,.08));
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.hub-card:hover,
+.hub-card:focus-within{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow,0 24px 60px rgba(12,42,67,.13));
+  border-color:rgba(14,132,168,.28);
+}
+.hub-card .hub-kicker{
+  font-family:var(--mono,monospace);
+  direction:ltr;
+  font-size:.66rem;
+  letter-spacing:.06em;
+  font-weight:800;
+  color:var(--mux-water);
+}
+.hub-card h3{margin:.1rem 0 0;font-size:1.18rem;color:var(--mux-navy);line-height:1.5;}
+.hub-card p{margin:0;color:var(--mux-muted);line-height:1.85;font-size:.98rem;}
+.hub-card .hub-go{
+  margin-top:auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.4rem;
+  min-height:48px;
+  padding:.6rem 1rem;
+  border-radius:14px;
+  font-weight:800;
+  background:var(--mux-water);
+  color:#fff;
+  border:1px solid var(--mux-water);
+}
+.hub-card .hub-go.ghost{
+  background:transparent;
+  color:var(--mux-navy);
+  border-color:var(--mux-line);
+}
+.hub-card .hub-go:hover,
+.hub-card .hub-go:focus-visible{filter:brightness(1.05);}
+@media (max-width:900px){.hub-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width:600px){.hub-grid{grid-template-columns:1fr;}}
+
+/* =====================================================================
+   Section quick-nav chip bar (Back to hub / Back to top affordances)
+   ===================================================================== */
+.quicknav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  margin:0 0 18px;
+}
+.quicknav a{
+  display:inline-flex;
+  align-items:center;
+  min-height:40px;
+  padding:.4rem .85rem;
+  border-radius:999px;
+  font-weight:700;
+  font-size:.92rem;
+  color:var(--mux-navy);
+  background:var(--mux-surface);
+  border:1px solid var(--mux-line);
+}
+.quicknav a:hover,
+.quicknav a:focus-visible{
+  border-color:rgba(14,132,168,.4);
+  background:rgba(23,162,203,.08);
+}
+.quicknav a[aria-current="true"]{
+  background:var(--mux-water);
+  color:#fff;
+  border-color:var(--mux-water);
+}
+
+/* =====================================================================
+   Book Tools — compact index + per-tool summary cards (career-os)
+   ===================================================================== */
+.bt-index{
+  margin:6px 0 30px;
+  border:1px solid var(--mux-line);
+  border-radius:20px;
+  background:linear-gradient(180deg,#fff,var(--surface-2,#F6FCFE));
+  box-shadow:var(--shadow-soft,0 10px 30px rgba(12,42,67,.08));
+  overflow:hidden;
+}
+.bt-index > summary{
+  cursor:pointer;
+  list-style:none;
+  padding:16px 20px;
+  font-weight:800;
+  color:var(--mux-navy);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.6rem;
+}
+.bt-index > summary::-webkit-details-marker{display:none;}
+.bt-index > summary .bt-index-hint{
+  font-family:var(--mono,monospace);
+  direction:ltr;font-size:.66rem;font-weight:800;
+  color:var(--mux-water);
+}
+.bt-index[open] > summary{border-bottom:1px solid var(--mux-line);}
+.bt-index .table-wrap{margin:0;}
+.bt-index table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.95rem;
+}
+.bt-index th,.bt-index td{
+  text-align:start;
+  padding:.7rem .9rem;
+  border-bottom:1px solid var(--mux-line);
+  vertical-align:top;
+  line-height:1.7;
+}
+.bt-index th{
+  background:rgba(23,162,203,.07);
+  color:var(--mux-navy);
+  font-weight:800;
+  position:sticky;top:0;
+}
+.bt-index td .bt-no{
+  font-family:var(--mono,monospace);direction:ltr;
+  font-weight:800;color:var(--mux-water);
+}
+.bt-index td a{
+  display:inline-flex;align-items:center;min-height:38px;
+  padding:.25rem .8rem;border-radius:999px;font-weight:800;
+  color:#fff;background:var(--mux-water);border:1px solid var(--mux-water);
+  white-space:nowrap;
+}
+.bt-index td a:hover,.bt-index td a:focus-visible{filter:brightness(1.06);}
+
+/* On small screens the 4-column table hides the action column behind a
+   horizontal swipe. Stack each row as a mini-card instead so the open
+   link is always visible. Pure CSS, scoped to .bt-index only. */
+@media (max-width:600px){
+  .bt-index .table-wrap{overflow:visible;}
+  .bt-index .table-wrap.is-scrollable::after{content:none;}
+  .bt-index table,.bt-index tbody,.bt-index tr,.bt-index td{display:block;border:0;}
+  .bt-index thead{
+    position:absolute;width:1px;height:1px;margin:-1px;
+    overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;
+  }
+  .bt-index tr{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    align-items:center;
+    gap:.2rem .75rem;
+    padding:.8rem .9rem;
+    border-bottom:1px solid var(--mux-line);
+  }
+  .bt-index tr:last-child{border-bottom:0;}
+  .bt-index td{padding:0;border-bottom:0;}
+  .bt-index td:nth-child(1){grid-column:1;grid-row:1;}
+  .bt-index td:nth-child(2){grid-column:2;grid-row:1;font-weight:800;color:var(--mux-navy);}
+  .bt-index td:nth-child(3){grid-column:1 / -1;grid-row:2;color:var(--mux-muted);font-size:.88rem;direction:ltr;text-align:start;}
+  .bt-index td:nth-child(4){grid-column:1 / -1;grid-row:3;margin-top:.3rem;}
+  .bt-index td:nth-child(4) a{width:100%;justify-content:center;min-height:44px;}
+}
+
+.bt-summary{
+  margin:0 0 14px;
+  border:1px solid var(--mux-line);
+  border-inline-start:4px solid var(--mux-water);
+  border-radius:16px;
+  background:var(--mux-surface);
+  padding:16px 18px;
+}
+.bt-summary h4{
+  margin:0 0 .5rem;
+  color:var(--mux-navy);
+  font-size:1.04rem;
+  line-height:1.6;
+}
+.bt-summary dl{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:.35rem 1rem;
+  margin:0;
+}
+.bt-summary dt{
+  font-family:var(--mono,monospace);direction:ltr;
+  font-size:.66rem;font-weight:800;letter-spacing:.04em;
+  color:var(--mux-water);
+  padding-top:.2rem;
+  white-space:nowrap;
+}
+.bt-summary dd{margin:0;color:var(--mux-ink);line-height:1.8;font-size:.95rem;}
+.bt-summary dd.bt-noclaim{color:#8c4a2f;}
+@media (max-width:600px){
+  .bt-summary dl{grid-template-columns:1fr;gap:.15rem;}
+  .bt-summary dt{padding-top:.55rem;}
+}
+
+/* =====================================================================
+   Life Operating Calendar — calmer checklists & bigger tap rows
+   ===================================================================== */
+@media (max-width:760px){
+  .checklist label,
+  .checklist .check,
+  .checklist li{
+    min-height:46px;
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    line-height:1.6;
+  }
+  .checklist input[type="checkbox"]{
+    width:22px;height:22px;flex:0 0 auto;
+  }
+}
+
+/* =====================================================================
+   Wisdom — related links row + tidier 60-theme index on mobile
+   ===================================================================== */
+.related-links{
+  display:flex;flex-wrap:wrap;gap:.55rem;margin-top:14px;
+}
+.related-links a{
+  display:inline-flex;align-items:center;min-height:44px;
+  padding:.45rem 1rem;border-radius:14px;font-weight:800;
+  color:var(--mux-navy);background:var(--mux-surface);
+  border:1px solid var(--mux-line);
+}
+.related-links a:hover,.related-links a:focus-visible{
+  border-color:rgba(14,132,168,.4);background:rgba(23,162,203,.08);
+}
+@media (max-width:640px){
+  /* Keep the 60-theme index compact: a comfortable internal scroll
+     instead of a 5,000px+ wall that doubles the page length. */
+  .wisdom-theme-list{
+    max-height:460px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior:contain;
+    padding-inline-end:4px;
+  }
+  .wisdom-theme-list button,
+  .wisdom-theme-item{min-height:46px;}
+}
+
+/* =====================================================================
+   Year Operating Wheel — larger, calmer month navigator on mobile
+   ===================================================================== */
+@media (max-width:720px){
+  .month-nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+  .month-nav button{
+    min-height:52px;
+    font-size:1rem;
+    padding:.7rem .4rem;
+    border-radius:16px;
+  }
+}
+@media (max-width:420px){
+  .month-nav{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
+/* ============================================================
+   v38 mobile-menu safety patch
+   Guarantees a consistent collapsed nav on every page that loads
+   this file (all pages do), regardless of each page's embedded
+   nav rules. Loaded after embedded <style>, so this wins. The
+   JS in main.js / the inline copies only toggles the .open class;
+   visibility is owned here. !important guards against any earlier
+   embedded rule leaving the menu visible (which made tapping the
+   button appear to "do nothing").
+   ============================================================ */
+@media (max-width: 920px) {
+  .nav-toggle {
+    display: inline-flex !important;
+  }
+  #nav-menu.nav-menu {
+    position: absolute;
+    inset-inline: 16px;
+    top: 72px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    list-style: none;
+    padding: 12px;
+    margin: 0;
+    background: var(--navy, #0C2A43);
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 18px;
+    box-shadow: var(--shadow, 0 16px 40px rgba(0, 0, 0, .2));
+    z-index: 100;
+  }
+  #nav-menu.nav-menu.open {
+    display: flex !important;
+  }
+  #nav-menu.nav-menu a {
+    display: block;
+    min-height: 44px;
+    padding: .9rem 1.1rem;
+    font-size: 1rem;
+  }
+}
+
+
+/* Site Search · v39 */
+.search-shell { max-width: 980px; margin-inline: auto; }
+.search-panel {
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(12,42,67,.12);
+  border-radius: 28px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  box-shadow: 0 18px 50px rgba(12,42,67,.12);
+}
+.search-box-row { display: grid; grid-template-columns: 1fr auto; gap: .75rem; align-items: center; }
+.search-input {
+  width: 100%; min-height: 56px; border: 1px solid rgba(12,42,67,.22); border-radius: 18px;
+  padding: 0 1rem; font: inherit; font-size: 1.05rem; background: #fff; color: var(--ink, #102333);
+  outline: none;
+}
+.search-input:focus { border-color: var(--aqua, #0E84A8); box-shadow: 0 0 0 4px rgba(14,132,168,.16); }
+.search-clear { min-height: 56px; border-radius: 18px; border: 1px solid rgba(12,42,67,.2); background: #fff; padding: 0 1.1rem; cursor: pointer; font: inherit; font-weight: 700; color: var(--navy, #0C2A43); }
+.search-hints { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1rem; }
+.search-hints button { border:1px solid rgba(14,132,168,.22); border-radius:999px; background:rgba(14,132,168,.08); color:var(--aqua-dark, #0A6D8D); padding:.55rem .8rem; cursor:pointer; font:inherit; font-weight:700; }
+.search-count { margin:1.2rem 0 .7rem; color:var(--muted, #5f7484); font-weight:700; }
+.search-results { display:grid; gap:1rem; }
+.search-result-card { background:#fff; border:1px solid rgba(12,42,67,.12); border-radius:24px; padding:1.1rem; box-shadow:0 12px 30px rgba(12,42,67,.08); }
+.search-result-card h2 { margin:.25rem 0 .6rem; font-size:1.15rem; line-height:1.55; }
+.search-result-card h2 a { color:var(--navy, #0C2A43); text-decoration:none; }
+.search-result-card h2 a:hover { text-decoration:underline; }
+.search-result-page { color:var(--aqua-dark, #0A6D8D); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.82rem; letter-spacing:.05em; }
+.search-result-card p { margin:0 0 .9rem; color:var(--muted, #5f7484); line-height:1.9; }
+.search-open { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.65rem 1rem; border-radius:999px; background:var(--navy, #0C2A43); color:#fff; text-decoration:none; font-weight:800; }
+.search-empty { background:rgba(255,255,255,.65); border:1px dashed rgba(12,42,67,.22); border-radius:22px; padding:1rem; color:var(--muted,#5f7484); line-height:1.9; }
+@media (max-width: 640px) {
+  .search-box-row { grid-template-columns:1fr; }
+  .search-clear { width:100%; }
+  .search-result-card { border-radius:20px; }
+}
+
+/* ============================================================
+   v41 consistency patch — desktop nav one-line + calmer heroes
+   ============================================================ */
+@media (min-width: 921px){
+  .site-header .nav.wrap{
+    width:min(100% - 40px, 1680px) !important;
+    max-width:1680px !important;
+    flex-wrap:nowrap !important;
+    gap:1rem !important;
+  }
+  .site-header .brand{
+    flex:0 0 auto !important;
+    min-width:max-content !important;
+  }
+  .site-header #nav-menu.nav-menu{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    row-gap:0 !important;
+    gap:.18rem !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    list-style:none !important;
+    scrollbar-width:none;
+  }
+  .site-header #nav-menu.nav-menu::-webkit-scrollbar{display:none;}
+  .site-header #nav-menu.nav-menu a{
+    white-space:nowrap !important;
+    padding:.46rem .66rem !important;
+    font-size:.90rem !important;
+    line-height:1.2 !important;
+  }
+  .site-header #nav-menu.nav-menu a[aria-current="page"]{
+    padding:.52rem .72rem !important;
+  }
+}
+
+/* ============================================================
+   v42 — Unified typography system (one premium scale, site-wide)
+   Loaded by every page (mobile-ux.css is linked on all 8), so a
+   single token set governs hero titles, subtitles, section/card
+   headings, body, eyebrows, and line-height. Calmer top-end so
+   long Arabic titles stay contained instead of dominating.
+   ============================================================ */
+:root{
+  /* one font stack everywhere (Arabic + English, no new web fonts) */
+  --acl-font: "Tajawal", "IBM Plex Sans Arabic", "Noto Kufi Arabic",
+              "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+              Arial, sans-serif;
+  /* type scale — clamp keeps desktop/mobile balanced */
+  --fs-hero-title: clamp(2.2rem, 4.2vw, 4rem);
+  --fs-hero-lead:  clamp(1.05rem, 1.45vw, 1.35rem);
+  --fs-section-title: clamp(1.65rem, 3vw, 2.6rem);
+  --fs-card-title: clamp(1.2rem, 2vw, 1.55rem);
+  --fs-body: clamp(1rem, 1vw, 1.1rem);
+  --fs-small: 0.92rem;
+  /* line-height */
+  --lh-body: 1.9;
+  --lh-lead: 2;
+  --lh-card: 1.8;
+  --lh-nav: 1.2;
+  --lh-title: 1.2;
+}
+
+/* One font family across the whole site (consolidate any drift). */
+body{ font-family: var(--acl-font); }
+
+/* Base h1 → unified hero scale. Catches titles that aren't inside a
+   .hero/.page-hero wrapper (e.g. the 404 page) so every page's main
+   title shares one size. No !important here, so the hero rules below
+   (and page intent) can still refine. */
+h1{
+  font-size: var(--fs-hero-title);
+  line-height: var(--lh-title);
+  letter-spacing: -.01em;
+}
+@media (max-width: 760px){
+  h1{ font-size: clamp(1.9rem, 7.4vw, 2.5rem); line-height: 1.25; }
+}
+
+/* Hero titles: one calm scale on every page. Arabic titles get no
+   positive letter-spacing (a slight negative tightens Latin display
+   text without stretching Arabic). max-width lets long titles wrap
+   elegantly instead of running edge-to-edge. */
+.hero h1,
+.hero-copy h1,
+.page-hero h1,
+.article-hero h1,
+.section-hero h1,
+.wisdom-title,
+.wheel-hero h1,
+.calendar-hero h1,
+.search-hero h1{
+  font-size: var(--fs-hero-title) !important;
+  line-height: var(--lh-title) !important;
+  letter-spacing: -.01em !important;
+  max-width: 22ch;
+}
+
+/* Hero subtitle / lead paragraphs: one size + comfortable Arabic lead. */
+.hero .lead,
+.hero-copy .lead,
+.hero-sub,
+.page-hero .lead,
+.article-hero .lead,
+.search-hero .lead,
+.search-hero p{
+  font-size: var(--fs-hero-lead) !important;
+  line-height: var(--lh-lead);
+}
+
+/* English uppercase eyebrows keep their tracking; Arabic titles never
+   inherit wide letter-spacing. */
+.eyebrow{ letter-spacing:.14em; }
+
+@media (max-width: 760px){
+  /* On phones, hero titles must stay contained — never fill the screen. */
+  .hero h1,
+  .hero-copy h1,
+  .page-hero h1,
+  .article-hero h1,
+  .section-hero h1,
+  .wisdom-title,
+  .wheel-hero h1,
+  .calendar-hero h1,
+  .search-hero h1{
+    font-size: clamp(1.9rem, 7.4vw, 2.5rem) !important;
+    line-height: 1.25 !important;
+    max-width: 100%;
+  }
+}

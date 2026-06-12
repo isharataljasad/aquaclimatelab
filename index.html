@@ -33,8 +33,8 @@
   <meta name="twitter:image" content="https://aquaclimatelab.com/assets/img/og-image.png" />
   <meta name="twitter:image:alt" content="AquaClimate Lab cover" />
 
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -654,7 +654,19 @@ input[type=range]::-moz-range-thumb{
 @media (max-width:600px){.hub-grid{grid-template-columns:1fr}}
 
   </style>
-  <link rel="stylesheet" href="assets/css/mobile-ux.css" />
+  <style id="acl-v44-live-critical">
+    :root{--navy:#0C2A43;--ink:#0B1F2E;--surface:#fff;--surface-2:#F2FAFD;--line:rgba(12,42,67,.12);--water:#0E84A8;--cyan:#17A2CB;--wrap:1180px;--shadow:0 24px 70px rgba(12,42,67,.16);--sans:"Tajawal","IBM Plex Sans Arabic","Noto Kufi Arabic","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;--mono:"SFMono-Regular","Cascadia Code","Roboto Mono",monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--sans);background:#f6fbfd;color:var(--ink);line-height:1.9;direction:rtl;text-align:right}a{color:inherit}.wrap{width:min(var(--wrap),calc(100% - 40px));margin-inline:auto}img,svg{max-width:100%}
+    .skip-link{position:absolute;top:8px;inset-inline-start:8px;z-index:9999;background:#fff;color:var(--navy);padding:.5rem .75rem;border-radius:999px;transform:translateY(-140%);box-shadow:0 6px 20px rgba(0,0,0,.15)}.skip-link:focus{transform:translateY(0)}
+    .site-header{position:sticky;top:0;z-index:1000;background:rgba(7,31,51,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.10)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px;direction:ltr}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;min-width:0}.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(140deg,var(--water),var(--cyan));display:grid;place-items:center;flex:0 0 auto}.brand-mark svg{width:24px;height:24px;display:block}.brand-text{display:grid;gap:1px;line-height:1.1}.brand-text strong{font-weight:800;font-size:1rem;color:#fff}.brand-text small{font-size:.68rem;letter-spacing:.08em;color:#cdeaf5;white-space:nowrap}
+    .nav-toggle{display:none;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:.7rem .9rem;font:700 .95rem/1 var(--sans);cursor:pointer}.nav-toggle .bars,.nav-toggle .bars:before,.nav-toggle .bars:after{display:block;width:18px;height:2px;background:#fff;border-radius:2px;content:""}.nav-toggle .bars{position:relative}.nav-toggle .bars:before{position:absolute;top:-6px}.nav-toggle .bars:after{position:absolute;top:6px}
+    .nav-menu{display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0;direction:ltr}.nav-menu li{list-style:none;margin:0;padding:0}.nav-menu a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:.55rem .68rem;border-radius:999px;text-decoration:none;color:#d8edf5;font-weight:700;font-size:.92rem;line-height:1.2;white-space:nowrap}.nav-menu a:hover,.nav-menu a:focus,.nav-menu a[aria-current="page"]{background:rgba(255,255,255,.12);color:#fff}
+    .section{padding:72px 0}.button{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:44px;border-radius:999px;padding:.85rem 1.15rem;border:1px solid rgba(14,132,168,.25);text-decoration:none;font-weight:800;cursor:pointer;font-family:var(--sans)}.button.primary{background:linear-gradient(140deg,var(--water),var(--cyan));color:#fff;border-color:transparent}.button.ghost{background:rgba(255,255,255,.78);color:var(--navy)}
+    .footer{background:#071f33;color:#d9eef6;padding:48px 0 28px}.footer a{color:#e7f8fc}.footer-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}.footer-links{display:flex;flex-wrap:wrap;gap:10px}.footer-links a{text-decoration:none;padding:.5rem .7rem;border-radius:999px;background:rgba(255,255,255,.08)}
+    @media(max-width:920px){.wrap{width:min(100% - 28px,var(--wrap))}.nav{min-height:64px}.nav-toggle{display:inline-flex}.nav-menu{position:absolute;top:calc(100% + 10px);left:14px;right:14px;display:none!important;flex-direction:column;align-items:stretch;gap:8px;padding:14px;border-radius:22px;background:#082238;border:1px solid rgba(255,255,255,.13);box-shadow:0 26px 60px rgba(3,18,30,.32);z-index:1001;list-style:none}.nav-menu.open{display:flex!important}.nav-menu a{width:100%;min-height:46px;justify-content:flex-start;padding-inline:1rem}.section{padding:48px 0}.footer-grid{grid-template-columns:1fr}.brand-text small{display:none}}
+  </style>
+
+  <link rel="stylesheet" href="/assets/css/mobile-ux.v44.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -687,15 +699,15 @@ input[type=range]::-moz-range-thumb{
         <span class="bars" aria-hidden="true"></span><span>Menu</span>
       </button>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="career-os.html">Career-OS</a></li>
-        <li><a href="career-os.html#book-derived-tools">Book Tools</a></li>
-        <li><a href="wisdom-of-day.html">Wisdom</a></li>
-        <li><a href="life-operating-calendar.html">Life Calendar</a></li>
-        <li><a href="year-operating-wheel.html">Year Wheel</a></li>
-        <li><a href="water-without-fear.html">Water Wonder</a></li>
-        <li><a href="search.html">Search</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/career-os">Career-OS</a></li>
+        <li><a href="/career-os#book-derived-tools">Book Tools</a></li>
+        <li><a href="/wisdom-of-day">Wisdom</a></li>
+        <li><a href="/life-operating-calendar">Life Calendar</a></li>
+        <li><a href="/year-operating-wheel">Year Wheel</a></li>
+        <li><a href="/water-without-fear">Water Wonder</a></li>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -776,42 +788,42 @@ input[type=range]::-moz-range-thumb{
             <span class="hub-kicker">WISDOM OF THE DAY</span>
             <h3>حكمة اليوم</h3>
             <p>مبدأ قصير + فعل 10 دقائق + مخرج موثّق، يتغيّر يوميًا.</p>
-            <a class="hub-go" href="wisdom-of-day.html">افتح حكمة اليوم</a>
+            <a class="hub-go" href="/wisdom-of-day">افتح حكمة اليوم</a>
           </article>
 
           <article class="hub-card">
             <span class="hub-kicker">LIFE OPERATING CALENDAR</span>
             <h3>تقويم الحياة</h3>
             <p>بطاقة يوم واحدة: أعمال، أهمية، ورادار حماية مبكرة.</p>
-            <a class="hub-go" href="life-operating-calendar.html">افتح تقويم الحياة</a>
+            <a class="hub-go" href="/life-operating-calendar">افتح تقويم الحياة</a>
           </article>
 
           <article class="hub-card">
             <span class="hub-kicker">YEAR OPERATING WHEEL</span>
             <h3>العجلة السنوية</h3>
             <p>اختر شهرًا واحدًا واحصل على بطاقة تشغيل قابلة للنسخ.</p>
-            <a class="hub-go" href="year-operating-wheel.html">افتح العجلة السنوية</a>
+            <a class="hub-go" href="/year-operating-wheel">افتح العجلة السنوية</a>
           </article>
 
           <article class="hub-card">
             <span class="hub-kicker">CAREER-OS TOOLBOX</span>
             <h3>صندوق أدوات المهنة</h3>
             <p>من المهارة إلى أداة عمل جاهزة ودليل جاهزية موثّق.</p>
-            <a class="hub-go" href="career-os.html">افتح Career-OS</a>
+            <a class="hub-go" href="/career-os">افتح Career-OS</a>
           </article>
 
           <article class="hub-card">
             <span class="hub-kicker">BOOK-DERIVED TOOLS</span>
             <h3>أدوات الكتب 001–010</h3>
             <p>عشر حقائب عملية: ثقة، تواصل، تفاوض، مرونة، تركيز، وذاكرة.</p>
-            <a class="hub-go" href="career-os.html#book-derived-tools">افتح أدوات الكتب</a>
+            <a class="hub-go" href="/career-os#book-derived-tools">افتح أدوات الكتب</a>
           </article>
 
           <article class="hub-card">
             <span class="hub-kicker">WATER WONDER</span>
             <h3>الماء بلا خوف</h3>
             <p>اختيار عملي للماء والعبوة والفلتر، ومتى تحتاج تحليلًا.</p>
-            <a class="hub-go ghost" href="water-without-fear.html">اقرأ المقال العملي</a>
+            <a class="hub-go ghost" href="/water-without-fear">اقرأ المقال العملي</a>
           </article>
 
         </div>
@@ -1185,9 +1197,9 @@ input[type=range]::-moz-range-thumb{
             <h3>الماء بلا خوف</h3>
             <p class="lead">ماذا أشرب؟ ماذا أستخدم؟ ومتى أفحص الماء؟ دليل عملي للمستهلك العادي حول الماء المعبأ، البلاستيك، الفلاتر، التخزين، التحذيرات الرسمية، والمياه المعالجة.</p>
             <div class="button-row">
-              <a class="button primary" href="water-without-fear.html">اقرأ المقال العملي</a>
-              <a class="button ghost" href="./water-as-body-operating-system-12-slides.pdf" download type="application/pdf" target="_blank" rel="noopener">تحميل العرض PDF</a>
-              <a class="button ghost" href="./download-water-wonder-pdf.html">رابط بديل للتحميل</a>
+              <a class="button primary" href="/water-without-fear">اقرأ المقال العملي</a>
+              <a class="button ghost" href="/water-as-body-operating-system-12-slides.pdf" download type="application/pdf" target="_blank" rel="noopener">تحميل العرض PDF</a>
+              <a class="button ghost" href="/download-water-wonder-pdf">رابط بديل للتحميل</a>
             </div>
           </article>
           <div class="card feature-list">
@@ -1310,7 +1322,7 @@ input[type=range]::-moz-range-thumb{
             <h3>الاختيار المعتمد</h3>
             <p class="chosen">MODFLOW 6 + QGIS + NASA ARSET</p>
             <p>المسار يبدأ بالمياه الجوفية والخرائط والاستشعار عن بعد، ثم يتحول إلى تقرير Water Balance أو Pumping/Recharge Scenario.</p>
-            <a class="button ghost" href="career-os.html#hydrology-decision">تفاصيل المسار</a>
+            <a class="button ghost" href="/career-os#hydrology-decision">تفاصيل المسار</a>
           </article>
 
           <article class="decision-card">
@@ -1318,7 +1330,7 @@ input[type=range]::-moz-range-thumb{
             <h3>الاختيار المعتمد</h3>
             <p class="chosen">Aspen Plus + ISO/IEC 17025 + Minitab</p>
             <p>المسار يبدأ بمحاكاة عملية صناعية، ثم جودة مختبر/عملية، ثم تقرير يربط النتائج بالكفاءة والجودة وتقليل الهدر.</p>
-            <a class="button ghost" href="career-os.html#chemistry-decision">تفاصيل المسار</a>
+            <a class="button ghost" href="/career-os#chemistry-decision">تفاصيل المسار</a>
           </article>
 
           <article class="decision-card">
@@ -1326,7 +1338,7 @@ input[type=range]::-moz-range-thumb{
             <h3>مسار قيادة الفريق</h3>
             <p class="chosen">ISO 14001 + CAPM/PMP + NEBOSH IGC</p>
             <p>للقيادة لا يكفي التخصص. المطلوب صندوق أدوات لمشروع توفير أو تحسين: خط أساس، إجماع، مخاطر، مؤشرات، وإغلاق اعتراضات بالدليل.</p>
-            <a class="button primary" href="career-os.html#leader-decision">صندوق أدوات القائدة</a>
+            <a class="button primary" href="/career-os#leader-decision">صندوق أدوات القائدة</a>
           </article>
 
           <article class="decision-card">
@@ -1334,7 +1346,7 @@ input[type=range]::-moz-range-thumb{
             <h3>محرك التوفير الصناعي</h3>
             <p class="chosen">Cost Effectiveness + Operational Survival</p>
             <p>12 عنقودًا لتوليد أفكار توفير آمنة: إنفاق، موردون، مخزون، إنتاج، طاقة، صيانة، جودة، تصدير، عمليات، بيانات، ذكاء اصطناعي، وحوكمة.</p>
-            <a class="button primary" href="career-os.html#manufacturing-survival-engine">افتح المحرك</a>
+            <a class="button primary" href="/career-os#manufacturing-survival-engine">افتح المحرك</a>
           </article>
 
 
@@ -1344,7 +1356,7 @@ input[type=range]::-moz-range-thumb{
             <h3>حكمة اليوم</h3>
             <p class="chosen">Daily Wisdom Agent · 60 themes</p>
             <p>محرك ثابت وخفيف يختار حكمة يومية من 60 موضوعًا: اتجاه صحيح، ممارسة صحيحة، وفهم صحيح. كل حكمة تتحول إلى فعل صغير، سؤال مراجعة، ومخرج قابل للتوثيق.</p>
-            <a class="button primary" href="wisdom-of-day.html">افتح حكمة اليوم</a>
+            <a class="button primary" href="/wisdom-of-day">افتح حكمة اليوم</a>
           </article>
 
           <article class="decision-card wisdom-entry">
@@ -1352,7 +1364,7 @@ input[type=range]::-moz-range-thumb{
             <h3>تقويم التشغيل العملي للحياة</h3>
             <p class="chosen">Time × Tasks × Energy × Early Protection</p>
             <p>تقويم ثابت يحول اليوم إلى بطاقة تشغيل: ثلاثة مخرجات، مصفوفة أهمية، متطلبات حياة، رادار أعراض، وإشارات حمراء لا يجوز تطبيعها.</p>
-            <a class="button primary" href="life-operating-calendar.html">افتح تقويم الحياة</a>
+            <a class="button primary" href="/life-operating-calendar">افتح تقويم الحياة</a>
           </article>
 
           <article class="decision-card wisdom-entry">
@@ -1360,7 +1372,7 @@ input[type=range]::-moz-range-thumb{
             <h3>العجلة السنوية لتشغيل الحياة</h3>
             <p class="chosen">Year × Quarter × Month × Week × Day</p>
             <p>نموذج دائري يربط السنة بالأرباع والشهور والأسابيع واليوم: إنجاز، استنزاف، قرار إيقاف، عادة، إشارة جسد، ومشروع مهني في بطاقة واحدة قابلة للنسخ.</p>
-            <a class="button primary" href="year-operating-wheel.html">افتح العجلة السنوية</a>
+            <a class="button primary" href="/year-operating-wheel">افتح العجلة السنوية</a>
           </article>
 
           <article class="decision-card">
@@ -1368,7 +1380,7 @@ input[type=range]::-moz-range-thumb{
             <h3>أدوات مستخلصة من كتب</h3>
             <p class="chosen">Confidence + Clear-Mind + Interaction + Negotiation + Resilience + Performance + Time + Full Focus + Intentional + Memory</p>
             <p>تحويل الكتب إلى أدوات عمل: بطاقة اجتماع، مواءمة توقعات، مراجعة أسبوعية، تخطيط تواصل، أسئلة تفاوض، توقف تكتيكي، سجل توافق يومي، ميزانية ساعات، بطاقات SMARTER وBig 3، بطاقة مهمة ربعية، وأدوات ذاكرة تقنية ونقل معرفة.</p>
-            <a class="button primary" href="career-os.html#book-derived-tools">افتح أدوات الكتب</a>
+            <a class="button primary" href="/career-os#book-derived-tools">افتح أدوات الكتب</a>
           </article>
         </div>
       </div>
@@ -1779,6 +1791,6 @@ input[type=range]::-moz-range-thumb{
 })();
 
   </script>
-  <script src="assets/js/mobile-ux.js" defer></script>
+  <script src="/assets/js/mobile-ux.v44.js" defer></script>
 </body>
 </html>

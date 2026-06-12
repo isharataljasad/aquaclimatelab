@@ -1,3 +1,27 @@
+# CHANGELOG
+
+## v44 — Live deployment real fix · clean URLs · cache-safe assets · no password
+
+Primary target: fix the live-only failures on `/life-operating-calendar` and `/year-operating-wheel`, before adding new content.
+
+What changed:
+- Added explicit Vercel rewrites for clean URLs: `/life-operating-calendar`, `/year-operating-wheel`, `/career-os`, `/wisdom-of-day`, `/water-without-fear`, `/search`, and `/download-water-wonder-pdf`.
+- Added folder `index.html` fallbacks for the same clean URLs so trailing-slash and folder-style serving cannot fall back to raw or stale pages.
+- Converted key internal links and navigation to root-absolute clean URLs, so links work from `/page`, `/page/`, and `/page.html`.
+- Created versioned CSS/JS assets: `styles.v44.css`, `mobile-ux.v44.css`, `main.v44.js`, `mobile-ux.v44.js`, and `site-search.v44.js` to bypass old browser/CDN copies caused by long-lived asset caching.
+- Updated all HTML pages to load the versioned assets from root-absolute `/assets/...` paths.
+- Added a small inline critical shell/nav CSS fallback to each page so header/navigation never collapse into raw bullets if an external CSS request is delayed or stale.
+- Updated CSP to match the current static site architecture: self-hosted scripts plus existing inline static scripts/styles; no external tracking or frameworks added.
+- Changed CSS/JS cache headers to `no-cache` during this stabilization version; image/PDF caching remains safe.
+- Fixed current-page highlighting logic so it recognizes clean URLs, `.html` URLs, and folder-index URLs.
+- Fixed the search canonical URL and made search result URLs root-absolute so `/search` and `/search/` both work.
+
+Preserved:
+- All pages, PDFs, Search, Book Tools, Water Wonder, Life Calendar, Year Wheel, and existing content.
+- No password, no invite gate, no frameworks, no tracking, no removed content.
+
+Validation performed locally over an HTTP server, including clean URLs and `.html` URLs.
+
 ## v42 — Typography consistency pass (one premium scale) · no password
 
 Approach: audit-first, then a single small CSS patch. Measured every page's rendered titles/leads/nav at 390/430/768/1366px before editing. Finding: the font family was already unified (Tajawal everywhere) and base h1 sizes were close, but (a) a v41 hero override pushed titles up to clamp(...,4.35rem), (b) long Arabic hero titles — notably Career-OS "صندوق أدوات لقائدة فريق: قرار، إجماع، مخاطر، مؤشرات، وتقرير إدارة." — rendered at the large cap and wrapped to 5 lines (~230px tall on mobile), reading as oversized, and (c) the 404 title sat outside the hero selectors, so it didn't follow the scale. Subtitle/lead and nav sizes were consistent already.

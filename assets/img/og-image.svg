@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#091525"/>
+      <stop offset="1" stop-color="#060d16"/>
+    </linearGradient>
+    <linearGradient id="drop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#39c0e0"/>
+      <stop offset="1" stop-color="#1c7fa6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.15" cy="0.1" r="0.8">
+      <stop offset="0" stop-color="#39c0e0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#39c0e0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.95" cy="0.05" r="0.6">
+      <stop offset="0" stop-color="#f4b14d" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#f4b14d" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#8fb0d1" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- water drop emblem, top-right corner -->
+  <g transform="translate(995, 120) scale(0.8)">
+    <circle cx="105" cy="155" r="180" fill="#39c0e0" opacity="0.06"/>
+    <path d="M105 20c64 74 95 124 95 168a95 95 0 1 1-190 0c0-44 31-94 95-168Z" fill="url(#drop)"/>
+    <path d="M58 195a47 47 0 0 0 47 47" fill="none" stroke="#eef5fb" stroke-width="9" stroke-linecap="round"/>
+    <polyline points="14,330 64,310 104,322 154,290 196,308" fill="none" stroke="#7fe6f2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- eyebrow -->
+  <text x="90" y="158" fill="#7fe6f2" font-family="monospace" font-size="24" letter-spacing="6">ARID-REGION SCIENCE</text>
+
+  <!-- title -->
+  <text x="86" y="268" fill="#eef5fb" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="-3">AquaClimate Lab</text>
+
+  <!-- subtitle -->
+  <text x="90" y="340" fill="#7fe6f2" font-family="monospace" font-size="34" font-weight="600" letter-spacing="1">Water × Weather × Chemistry × Data</text>
+
+  <!-- line -->
+  <text x="90" y="424" fill="#92a6bd" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" font-size="29">From Arizona to Saudi Arabia — understanding</text>
+  <text x="90" y="464" fill="#92a6bd" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" font-size="29">water, climate &amp; chemistry through data.</text>
+
+  <!-- chips -->
+  <g font-family="monospace" font-size="22" fill="#bcd2e4">
+    <rect x="90" y="522" width="156" height="46" rx="23" fill="none" stroke="#8fb0d1" stroke-opacity="0.25"/>
+    <text x="116" y="552">Hydrology</text>
+    <rect x="262" y="522" width="150" height="46" rx="23" fill="none" stroke="#8fb0d1" stroke-opacity="0.25"/>
+    <text x="288" y="552">Chemistry</text>
+    <rect x="428" y="522" width="160" height="46" rx="23" fill="none" stroke="#8fb0d1" stroke-opacity="0.25"/>
+    <text x="454" y="552">Data &amp; AI</text>
+  </g>
+</svg>
