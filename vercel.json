@@ -2,9 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
-  "analytics": {
-    "enable": true
-  },
   "rewrites": [
     {
       "source": "/career-os",
