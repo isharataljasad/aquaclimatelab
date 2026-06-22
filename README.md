@@ -57,7 +57,7 @@ aquaclimate-lab/
 
 ## Before publishing — checklist
 
-- [x] Public contact emails are set to `renadsuf2002@gmail.com` and `yarasuf2001@gmail.com`.
+- [x] Public contact emails are set to `jumanajuh@gmail.com`, `renadsuf2002@gmail.com`, `yarasuf2001@gmail.com`, and `wejdanphy99@gmail.com`.
 - [ ] Replace the three **profile placeholders** (Water & Climate / Chemistry & Industry / Data Science & AI) with real role descriptions, and swap the `Coming soon` LinkedIn labels for real URLs when ready.
 - [ ] Confirm the domain is `aquaclimatelab.com` in `robots.txt`, `sitemap.xml`, and the metadata in `index.html` (already set).
 - [ ] Optionally regenerate `assets/img/og-image.png` from `og-image.svg` after any branding change.

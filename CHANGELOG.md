@@ -1,4 +1,10 @@
 # CHANGELOG
+## v45 — Contact theme routing update
+
+- Added `jumanajuh@gmail.com` to the contact section.
+- Updated the contact section to show four theme-based routes without naming the disciplines directly.
+- Preserved existing emails: `renadsuf2002@gmail.com`, `yarasuf2001@gmail.com`, and `wejdanphy99@gmail.com`.
+
 
 ## v44 — Live deployment real fix · clean URLs · cache-safe assets · no password
 

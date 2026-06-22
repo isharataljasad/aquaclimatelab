@@ -460,13 +460,23 @@ input[type=range]::-moz-range-thumb{
 
 /* ---------- Contact ---------- */
 .contact-card{
-  padding:42px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+  padding:42px;display:flex;align-items:flex-start;justify-content:space-between;gap:28px;flex-wrap:wrap;
   border:1px solid rgba(255,255,255,.10);border-radius:var(--radius-lg);
   background:linear-gradient(150deg,#103251,#0a2138);color:var(--ink-invert);box-shadow:var(--shadow);
 }
 .contact-card h2{margin-bottom:.7rem;color:var(--ink-invert)}
 .contact-card p{color:var(--muted-invert);max-width:46ch}
-.contact-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.contact-actions{display:grid;grid-template-columns:repeat(2,minmax(230px,1fr));gap:.85rem;flex:1;min-width:min(100%,520px)}
+.contact-pill{
+  display:flex;flex-direction:column;gap:.35rem;padding:1rem 1.05rem;border-radius:18px;
+  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.075);
+  color:var(--ink-invert);text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,.18);
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.contact-pill:hover{transform:translateY(-2px);border-color:var(--aqua-soft);background:rgba(255,255,255,.12)}
+.contact-pill span{font-weight:700;color:var(--ink-invert);line-height:1.6}
+.contact-pill strong{direction:ltr;unicode-bidi:embed;text-align:left;font-family:var(--mono);font-size:.86rem;color:var(--aqua-soft);letter-spacing:.01em}
+.contact-actions .button.ghost{justify-self:start}
 .contact-card .button.ghost{border-color:rgba(255,255,255,.28);color:var(--ink-invert);background:rgba(255,255,255,.08)}
 .contact-card .button.ghost:hover{background:rgba(255,255,255,.16);border-color:var(--aqua-soft)}
 
@@ -509,6 +519,8 @@ input[type=range]::-moz-range-thumb{
   .console{padding:20px}
   .channel{grid-template-columns:70px 1fr auto;gap:10px}
   .contact-card{flex-direction:column;align-items:flex-start;padding:30px}
+
+  .contact-actions{grid-template-columns:1fr;min-width:100%}
   .footer-grid{flex-direction:column}
   .footer-meta{text-align:start}
 }
@@ -677,10 +689,6 @@ input[type=range]::-moz-range-thumb{
     "inLanguage": ["ar", "en"]
   }
   </script>
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">تجاوز إلى المحتوى الرئيسي</a>
@@ -1564,12 +1572,25 @@ input[type=range]::-moz-range-thumb{
           <div>
             <p class="eyebrow">Contact</p>
             <h2>تواصل مع المختبر.</h2>
-            <p>للتواصل أو الأسئلة التعليمية حول الماء والمناخ والكيمياء والبيانات، راسلنا عبر البريد أدناه.</p>
+            <p>للتواصل أو الأسئلة التعليمية والمهنية، اختر البريد الأقرب لموضوعك.</p>
           </div>
-          <div class="contact-actions">
-            <a class="button primary" href="mailto:renadsuf2002@gmail.com">renadsuf2002@gmail.com</a>
-            <a class="button primary" href="mailto:yarasuf2001@gmail.com">yarasuf2001@gmail.com</a>
-            <a class="button primary" href="mailto:wejdanphy99@gmail.com">wejdanphy99@gmail.com</a>
+          <div class="contact-actions" aria-label="مسارات التواصل">
+            <a class="contact-pill" href="mailto:jumanajuh@gmail.com">
+              <span>العقود • المسؤوليات • حماية الموقف • صياغة آمنة</span>
+              <strong>jumanajuh@gmail.com</strong>
+            </a>
+            <a class="contact-pill" href="mailto:renadsuf2002@gmail.com">
+              <span>الماء • المناخ • الخرائط • القياسات البيئية</span>
+              <strong>renadsuf2002@gmail.com</strong>
+            </a>
+            <a class="contact-pill" href="mailto:yarasuf2001@gmail.com">
+              <span>المختبر • الجودة • القياسات • التحليل</span>
+              <strong>yarasuf2001@gmail.com</strong>
+            </a>
+            <a class="contact-pill" href="mailto:wejdanphy99@gmail.com">
+              <span>البنية • الخواص • الاختبار • الفشل الصناعي</span>
+              <strong>wejdanphy99@gmail.com</strong>
+            </a>
             <a class="button ghost" href="#top">العودة للأعلى</a>
           </div>
         </div>
