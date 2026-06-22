@@ -1,3 +1,4 @@
+- v47: Fixed contact cards by embedding theme-background CSS inside the critical inline CSS used by index.html.
 ## v46 — Contact themed email cards
 - Added visual background themes to the four contact email cards.
 - Kept the contact labels indirect without naming the academic field titles.

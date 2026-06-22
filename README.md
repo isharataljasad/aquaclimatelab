@@ -1,3 +1,5 @@
+
+Contact cards theme-background fix: v47 embeds the contact card image styles directly in index.html critical CSS.
 # AquaClimate Lab
 
 **Water × Weather × Chemistry × Data — for arid-region thinking.**
