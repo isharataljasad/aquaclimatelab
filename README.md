@@ -121,3 +121,6 @@ The Career-OS page has been changed from broad examples into selected career dec
 - Team lead readiness: ISO 14001 + ISO/IEC 17025 + CAPM/PMP by eligibility + NEBOSH IGC
 
 The language avoids promising a specific career outcome. It focuses on leadership readiness evidence, measurable work outputs, and safe educational projects.
+
+### v46 contact cards
+The contact section now uses four visual themed email cards with background imagery while keeping field names indirect.

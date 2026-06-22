@@ -1,3 +1,8 @@
+## v46 — Contact themed email cards
+- Added visual background themes to the four contact email cards.
+- Kept the contact labels indirect without naming the academic field titles.
+- Added contact theme image assets under `assets/img/contact/`.
+
 # CHANGELOG
 ## v45 — Contact theme routing update
 
